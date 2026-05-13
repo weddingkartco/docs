@@ -1,0 +1,76 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Weddingkart",
+  "theme": "almond",
+  "favicon": "https://icons.duckduckgo.com/ip3/weddingkart.gitbook.io.ico",
+  "colors": {
+    "primary": "#E8536A",
+    "light": "#FDE8EC",
+    "dark": "#B52F45"
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Try Free",
+      "href": "https://app.weddingkart.co"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "getting-started",
+              "wedding-setup"
+            ]
+          },
+          {
+            "group": "Guest Management",
+            "pages": [
+              "guests/overview",
+              "guests/adding-guests",
+              "guests/excel-import",
+              "guests/international-guests",
+              "guests/guest-groups"
+            ]
+          },
+          {
+            "group": "WhatsApp Announcements",
+            "pages": [
+              "announcements/overview",
+              "announcements/ai-announcements",
+              "announcements/scheduling",
+              "announcements/announcement-packs",
+              "announcements/voice-announcements"
+            ]
+          },
+          {
+            "group": "Collecting Responses",
+            "pages": [
+              "collect/rsvp-management",
+              "collect/travel-tickets",
+              "collect/id-cards",
+              "collect/two-way-chat"
+            ]
+          },
+          {
+            "group": "Account & Settings",
+            "pages": [
+              "account/team-collaboration",
+              "account/google-sheets-integration",
+              "account/payments-credits",
+              "account/referral-program"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {}
+  }
+}

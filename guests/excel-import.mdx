@@ -1,0 +1,78 @@
+---
+title: "Excel Import"
+description: Import your entire guest list from an Excel or CSV file in one step
+---
+
+Excel import is the fastest way to add a large number of guests to Weddingkart. Upload your existing spreadsheet and Weddingkart reads your columns, adds every guest, and creates groups automatically — all in a single step.
+
+## Prepare your file
+
+Your Excel or CSV file needs at minimum a name column and a phone number column. Every other column is optional and gets imported as a guest attribute or used to create groups.
+
+| Column | Required | Notes |
+|--------|----------|-------|
+| Name | Yes | Guest's full name |
+| Phone | Yes | Include country code (e.g., `+91 98765 43210`). Without a country code, Weddingkart assumes the same country as your account. |
+| Group columns | No | Use Yes/No values. Weddingkart creates a group for each column where at least one guest has "Yes". |
+| Attribute columns | No | Any other column (hotel name, pickup point, meal preference, etc.) is imported as a guest attribute. |
+
+### Example file
+
+| Name | Phone | Brideside | Groomside | Hotel Name |
+|------|-------|-----------|-----------|------------|
+| Rahul Sharma | +91 98765 43210 | Yes | No | Taj Hotel |
+| Priya Mehta | +91 91234 56789 | No | Yes | The Leela |
+| James Wilson | +44 7911 123456 | No | Yes | The Leela |
+
+After importing this file, Weddingkart creates a "Brideside" group and a "Groomside" group automatically, and stores each guest's hotel name as an attribute you can use in WhatsApp messages.
+
+<Tip>
+  Use Yes/No values in any column you want to become a group. Columns with other values (like "Taj Hotel") are imported as guest attributes instead.
+</Tip>
+
+## Import steps
+
+<Steps>
+  <Step title="Navigate to Guests">
+    Open the wedding in the Weddingkart app and go to **Guests**.
+  </Step>
+  <Step title="Tap Import from Excel">
+    Tap **Add Guests** → **Import Sheets**. You can upload an `.xlsx` or `.csv` file from your device, or paste a Google Spreadsheet link.
+  </Step>
+  <Step title="Upload your file">
+    Select your file and wait for Weddingkart to process it. The system analyzes every column and row.
+
+    - If the file cannot be read at all, you'll see an error and the import stops.
+    - If most rows are valid but some have issues (missing phone numbers, bad formatting), you'll see a warning. You can continue past warnings or abort, fix the file, and re-upload.
+  </Step>
+  <Step title="Review column mapping and select groups">
+    Weddingkart shows you all the groups it detected from Yes/No columns. Select the groups you want to create. You don't need to import every group — only select the ones you'll use for sending announcements.
+  </Step>
+  <Step title="Confirm the import">
+    Tap **Save**. Guests are added, and groups are created for every column you selected.
+  </Step>
+</Steps>
+
+## After import
+
+Groups appear immediately in the Groups section of your wedding. You can add or remove guests from any group at any time.
+
+If you re-upload an updated version of the same file, Weddingkart matches guests by phone number:
+
+- Guests already in the system have their name and group assignments updated.
+- New phone numbers are added as new guests.
+- Removed phone numbers are not deleted automatically — you remove them manually if needed.
+
+<Warning>
+  Changing a guest's phone number in Excel and re-uploading adds the new number but does not remove the old one. Delete the old number manually in the app if you no longer need it.
+</Warning>
+
+## Cleaning your file before import
+
+If your guest list was collected from multiple sources (family WhatsApp threads, caterer lists, hotel lists), it may contain duplicate entries or inconsistent phone number formats.
+
+Weddingkart's free **Guest Excel Cleaner** tool at [weddingkart.co/tools](https://weddingkart.co/tools) helps you deduplicate and standardize your file before importing.
+
+<Note>
+  On the Standard plan, the AI Excel Analyzer automatically detects formatting issues, duplicate phone numbers, and missing country codes in your guest file before you import it.
+</Note>

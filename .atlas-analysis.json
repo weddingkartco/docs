@@ -1,0 +1,95 @@
+{
+  "projectType": "saas",
+  "projectName": "Weddingkart",
+  "projectDescription": "Weddingkart is the all-in-one wedding management platform for professional event managers — manage guests, send WhatsApp announcements, collect RSVPs, travel tickets, and ID cards, all without guests needing to install any app.",
+  "theme": "almond",
+  "primaryColor": "#E8536A",
+  "lightColor": "#FDE8EC",
+  "darkColor": "#B52F45",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "getting-started",
+              "wedding-setup"
+            ]
+          },
+          {
+            "group": "Guest Management",
+            "pages": [
+              "guests/overview",
+              "guests/adding-guests",
+              "guests/excel-import",
+              "guests/international-guests",
+              "guests/guest-groups"
+            ]
+          },
+          {
+            "group": "WhatsApp Announcements",
+            "pages": [
+              "announcements/overview",
+              "announcements/ai-announcements",
+              "announcements/scheduling",
+              "announcements/announcement-packs",
+              "announcements/voice-announcements"
+            ]
+          },
+          {
+            "group": "Collecting Responses",
+            "pages": [
+              "collect/rsvp-management",
+              "collect/travel-tickets",
+              "collect/id-cards",
+              "collect/two-way-chat"
+            ]
+          },
+          {
+            "group": "Account & Settings",
+            "pages": [
+              "account/team-collaboration",
+              "account/google-sheets-integration",
+              "account/payments-credits",
+              "account/referral-program"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Guest management with Excel import and automatic group creation",
+    "WhatsApp announcements via official Business API (no personal number needed)",
+    "One-tap RSVP collection via interactive WhatsApp buttons",
+    "AI-powered announcement creation from natural language prompts",
+    "Travel ticket collection with AI auto-extraction of flight details",
+    "ID card collection directly through WhatsApp",
+    "Two-way chat with guests from within the app",
+    "Announcement scheduling for future dates and times",
+    "Google Sheets and Excel export for all guest data",
+    "Multi-wedding management from a single account",
+    "Team collaboration with real-time shared access",
+    "Voice announcements delivered via phone call"
+  ],
+  "publicApiSurface": [
+    "Create Wedding",
+    "Add Guest (manual)",
+    "Import Guests via Excel/CSV",
+    "Create Guest Group",
+    "Send Announcement (WhatsApp)",
+    "AI Announcement creation",
+    "Schedule Announcement",
+    "Send RSVP Request",
+    "Collect Travel Tickets",
+    "Collect ID Cards",
+    "2-Way Chat (guest reply inbox)",
+    "Google Sheets sync/export",
+    "Invite Team Member",
+    "Purchase Credits / Upgrade Plan",
+    "Referral Program"
+  ]
+}

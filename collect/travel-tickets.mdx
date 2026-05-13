@@ -1,0 +1,96 @@
+---
+title: "Travel Tickets"
+description: "Collect guest travel details and flight/train tickets via WhatsApp."
+---
+
+Guests forward their flight or train ticket directly in WhatsApp. AI reads the ticket and extracts the arrival time, departure city, flight or train number, and other details automatically — no manual data entry required.
+
+This feature is especially useful for destination weddings and multi-day events where you need to coordinate airport or station pickups and ground transportation.
+
+## How it works
+
+You send guests a WhatsApp message asking them to reply with their travel ticket. Guests attach a PDF of their ticket and send it back in the chat. Weddingkart's AI reads the document and populates the travel details in the guest's profile, including:
+
+- Flight or train number
+- Departure city
+- Arrival time and date
+- Terminal or station
+
+Your logistics team can then export all travel data to Google Sheets and use it to plan vehicle assignments and pickup slots.
+
+## Request travel tickets
+
+<Steps>
+  <Step title="Go to Announcements">
+    Open the Weddingkart app and tap **Announcements** in the main menu.
+  </Step>
+  <Step title="Create a new announcement">
+    Tap **Create Announcement** and select the **Travel Information** template.
+  </Step>
+  <Step title="Instruct guests to send a PDF">
+    The message should ask guests to reply with their ticket as a **PDF file**, not a screenshot. AI reads PDFs more accurately than images.
+  </Step>
+  <Step title="Select recipients">
+    Choose the guests or groups who need to submit travel details — for example, outstation guests or guests flying in.
+  </Step>
+  <Step title="Send">
+    Tap **Send** to deliver the message, or schedule it for a specific date and time.
+  </Step>
+</Steps>
+
+<Note>
+  Sending an announcement is optional. Guests can upload their travel ticket by replying to any message in the WhatsApp chat at any time, and the AI will process it the same way.
+</Note>
+
+## View collected tickets
+
+<Steps>
+  <Step title="Open Export Guest Data">
+    On the **Wedding Homepage**, tap **Export Guest Data**.
+  </Step>
+  <Step title="Sync to Google Sheets">
+    Tap **Sync** to export all collected ticket data to your linked Google Sheet. Wait a moment for the sync to complete.
+  </Step>
+  <Step title="Share with your logistics team">
+    Share the Google Sheet link with your transportation partner or coordinator. The sheet shows each guest's arrival time, travel mode, flight or train number, and departure city — everything needed to assign pickups.
+  </Step>
+</Steps>
+
+## AI auto-extraction
+
+When a guest sends a PDF ticket, the AI reads it within seconds and writes the extracted details directly to the guest's profile. You do not need to open the ticket manually or type anything. The same extraction works for IRCTC train tickets, airline e-tickets, and forwarded confirmation emails saved as PDF.
+
+<Tip>
+  Ask guests to send a PDF, not a screenshot. Screenshots are images and the AI extracts text from PDFs more reliably — especially for smaller print like PNR numbers, terminal codes, and train berth details.
+</Tip>
+
+## Send reminders
+
+To follow up with guests who haven't submitted their ticket, use the auto-created **Travel Tickets: Not Sent** group. This group contains only guests who have not yet uploaded a ticket, so you don't disturb guests who have already complied.
+
+## Best practices
+
+- Request tickets at least 2 weeks before the wedding to give yourself time to plan transportation.
+- Always ask for PDFs rather than screenshots.
+- After syncing, share the Google Sheet with your transportation partner so they can view guest arrivals and assign vehicles.
+
+<Note>
+  Travel ticket collection is available in the **Standard plan** only.
+</Note>
+
+## Related pages
+
+<CardGroup cols={2}>
+  <Card title="RSVP Management" icon="check" href="/collect/rsvp-management">
+    Collect attendance confirmations via WhatsApp buttons.
+  </Card>
+  <Card title="ID Cards" icon="id-card" href="/collect/id-cards">
+    Collect guest ID cards for venue security check-in.
+  </Card>
+  <Card title="Two-Way Chat" icon="message" href="/collect/two-way-chat">
+    Reply to individual guest messages from the app.
+  </Card>
+  <Card title="Google Sheets Integration" icon="table" href="/account/google-sheets-integration">
+    Export and sync guest data to Google Sheets.
+  </Card>
+</CardGroup>

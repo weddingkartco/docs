@@ -1,0 +1,76 @@
+---
+title: "Adding Guests"
+description: Add guests to your wedding manually or by importing from Excel
+---
+
+You have two ways to add guests to a wedding in Weddingkart: add them one at a time manually, or import a spreadsheet to add many at once.
+
+## Manual addition
+
+Use manual addition when you have a handful of guests to add or need to quickly add a single person.
+
+<Steps>
+  <Step title="Open the Guests section">
+    Navigate to the wedding in the Weddingkart app and open **Guests**.
+  </Step>
+  <Step title="Tap Add Guest">
+    Tap **Add Guest** → **Add Manually**.
+  </Step>
+  <Step title="Enter name and phone number">
+    Enter the guest's name and phone number. You can add up to three phone numbers per guest.
+
+    For international guests, include the full country code (e.g., `+1 555 123 4567` for the US). If you omit the country code, Weddingkart assumes the same country as your account.
+  </Step>
+  <Step title="Assign to a group (optional)">
+    Select one or more groups to add the guest to. You can skip this and assign groups later.
+  </Step>
+  <Step title="Save">
+    Tap **Save**. The guest is added to your wedding immediately.
+  </Step>
+</Steps>
+
+## Guest fields
+
+Every guest requires a name and at least one phone number. Everything else is optional.
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| Name | Yes | The name used in message placeholders (`GUEST_NAME`) |
+| Phone number | Yes | Up to 3 numbers per guest; include country code for international |
+| Group | No | Assign on creation or any time afterward |
+
+## Guest attributes
+
+Guest attributes are custom fields you attach to individual guests. They work like extra columns in a spreadsheet — you define the field name once, then set a value per guest.
+
+Common attributes include:
+
+- `hotel_name` — which hotel the guest is staying at
+- `pickup_point` — airport or station pickup location
+- `bus_number` — shuttle or bus group assignment
+- `meal_preference` — dietary requirement
+
+Once you set an attribute, you can use it as a placeholder in any WhatsApp message. Write `HOTEL_NAME` in your message template and Weddingkart replaces it with each guest's specific hotel name at send time. Every guest gets a personalised message from a single template.
+
+You can set attributes when adding a guest manually, or import them in bulk from an Excel file by including them as extra columns.
+
+<Note>
+  Weddingkart validates attribute placeholders before you send. If any guest in your target group is missing a value for a placeholder you used, the app shows you a list so you can fill the gaps before sending.
+</Note>
+
+## Next steps
+
+Once your guests are added, organize them into groups to control who receives which announcements.
+
+<Tip>
+  For large guest lists, skip manual addition entirely. Use Excel import to bring in hundreds of guests at once, with groups created automatically from your spreadsheet columns.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Guest Groups" icon="users" href="/guests/guest-groups">
+    Organize guests into segments for targeted announcements
+  </Card>
+  <Card title="Excel Import" icon="table" href="/guests/excel-import">
+    Import your entire guest list in one step
+  </Card>
+</CardGroup>
