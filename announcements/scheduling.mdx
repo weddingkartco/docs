@@ -11,38 +11,38 @@ This is how professional event managers handle wedding communication: build the 
 
 <Steps>
   <Step title="Create your announcement">
-    Build your announcement as usual — choose the type, select a template, fill in the variables, and optionally attach a PDF or image. You can use AI Announcements or create manually.
-  </Step>
-  <Step title="Choose Schedule for Later">
-    Instead of tapping **Send Now**, tap **Schedule for Later**.
-  </Step>
-  <Step title="Pick the date and time">
-    Select the exact date and time you want the message to go out. The scheduled time must be in the future.
+    Build your announcement as usual — choose a template, fill in the variables, and optionally attach a PDF or image.
   </Step>
   <Step title="Select recipients">
-    Choose individual guests or one or more guest groups. When selecting multiple groups, choose how to combine them:
-    - **All Selected** — the union of all selected groups; each guest receives the message once even if they belong to multiple groups
-    - **Common in Selected** — only guests who appear in every one of the selected groups
+    Choose individual guests or one or more guest groups. When you select more than one group, **Combine options** lets you choose:
+    - **Send to all selected groups** — everyone in any of the groups; each guest receives the message once even if they belong to several
+    - **Send only to common guests** — only guests who appear in every selected group
+  </Step>
+  <Step title="Choose Schedule for Later">
+    On the review screen, under **Send Options**, pick **Schedule for Later** instead of **Send Now**.
+  </Step>
+  <Step title="Pick the date, time and time zone">
+    Select when you want the message to go out, and the time zone that time is in. The scheduled time must be in the future.
   </Step>
   <Step title="Confirm the schedule">
-    Tap **Create Schedule**. The announcement is now queued. Weddingkart will send it automatically at the scheduled time without any further action from you.
+    Tap **Schedule Announcement**. Weddingkart will send it automatically at the scheduled time without any further action from you.
   </Step>
 </Steps>
 
+<Note>
+For group sends, the guest list is finalised when the message goes out, not when you schedule it. Guests added to or removed from the selected groups before then are included or excluded automatically.
+</Note>
+
 ## Managing scheduled announcements
 
-All your pending schedules are visible in the **Schedules** section. From there you can:
+All your schedules are listed in the **Schedules** section. Tap one to see its **Recipients** and actions:
 
-- **Edit** — change the send time, recipient groups, or targeting logic before the message goes out
-- **Preview recipients** — see the exact guest list that will receive the message
-- **Send now** — trigger the announcement immediately without waiting for the scheduled time
-- **Cancel** — pause a scheduled announcement; it can be resumed later
-- **Resume** — reactivate a cancelled schedule
-- **Delete** — permanently remove a schedule
-
-<Note>
-Cancelling a schedule pauses it without deleting it. You can resume it later if the timing changes. Deleting a schedule is permanent and cannot be undone.
-</Note>
+- **Change Time** — move the send time (at least 15 minutes in the future)
+- **Send Now** — send the announcement immediately without waiting for the scheduled time
+- **Cancel** — stop a schedule before it sends
+- **Resume Schedule** — reactivate a cancelled schedule
+- **Activate Schedule** — turn a draft schedule on
+- **View Report** — see delivery for a schedule that has sent
 
 ## Schedule status
 
@@ -50,10 +50,10 @@ Each schedule shows one of the following statuses:
 
 | Status | Meaning |
 |---|---|
-| **Pending** | Scheduled and waiting to send |
-| **Processing** | Currently being dispatched |
-| **Completed** | Successfully sent to all recipients |
-| **Cancelled** | Paused manually; can be resumed |
+| **Draft** | Created but not active yet; tap **Activate Schedule** to turn it on |
+| **Scheduled** | Active and waiting to send |
+| **Sent** | Sent to recipients |
+| **Cancelled** | Stopped manually; can be resumed |
 | **Failed** | An error occurred during sending |
 
 ## Useful scenarios for scheduling
@@ -74,9 +74,13 @@ You can also create a reminder sequence: send the first message 7 days before th
 Set up your full announcement calendar when you first configure a new wedding. Scheduling everything at once means you'll never need to remember to send a message at a critical moment.
 </Tip>
 
+## Voice announcements
+
+Recorded voice announcements can be scheduled the same way. AI voice calls cannot be scheduled — they are sent immediately.
+
 ## Time zones
 
-All scheduled times are stored in UTC and converted to your local time zone for display. When scheduling, account for where your guests are located — a message sent at 9 AM in Delhi reaches guests in a different time window than guests in London or New York.
+When you schedule, you choose the time zone the send time is in, and the **Schedules** section shows which time zone its times are displayed in. Account for where your guests are located — a message sent at 9 AM in Delhi reaches guests in a different time window than guests in London or New York.
 
 <Warning>
 Avoid scheduling messages before 8 AM or after 10 PM in the recipient's local time zone. Messages sent at unusual hours are often muted or ignored, and may signal to guests that your communication is disorganized.

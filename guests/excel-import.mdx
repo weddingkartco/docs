@@ -1,20 +1,22 @@
 ---
 title: "Excel Import"
-description: Import your entire guest list from an Excel or CSV file in one step
+description: Import your entire guest list from an Excel file in one step
 ---
 
 Excel import is the fastest way to add a large number of guests to Weddingkart. Upload your existing spreadsheet and Weddingkart reads your columns, adds every guest, and creates groups automatically — all in a single step.
 
 ## Prepare your file
 
-Your Excel or CSV file needs at minimum a name column and a phone number column. Every other column is optional and gets imported as a guest attribute or used to create groups.
+Weddingkart imports `.xlsx` files. Your file needs at minimum a name column and a phone number column — column headers can be anything, and Weddingkart detects which column is which. Every other column is optional and can be imported as a guest attribute, used to create groups, or both.
+
+Put column headers in the first row and avoid merged cells. If your file has more than one sheet, you choose which sheets to import; hidden sheets are skipped unless you tick them.
 
 | Column | Required | Notes |
 |--------|----------|-------|
 | Name | Yes | Guest's full name |
-| Phone | Yes | Include country code (e.g., `+91 98765 43210`). Without a country code, Weddingkart assumes the same country as your account. |
-| Group columns | No | Use Yes/No values. Weddingkart creates a group for each column where at least one guest has "Yes". |
-| Attribute columns | No | Any other column (hotel name, pickup point, meal preference, etc.) is imported as a guest attribute. |
+| Phone | Yes | Any format works. Include the country code for non-Indian numbers (e.g., `+44 7911 123456`) — numbers without a country code are treated as Indian (+91). Add a second phone column for guests with more than one number. |
+| Group columns | No | Weddingkart suggests a group for each distinct value in a column (for example, `brideside=yes`). Each sheet name also becomes a suggested group. |
+| Attribute columns | No | Any other column (hotel name, pickup point, meal preference, etc.) can be imported as a guest attribute. |
 
 ### Example file
 
@@ -24,10 +26,12 @@ Your Excel or CSV file needs at minimum a name column and a phone number column.
 | Priya Mehta | +91 91234 56789 | No | Yes | The Leela |
 | James Wilson | +44 7911 123456 | No | Yes | The Leela |
 
-After importing this file, Weddingkart creates a "Brideside" group and a "Groomside" group automatically, and stores each guest's hotel name as an attribute you can use in WhatsApp messages.
+For this file, Weddingkart suggests groups such as `brideside=yes` and `groomside=yes` from the Yes/No columns, and offers each guest's hotel name as an attribute you can use in WhatsApp messages.
 
 <Tip>
-  Use Yes/No values in any column you want to become a group. Columns with other values (like "Taj Hotel") are imported as guest attributes instead.
+  Columns with only a few distinct values (up to 5, like Yes/No or a couple of hotel names) have their groups pre-selected for you. Columns with many values, like room numbers, are still offered as groups but not pre-selected. The same column can be used both as a group and as a guest attribute.
+
+  Another way to split your list is by sheet: put bride's-side guests on a "Brideside" sheet and groom's-side guests on a "Groomside" sheet, and each sheet becomes a group.
 </Tip>
 
 ## Import steps
@@ -37,29 +41,36 @@ After importing this file, Weddingkart creates a "Brideside" group and a "Grooms
     Open the wedding in the Weddingkart app and go to **Guests**.
   </Step>
   <Step title="Tap Import from Excel">
-    Tap **Add Guests** → **Import Sheets**. You can upload an `.xlsx` or `.csv` file from your device, or paste a Google Spreadsheet link.
+    Tap **Add Guest** → **Import from Excel**, then tap **Select Sheet from Device** and choose your `.xlsx` file. The same screen has a **Sample Excel Template** you can download to get started.
   </Step>
   <Step title="Upload your file">
-    Select your file and wait for Weddingkart to process it. The system analyzes every column and row.
+    Wait for Weddingkart to process the file. It detects names, phone numbers, and groups, and shows progress as it works through each sheet. If your file has more than one sheet, choose which ones to import.
 
-    - If the file cannot be read at all, you'll see an error and the import stops.
-    - If most rows are valid but some have issues (missing phone numbers, bad formatting), you'll see a warning. You can continue past warnings or abort, fix the file, and re-upload.
+    - If there are errors in your sheet, the import stops — fix the errors and import the file again.
+    - If some rows have issues (for example, a missing phone number, a duplicate number, or a name that doesn't look right), you'll see warnings with a summary. Warnings don't block the import, and Weddingkart also sends them to you on WhatsApp so you can fix them later.
+
+    Tap **Next: Choose Groups** to continue.
   </Step>
-  <Step title="Review column mapping and select groups">
-    Weddingkart shows you all the groups it detected from Yes/No columns. Select the groups you want to create. You don't need to import every group — only select the ones you'll use for sending announcements.
+  <Step title="Review groups">
+    On **Review Groups**, Weddingkart shows the groups it found. Use **Select all**, **Suggested**, or **Clear all**, or tick groups one by one. You don't need to import every group — only select the ones you'll use for sending announcements. Groups are optional: tap **Continue without groups** to import guests ungrouped.
+
+    If you started the import from inside a group, you can also add every imported guest to that group.
+  </Step>
+  <Step title="Choose per-guest info">
+    On **Per-guest info**, pick which columns to import as guest attributes so you can use them in messages.
   </Step>
   <Step title="Confirm the import">
-    Tap **Save**. Guests are added, and groups are created for every column you selected.
+    Tap **Import Guests**. Guests are added, groups are created for every group you selected, and the chosen per-guest info is saved.
   </Step>
 </Steps>
 
 ## After import
 
-Groups appear immediately in the Groups section of your wedding. You can add or remove guests from any group at any time.
+Groups appear immediately on the Guests screen of your wedding. You can add or remove guests from any group at any time.
 
 If you re-upload an updated version of the same file, Weddingkart matches guests by phone number:
 
-- Guests already in the system have their name and group assignments updated.
+- Guests already in the system have their name updated and are added to the groups you select.
 - New phone numbers are added as new guests.
 - Removed phone numbers are not deleted automatically — you remove them manually if needed.
 
@@ -71,8 +82,8 @@ If you re-upload an updated version of the same file, Weddingkart matches guests
 
 If your guest list was collected from multiple sources (family WhatsApp threads, caterer lists, hotel lists), it may contain duplicate entries or inconsistent phone number formats.
 
-Weddingkart's free **Guest Excel Cleaner** tool at [weddingkart.co/tools](https://weddingkart.co/tools) helps you deduplicate and standardize your file before importing.
+Weddingkart's free **Guest Excel Cleaner** tool at [weddingkart.co/tools/guest-excel-cleaner](https://weddingkart.co/tools/guest-excel-cleaner) helps you deduplicate and standardize your file before importing.
 
 <Note>
-  On the Standard plan, the AI Excel Analyzer automatically detects formatting issues, duplicate phone numbers, and missing country codes in your guest file before you import it.
+  Every upload is checked automatically before anything is imported — rows without a valid phone number, duplicate phone numbers, and names that don't look right show up as warnings you can review.
 </Note>

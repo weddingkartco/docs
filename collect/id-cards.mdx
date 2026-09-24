@@ -9,7 +9,7 @@ This is useful for destination weddings, banquet venues with security check-in r
 
 ## How it works
 
-You send guests a WhatsApp message asking them to reply with a photo of their ID. The guest takes a photo of their Aadhaar card, passport, driver's licence, or any other valid government document and sends it in the chat. The upload is stored against their guest profile in Weddingkart.
+You send guests a WhatsApp message asking them to reply with a photo of their ID. The guest takes a photo of their Aadhaar card, passport, driver's licence, or any other valid government document and sends it in the chat. The upload is stored against their guest profile in Weddingkart, and AI reads the card for the holder's name, ID number, and date of birth.
 
 Your team can then export all collected IDs via Google Sheets and share the sheet with venue security or hotel reception staff.
 
@@ -20,7 +20,7 @@ Your team can then export all collected IDs via Google Sheets and share the shee
     Open the Weddingkart app and tap **Announcements** in the main menu.
   </Step>
   <Step title="Create a new announcement">
-    Tap **Create Announcement** and select the **ID Collection** template.
+    Tap **Add Announcement** → **Send a ready-made message**, and pick a template from the **ID Collection** category.
   </Step>
   <Step title="Review the message">
     The template asks guests to send a photo of their ID in the WhatsApp reply. You can optionally personalise the message before sending.
@@ -36,16 +36,31 @@ Your team can then export all collected IDs via Google Sheets and share the shee
 ## View collected IDs
 
 <Steps>
-  <Step title="Open the guest profile">
-    Tap on any guest's name in the Weddingkart app to open their profile. Uploaded ID photos are stored there.
+  <Step title="Open ID Cards Management">
+    On the **Wedding Homepage**, tap **ID Cards** in the progress overview. The screen shows whether collection is **Live**, how many guests you've asked, and the share of IDs received. Tap **Received** or **Pending** to see those guests, or **View All** under Recent ID Cards to search every upload by name, phone, or file ID.
   </Step>
   <Step title="Export all IDs to Google Sheets">
-    On the **Wedding Homepage**, tap **Export Guest Data** and then **Sync** to export all collected ID data to your linked Google Sheet.
+    Tap **Export ID Cards** to open **Export Guest Data**, then tap **Sync Now** under Google Sheets to export all collected ID data to your linked Google Sheet. To copy the original ID files into a Google Drive folder, use the **Google Drive** section on the same screen.
   </Step>
   <Step title="Share with your venue team">
     Share the Google Sheet with your venue security team or hotel reception. As more guests upload their IDs, the sheet updates automatically, so staff always see the latest submissions.
   </Step>
 </Steps>
+
+### Front and back
+
+Each ID card is tagged **Front**, **Back**, or **Front + Back**, based on what the AI could read on it. If a guest sends the front and back as two separate photos, the AI recognises them as a pair and stitches them into a single PDF, marked **Combined by AI**. Tap any card to check exactly what the guest sent.
+
+### Upload an ID on a guest's behalf
+
+Got an ID by email or at the desk? Open the guest from your guest list and use **Upload** in the **ID Cards** section. The file is read the same way as one sent on WhatsApp — the details appear a few seconds later.
+
+## Check who has the right documents
+
+Tap **ID Requirements & Status** on the ID Cards screen to track not just *whether* guests sent an ID, but whether it's the *right* one.
+
+- **Settings** — turn on **Enable ID requirements** and create requirement profiles, for example "Domestic" accepting Aadhaar or "Foreign" requiring a passport plus a visa. Mark one profile as the **Default**, or turn on **Accept any document** if any ID will do. Guests can still send any ID — nothing is auto-rejected.
+- **Status** — see each guest's status (**Complete**, **Partial**, **Wrong type**, **Missing**, **Needs review**) and filter by it. Tap **Request** to message all guests with a given status asking for the correct document. Guests you can't reach right now are skipped automatically.
 
 ## Send reminders
 

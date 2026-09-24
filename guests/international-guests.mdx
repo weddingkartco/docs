@@ -3,7 +3,7 @@ title: "International Guests"
 description: Add and message guests outside India
 ---
 
-Weddingkart supports guests in any country. The process for adding international guests is the same as for local guests — the only requirement is that you include the full international phone number with the country code.
+Weddingkart supports guests in any country. The process for adding international guests is the same as for local guests — the only requirement is that Weddingkart knows the guest's country code.
 
 ## Adding international guests manually
 
@@ -15,7 +15,7 @@ Weddingkart supports guests in any country. The process for adding international
     Tap **Add Guest** → **Add Manually**.
   </Step>
   <Step title="Enter the international phone number">
-    Enter the guest's name and phone number with the full country code.
+    Enter the guest's name. The phone number field is set to India (+91) by default, so for an international guest either tap the country code next to the number and pick their country, or type the full number starting with `+` and the country code — Weddingkart detects the country automatically.
 
     | Country | Example format |
     |---------|---------------|
@@ -24,10 +24,10 @@ Weddingkart supports guests in any country. The process for adding international
     | UAE | `+971 50 123 4567` |
     | India | `+91 98765 43210` |
 
-    Include the `+` prefix and the country code before the local number.
+    If you type a number without the `+`, it's read as a number in the country currently selected.
   </Step>
   <Step title="Save">
-    Tap **Save**. The guest is added with their international number.
+    Tap **Save Guest**. The guest is added with their international number.
   </Step>
 </Steps>
 
@@ -41,17 +41,15 @@ For large groups of international guests, include their numbers in your Excel fi
 
 ## How Weddingkart handles missing country codes
 
-If a phone number in your guest list has no country code, Weddingkart assumes it belongs to the same country as your account.
-
-For example: if your Weddingkart account is registered with an Indian number (`+91`), any guest number without a country code is assumed to be an Indian number.
+If a phone number in your Excel file has no country code, Weddingkart assumes it's an Indian number (+91). This applies regardless of which country you or your account are in. When adding guests manually, the number is read in whichever country is selected in the country code picker (India by default).
 
 This means:
 
-- If all your guests are in the same country as you, you can safely omit country codes.
-- If you have a mix of local and international guests, include the `+` country code for every international number to avoid incorrect assumptions.
+- If all your guests have Indian numbers, you can safely omit country codes.
+- For every non-Indian number, include the `+` country code to avoid incorrect assumptions.
 
 <Warning>
-  Do not mix local and international guests in the same import without country codes. Weddingkart will apply your account's country code to all numbers that lack one, which will cause delivery failures for your international guests.
+  Do not leave out country codes for international guests in your import. Weddingkart treats every number without one as Indian, which will cause delivery failures for your international guests.
 </Warning>
 
 ## WhatsApp messaging for international guests

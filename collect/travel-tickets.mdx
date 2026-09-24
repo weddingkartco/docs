@@ -9,32 +9,29 @@ This feature is especially useful for destination weddings and multi-day events 
 
 ## How it works
 
-You send guests a WhatsApp message asking them to reply with their travel ticket. Guests attach a PDF of their ticket and send it back in the chat. Weddingkart's AI reads the document and populates the travel details in the guest's profile, including:
+You send guests a WhatsApp message asking them to reply with their travel ticket. Guests send the ticket back in the chat — a PDF or a clear screenshot or photo. Weddingkart's AI reads the document and populates the travel details in the guest's profile, including:
 
 - Flight or train number
 - Departure city
 - Arrival time and date
-- Terminal or station
+- Arrival airport or station
 
-Your logistics team can then export all travel data to Google Sheets and use it to plan vehicle assignments and pickup slots.
+Your logistics team can then plan pickups right in the app (see [Plan arrivals and pickups](#plan-arrivals-and-pickups)) or export all travel data to Google Sheets.
 
 ## Request travel tickets
 
 <Steps>
-  <Step title="Go to Announcements">
-    Open the Weddingkart app and tap **Announcements** in the main menu.
+  <Step title="Open Travel & Arrivals">
+    On the **Wedding Homepage**, tap **Tickets** in the progress overview to open the **Travel & Arrivals** screen.
   </Step>
-  <Step title="Create a new announcement">
-    Tap **Create Announcement** and select the **Travel Information** template.
-  </Step>
-  <Step title="Instruct guests to send a PDF">
-    The message should ask guests to reply with their ticket as a **PDF file**, not a screenshot. AI reads PDFs more accurately than images.
+  <Step title="Ask guests for tickets">
+    Tap **Ask guests for tickets** (it reads **Ask for tickets again** once you've already asked some guests). Weddingkart prepares a ticket-request WhatsApp message and opens it in the announcement editor.
   </Step>
   <Step title="Select recipients">
     Choose the guests or groups who need to submit travel details — for example, outstation guests or guests flying in.
   </Step>
   <Step title="Send">
-    Tap **Send** to deliver the message, or schedule it for a specific date and time.
+    Tap **Send Now** to deliver the message, or **Schedule for Later** to pick a date and time.
   </Step>
 </Steps>
 
@@ -46,10 +43,10 @@ Your logistics team can then export all travel data to Google Sheets and use it 
 
 <Steps>
   <Step title="Open Export Guest Data">
-    On the **Wedding Homepage**, tap **Export Guest Data**.
+    On the **Travel & Arrivals** screen, tap the **⋮** menu and choose **Export**.
   </Step>
   <Step title="Sync to Google Sheets">
-    Tap **Sync** to export all collected ticket data to your linked Google Sheet. Wait a moment for the sync to complete.
+    Under Google Sheets, tap **Sync Now** to export all collected ticket data to your linked Google Sheet. The sync keeps running in the background if you leave the page. To also copy the original ticket files (PDFs, images) into a Google Drive folder, use the **Google Drive** section on the same screen.
   </Step>
   <Step title="Share with your logistics team">
     Share the Google Sheet link with your transportation partner or coordinator. The sheet shows each guest's arrival time, travel mode, flight or train number, and departure city — everything needed to assign pickups.
@@ -58,11 +55,37 @@ Your logistics team can then export all travel data to Google Sheets and use it 
 
 ## AI auto-extraction
 
-When a guest sends a PDF ticket, the AI reads it within seconds and writes the extracted details directly to the guest's profile. You do not need to open the ticket manually or type anything. The same extraction works for IRCTC train tickets, airline e-tickets, and forwarded confirmation emails saved as PDF.
+When a guest sends a ticket, the AI reads it within seconds and writes the extracted details directly to the guest's profile. You do not need to open the ticket manually or type anything. The same extraction works for IRCTC train tickets, airline e-tickets, and forwarded confirmation emails saved as PDF.
 
 <Tip>
-  Ask guests to send a PDF, not a screenshot. Screenshots are images and the AI extracts text from PDFs more reliably — especially for smaller print like PNR numbers, terminal codes, and train berth details.
+  A PDF or a clear screenshot both work. If the AI can't read a ticket, it's flagged rather than silently dropped — see [Fix bad tickets](#fix-bad-tickets).
 </Tip>
+
+### Fix bad tickets
+
+The **Travel & Arrivals** screen shows **Received**, **Pending**, and **Bad** counts. Tap **Bad** to see tickets that need attention, each with a reason:
+
+- **Couldn't read it** or **No arrival place** — tap **Ask to re-send** to request a clearer copy from the guest.
+- **Wrong week** — the travel date falls outside the wedding dates. If it's actually fine, tap **Mark valid** and add a note so your team knows why.
+- **Not a valid ticket** — the file doesn't look like a real ticket.
+
+Tap any row to open the file and check it yourself.
+
+## Plan arrivals and pickups
+
+The **Travel & Arrivals** screen turns collected tickets into a pickup plan. First, finish the one-time setup: set the **City** your guests travel to and pick the **Arrival points** — the airports and stations near the venue. Weddingkart suggests nearby ones for you.
+
+Then use:
+
+- **Timeline** — every arrival and departure in date order.
+- **Pickup Roster** — pick an arrival point, date, and pickup window, then tap **Build roster** to group guests into pickups and assign drivers. Share the roster with drivers over WhatsApp or as an Excel file.
+- **Driver Runs** — see which driver runs are still unconfirmed, call the driver in one tap, and mark runs confirmed.
+
+If a guest shares travel details by phone instead of sending a ticket, open the **⋮** menu and choose **Add travel manually** to record the arrival yourself.
+
+<Note>
+  Timeline, Pickup Roster, and Driver Runs stay empty until you've set your city and arrival points.
+</Note>
 
 ## Send reminders
 
@@ -71,7 +94,6 @@ To follow up with guests who haven't submitted their ticket, use the auto-create
 ## Best practices
 
 - Request tickets at least 2 weeks before the wedding to give yourself time to plan transportation.
-- Always ask for PDFs rather than screenshots.
 - After syncing, share the Google Sheet with your transportation partner so they can view guest arrivals and assign vehicles.
 
 <Note>
