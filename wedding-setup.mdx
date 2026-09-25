@@ -3,7 +3,7 @@ title: "Wedding Setup"
 description: "Create and configure a wedding event in Weddingkart."
 ---
 
-Each wedding you manage in Weddingkart is its own self-contained event — with its own guest list, groups, announcements, and analytics. This page covers how to create and configure a wedding.
+Each wedding you manage in Weddingkart is its own self-contained event — with its own guest list, groups, announcements, credits, team, and analytics. This page covers how to create and configure a wedding, how multi-day weddings work, and what happens to a wedding after the big day.
 
 ## Creating a new wedding
 
@@ -17,7 +17,7 @@ Each wedding you manage in Weddingkart is its own self-contained event — with 
   </Step>
 
   <Step title="Choose what you're planning">
-    Under **What are you planning?**, pick **A wedding** or **A corporate event** (offsite, conference, awards night). A corporate event has no couple, so it asks for an **Event name** instead of the bride and groom fields below.
+    Under **What are you planning?**, pick **A wedding** ("For a couple and their guests") or **A corporate event** ("Offsite, conference, awards night"). A corporate event has no couple, so it asks for an **Event name** instead of the bride and groom fields below. See [Wedding vs corporate event](#wedding-vs-corporate-event).
   </Step>
 
   <Step title="Fill in the wedding details">
@@ -27,7 +27,7 @@ Each wedding you manage in Weddingkart is its own self-contained event — with 
     | --- | --- |
     | **Your role** | Your relationship to the wedding: Bride, Groom, Family Member, Event Manager, or Friend. Required. |
     | **Wedding Date** | Pick the date from the calendar. For a multi-day wedding, pick the first day. Required. |
-    | **Send messages from** | The WhatsApp number guests receive messages from. Leave it as **Wedding Invite (default)**, or pick your own connected WhatsApp Business number so guests see your business name. This can't be changed after the wedding is created. |
+    | **Send messages from** | The WhatsApp number guests receive messages from. Leave it as **Wedding Invite (default)**, or pick your own connected WhatsApp Business number so guests see your business name — see [Send from your own WhatsApp number](/account/own-whatsapp-number). This can't be changed after the wedding is created. |
     | **Bride's Name** | Bride's first name (required) and last name (optional). |
     | **Bride's Number** | Optional. |
     | **Groom's Name** | Groom's first name (required) and last name (optional). |
@@ -36,31 +36,133 @@ Each wedding you manage in Weddingkart is its own self-contained event — with 
   </Step>
 
   <Step title="Create">
-    Tap **Create Wedding**. The wedding is created and you're taken to its home screen.
+    Tap **Create Wedding**. You'll see **🎉  Your Wedding was created!** and you're taken to the wedding's home screen.
   </Step>
 </Steps>
+
+## Field rules
+
+| Field | Rules |
+| --- | --- |
+| **Your role** | Required on weddings. If you leave it empty you'll see **Role is mandatory**. It describes who you are to the couple — it doesn't change what you can do in the app. Whoever creates a wedding is always added to it as an **Admin**. Corporate events don't show this field. |
+| **Wedding Date** | Required. If empty you'll see **Wedding Date is mandatory**. The calendar only offers today up to about 18 months ahead, so you can't create a wedding in the past. The calendar's heading reminds you: **Multi-day? Pick the first day**. |
+| **Send messages from** | Optional. Leaving it alone uses **Wedding Invite (default)**. If you pick a number your account isn't allowed to use, you'll see **You don't have access to this WhatsApp number.** Once the wedding is created, the choice is permanent. |
+| **Bride's Name / Groom's Name** | The first names are required. Leaving one empty shows **Required** under it. Extra spaces are tidied up automatically. Last names are optional. |
+| **Bride's Number / Groom's Number** | Optional. The field starts on India (+91). Tap the country code to change it for a number from another country. |
+| **Event name** | Corporate events only. Required. If empty you'll see **Event name is mandatory**. |
+
+### What happens when you add the couple's numbers
+
+If you fill in **Bride's Number** or **Groom's Number**, that person gets a WhatsApp message letting them know their wedding has been set up on Weddingkart, with links to download the app. Adding their number does **not** give them access to the wedding. To let the bride or groom manage it with you, add them from **Team**. See [Team Collaboration](/account/team-collaboration).
+
+## Wedding vs corporate event
+
+Both kinds are created from the same **Create Event** button and work the same way once created: guests, groups, announcements, RSVPs, travel, IDs, chat, credits, and team all behave identically. The differences are:
+
+| | Wedding | Corporate event |
+| --- | --- | --- |
+| **Name** | Taken from the couple's first names | The **Event name** you type |
+| **Your role** field | Shown and required | Hidden — you're set as the organiser (Event Manager) |
+| **Bride and groom fields** | Shown; first names required | Not shown |
+| **Couple notified on WhatsApp** | Yes, if you entered their numbers | No |
+| **Wording in the app** | "Wedding" (for example **Create Wedding**, **Wedding Date**) | "Event" (for example **Create Event**, **Event Date**) |
+
+You can't turn a wedding into a corporate event, or the other way round, after it's created. Create a new one of the right kind instead.
+
+## Multi-day weddings and events
+
+A wedding with several functions over several days is **one wedding** in Weddingkart. Use the **Wedding Date** for the first day, then add each function as an **event** inside it:
+
+1. Open the wedding and go to **Events**. On a paid wedding it's in the **More** sheet. It may also appear among the **FEATURED** tiles on the Home tab. The screen is titled **Manage Events**.
+2. Tap **Create New Event**, then **Create from scratch**. Or tap one of the **SUGGESTED EVENTS** — **Haldi**, **Reception**, **Mehandi**, or **Sangeet** — to start with its name filled in.
+3. Fill in the event:
+   - **Event Name** — required
+   - **Event Date** — required; any date from today up to a year ahead
+   - **Event Time** — optional
+   - **Venue** — optional
+   - **Dress Code** — optional
+   - **Other Details** — optional
+   - **Select Invited Guests** — pick the guest groups invited to this function (for example, All Guests for the reception and a smaller group for the mehandi)
+4. Tap **Create Event**. It appears under **YOUR EVENTS**. An empty field shows **This field is required**.
+
+To change an event, tap it, edit, and tap **Update Event**. To remove it, tap **Delete Event** and confirm with **Yes, delete**.
 
 ## Editing wedding details
 
 You can update the date and the couple's names and numbers after the wedding has been created.
 
 1. Open the wedding from your list.
-2. Tap the **settings** (gear) icon on the wedding's header card.
+2. Tap the **settings** (gear) icon on the wedding's header card. The screen that opens is titled **Profile & Settings**.
 3. Update the fields you need to change and tap **Save**.
 
+- **Date** — you can pick any date from today up to a year ahead. You can't move a wedding to a past date.
+- **Names and numbers** — the same rules as when creating. A phone number that isn't valid for its country greys out **Save** until you fix it.
+- **Corporate events** show only the **Event Date** here. The event name can't be edited.
+
 The same screen has a **Delete Wedding** option. The sending number can't be changed here — a wedding keeps the number it was created with.
+
+## Deleting a wedding
+
+Only a wedding's **Admin** can delete it. Members and View Only team members can't.
+
+1. Open the wedding and tap the gear icon.
+2. Tap **Delete Wedding** at the bottom of **Profile & Settings**.
+3. Read the warning: *"Once this wedding is deleted, all of your content will be permanently gone from our database. This cannot be undone."*
+4. Type `DELETE` in capital letters in the **To confirm this, type DELETE** box and tap **Delete Wedding**.
+
+You'll see **🎉  Your Wedding was deleted!** The wedding disappears for you and for everyone on its team, along with its guest list and groups.
+
+<Warning>
+  Deleting is permanent and can't be undone. If you only want to stop working on a wedding, you don't need to delete it. Leave it, and it simply becomes read-only 10 days after the wedding date. To keep a copy of your guests first, use **Export Guest Data** in **More**.
+</Warning>
+
+To leave a wedding someone else created without deleting it, remove yourself from its team. See [Team Collaboration](/account/team-collaboration).
 
 ## Managing multiple weddings
 
 Weddingkart is built for event managers who run several weddings at once. You can create as many weddings as you need from a single account.
 
-To switch between weddings, go back to your list of weddings and tap the one you want to work on. Each wedding is completely separate — guest lists, groups, announcements, and analytics do not overlap between weddings.
+To switch between weddings, go back to your list of weddings and tap the one you want to work on. Each wedding is completely separate — guest lists, groups, announcements, credits, and analytics do not overlap between weddings.
+
+- **Your Weddings** lists every wedding you created or were added to as a team member, newest first.
+- **Search** (magnifying glass at the top) finds a wedding by the bride's, groom's, or event's name.
+- **Pin** weddings you're actively working on so they stay at the top: long-press the card and tap **Pin Wedding**. This option appears once you have more than 10 weddings, or while the search bar is open. Long-press again and tap **Unpin Wedding** to undo it.
+- **Read-only weddings** stay in your list so you can still look at them.
+
+Weddings you were added to by someone else appear in your list automatically when you log in with the phone number they added. There's nothing to accept.
 
 ## Wedding lifecycle
 
 <Info>
-  The wedding date must be today or later when you create a wedding. The wedding stays active up to the wedding date and for 10 days after it. During those 10 days, a banner on the wedding's home screen counts down the days left. After that, the wedding becomes read-only: you can no longer send announcements to guests or change the guest list.
+  The wedding date must be today or later when you create a wedding. The wedding stays active up to the wedding date and for 10 days after it. During those 10 days, a banner on the wedding's home screen counts down the days left. After that, the wedding becomes read-only and can no longer send messages to guests.
 </Info>
+
+### The countdown banner
+
+Once the wedding date has passed, a banner appears at the top of the wedding's **Home** tab. It says:
+
+> **Wedding goes inactive in 7 days**
+> After that you won't be able to send announcements or modify the guest list. Tap an action below.
+
+The number counts down each day (**…in 1 day** on the last day). The banner is grey with 7 or more days left, turns amber with 3–6 days left, and red with 2 or fewer. It offers **Send final message**, **Extend wedding**, and **Download data** buttons.
+
+When the 10 days are up, the banner changes to:
+
+> **This wedding is now read-only**
+> Extend the wedding to continue sending messages or managing the guest list.
+
+On a corporate event the banner says "event" instead of "wedding".
+
+### What read-only means
+
+A read-only wedding stays in your list, and you and your team can still open it and look at guests, RSVPs, reports, and chats. What stops:
+
+- **Sending announcements.** Queued or scheduled announcements for the wedding don't go out.
+- **Replying from Chat.** Sending a message shows **This wedding is no longer live. Sending messages is disabled.**
+- **Uploading ID cards by hand**, which shows *"This wedding is no longer live. ID card uploads are disabled."*
+- **Processing files guests send.** Tickets and IDs guests send on WhatsApp after this point aren't read into their records.
+
+Send any thank-you or final message before the countdown ends. If you need more time, contact Weddingkart support from the help icon at the top of the screen.
 
 ## Next steps
 
@@ -80,3 +182,44 @@ With your wedding created, you're ready to set up the rest of the event:
     Send WhatsApp invites, updates, and reminders to guests or specific groups.
   </Card>
 </CardGroup>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="How do I set up a wedding that runs over three days?">
+    Create one wedding with the first day as the **Wedding Date**. Then add each function (Haldi, Sangeet, Reception, and so on) as its own event under **Events**, each with its own date, time, and venue.
+  </Accordion>
+  <Accordion title="Can I create a wedding for a date that has already passed?">
+    No. The date picker starts at today. Weddingkart is for weddings that are still coming up.
+  </Accordion>
+  <Accordion title="How far ahead can I create a wedding?">
+    When creating a wedding, you can pick a date up to about 18 months ahead. When editing an existing wedding, you can move the date up to a year ahead.
+  </Accordion>
+  <Accordion title="Does 'Your role' limit what I can do?">
+    No. It only records who you are to the couple. Whoever creates a wedding is always its **Admin** and has full access.
+  </Accordion>
+  <Accordion title="Can I change the WhatsApp number a wedding sends from?">
+    No. The number chosen under **Send messages from** is fixed when the wedding is created. If you want to use your own number, [connect it](/account/own-whatsapp-number) first and then create a new wedding that uses it.
+  </Accordion>
+  <Accordion title="I added the bride's number. Why can't she see the wedding?">
+    Entering the couple's numbers only sends them a WhatsApp message about the wedding. To give the bride access, add her from **Team**. The wedding then appears when she logs in with that number.
+  </Accordion>
+  <Accordion title="Can I change a wedding into a corporate event?">
+    No. The type is chosen when you create it. Create a new corporate event from **Create Event** instead.
+  </Accordion>
+  <Accordion title="How do I switch between weddings?">
+    Go back to your list of weddings and tap the one you want. Use search to find it by name, and pin the ones you use most.
+  </Accordion>
+  <Accordion title="Who can delete a wedding, and can it be recovered?">
+    Only the wedding's **Admin** can delete it, by typing `DELETE` to confirm. Deletion is permanent and removes the wedding for the whole team. It can't be recovered.
+  </Accordion>
+  <Accordion title="What does 'Wedding goes inactive in N days' mean?">
+    The wedding date has passed. Ten days after the wedding date the wedding becomes read-only and can't send messages. Use the remaining days to send any final messages and download your data.
+  </Accordion>
+  <Accordion title="I see 'This wedding is no longer live. Sending messages is disabled.'">
+    The wedding is more than 10 days past its wedding date and is now read-only. You can still view everything, but you can't send. Contact Weddingkart support from the help icon if you need more time.
+  </Accordion>
+  <Accordion title="Do I get new free credits for each wedding?">
+    Yes. Every new wedding starts with 50 free credits of its own. See [Payments & Credits](/account/payments-credits).
+  </Accordion>
+</AccordionGroup>

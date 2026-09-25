@@ -27,6 +27,32 @@ When you add a team member, you choose their **Access Role**. Admins and Members
 Use **View Only** for people who only need to follow along — for example, a family member who wants to watch RSVPs come in without accidentally messaging guests.
 </Note>
 
+### Permission details
+
+The table below lists what each access role can do on a wedding.
+
+| Action | Admin | Member | View Only |
+|---|:---:|:---:|:---:|
+| See guests, groups, RSVPs, events, announcements, and reports | ✓ | ✓ | ✓ |
+| See the team list | ✓ | ✓ | ✓ |
+| Open the wedding's Google Sheet link | ✓ | ✓ | ✓ |
+| Add, edit, or delete guests and groups | ✓ | ✓ | — |
+| Create, send, or schedule announcements and WhatsApp messages | ✓ | ✓ | — |
+| Create or edit events | ✓ | ✓ | — |
+| Tap **Sync Now** for Google Sheets, or sync documents to Google Drive | ✓ | ✓ | — |
+| Pay for a plan or top up credits | ✓ | ✓ | — |
+| Add, edit, or remove team members | ✓ | ✓ | — |
+| Change the **WhatsApp Bot** settings and knowledge | ✓ | — | — |
+| Extend the wedding's dates | ✓ | — | — |
+| Delete the wedding | ✓ | — | — |
+
+A few more things to know:
+
+- **Members can manage the team.** A Member can add people, change anyone's access role, and remove people — the same as an Admin. Only give Member access to people you trust to manage the team.
+- **View Only is enforced when someone tries to change something.** A View Only person sees the same buttons as everyone else, but any action that adds, edits, deletes, or sends is refused. They may see the message **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
+- **Moving referral credits into a wedding** depends on who created the wedding, not on access role. Only the person who created the wedding can transfer their personal referral credits into it. See [Referral Program](/account/referral-program).
+- **Access to your own WhatsApp number is separate.** Your role on a wedding doesn't let someone send from, or create templates on, a WhatsApp Business number you connected. That's a separate grant, covered in [Share your number with your team](/account/own-number-access).
+
 ## Adding a team member
 
 <Steps>
@@ -34,10 +60,13 @@ Use **View Only** for people who only need to follow along — for example, a fa
     Open the wedding in the Weddingkart app and tap **Team** (in the **More** menu). This opens **Teams Management**.
   </Step>
   <Step title="Tap Add Team Member">
-    Tap the **Add Team Member** button.
+    Tap the **Add Team Member** button. The **Invite to team** screen opens.
   </Step>
   <Step title="Enter their details">
-    Enter the team member's name and phone number, pick their **Wedding Role** (for example, event manager or family), and choose an **Access Role** — Admin, Member, or View Only.
+    Enter the team member's **Name** and **Phone Number**, pick their **Wedding Role**, and choose an **Access Role** — Admin, Member, or View Only. You can type the number or pick it from your phone's contacts.
+  </Step>
+  <Step title="Tap Save">
+    When the member is added, you see **"🎉 Team Member Created!"** and they appear in the team list.
   </Step>
   <Step title="They receive a WhatsApp notification">
     The invited person receives a WhatsApp message informing them they've been added to the team. If the wedding's Google Sheet has been created, they also receive its link on WhatsApp.
@@ -48,6 +77,34 @@ Use **View Only** for people who only need to follow along — for example, a fa
 </Steps>
 
 You can change a team member's role or remove them later from the same **Teams Management** screen.
+
+### The fields on the invite screen
+
+All four fields are required.
+
+- **Name** — how the person appears in the team list.
+- **Phone Number** — the number they will log into Weddingkart with. The country code starts as India (+91); change it for a team member with a number from another country.
+- **Wedding Role** — who the person is to the wedding: **Event Manager**, **Bride**, **Groom**, **Relative**, **Weddingkart Team**, or **Others**. If you pick **Others**, a **Specify Role** field appears so you can type their role. The wedding role is a label only — it doesn't change what the person can do.
+- **Access Role** — **Admin**, **Member**, or **View Only**. This is what controls their permissions.
+
+If you tap **Save** without a wedding role, you see **"Please select a wedding role"**. Without an access role, you see **"Please select an access role"**.
+
+<Tip>
+You can add someone before they have ever used Weddingkart. As soon as they sign up with the phone number you entered, the wedding is waiting in their account.
+</Tip>
+
+## Editing or removing a team member
+
+Tap a person's card in **Teams Management** to open their details.
+
+- **To change their name, wedding role, or access role:** make the change and tap **Update**. You see **"🎉 Team Member Updated!"**.
+- **To change their phone number:** you can't edit the phone number of an existing team member. Remove them and add them again with the new number.
+- **To remove them:** tap **Delete**, then confirm **Yes, delete** in the **Delete Member?** dialog. They lose access to the wedding straight away. You see **"🎉 Team Member Deleted!"**.
+- **To leave a wedding yourself:** open your own card and tap **Delete**. The dialog warns **"You will lose access to this wedding. Are you sure?"** After you confirm, the app returns you to the home screen and the wedding disappears from your list.
+
+<Warning>
+A wedding must always have at least one Admin. If you try to remove the only Admin, you see **"Cannot delete the only admin of the wedding"**. Make someone else an Admin first, then remove the original Admin.
+</Warning>
 
 ## Real-time collaboration
 
@@ -60,9 +117,65 @@ All changes made by any team member are instantly visible to everyone else on th
 
 There's no need to refresh or sync — the data updates live for the whole team.
 
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A team member can't see the wedding">
+    The wedding appears for the phone number you entered when you added them. Check these in order:
+
+    1. **They logged in with a different number.** Open their card in **Teams Management** and compare the number, including the country code. If they have a number from outside India, make sure it wasn't saved with +91. To fix a wrong number, remove them and add them again with the right one.
+    2. **They were removed.** If their card is no longer in **Teams Management**, add them again.
+    3. **They haven't logged in yet.** The wedding shows only after they log into Weddingkart with that number.
+
+    If someone who isn't on the team tries to open the wedding (for example, from an old link after being removed), they see **"You are not allowed to access the wedding - …"** followed by the wedding's number.
+  </Accordion>
+  <Accordion title="I see 'Member already exists with given wedding_id…'">
+    That phone number is already on this wedding's team. Find the person in **Teams Management** and edit their role instead of adding them again.
+  </Accordion>
+  <Accordion title="A team member says every change fails">
+    Check their access role. A **View Only** person can look at everything but can't add, edit, delete, or send. Change them to **Member** if they need to make changes.
+  </Accordion>
+  <Accordion title="A team member didn't get the WhatsApp notification">
+    The notification is only a courtesy — the person doesn't need it to get access. As long as they log in with the number you entered, the wedding appears in their account. The Google Sheet link is only sent if the wedding's sheet had already been created when you added them.
+  </Accordion>
+</AccordionGroup>
+
 ## Best practices
 
 - **Add team members early.** Set up your team at the start of wedding setup so everyone has access before activity begins.
 - **Include family stakeholders if needed.** If the bride, groom, or a family point of contact wants to monitor responses, add them as a team member.
 - **Give the least access that works.** Make people who only need to watch progress **View Only**, so only the people running the wedding can message guests.
+- **Keep two Admins.** A second Admin can still extend the wedding or change the WhatsApp Bot if the first Admin is unavailable.
 - **Divide responsibilities.** Admins and Members can all send messages and edit guests, so agree on task ownership — for example, designate one person to monitor guest chat and another to track RSVPs.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Is there a limit on how many team members I can add?">
+    No. The app doesn't set a limit on team size.
+  </Accordion>
+  <Accordion title="Does adding team members cost anything?">
+    No. Adding team members doesn't use credits. Credits are only used when you message or call guests.
+  </Accordion>
+  <Accordion title="What's the difference between Wedding Role and Access Role?">
+    **Wedding Role** (Event Manager, Bride, Groom, Relative, Weddingkart Team, Others) describes who the person is. **Access Role** (Admin, Member, View Only) decides what they can do. Only the access role affects permissions.
+  </Accordion>
+  <Accordion title="Can a Member remove an Admin?">
+    Yes. Members can add, edit, and remove anyone on the team, including Admins, as long as at least one Admin stays on the wedding.
+  </Accordion>
+  <Accordion title="Can a Member delete the wedding?">
+    No. Only Admins can delete the wedding, extend its dates, or change the WhatsApp Bot.
+  </Accordion>
+  <Accordion title="Can View Only people see guest phone numbers and chats?">
+    Yes. View Only people see the same screens as Admins and Members, including the guest list and messages. They just can't change or send anything.
+  </Accordion>
+  <Accordion title="Can a team member pay for the plan?">
+    Yes. Admins and Members can buy a plan or top up credits from the **Wallet**. View Only people can't.
+  </Accordion>
+  <Accordion title="Do team members see all my weddings?">
+    No. Access is per wedding. Someone added to one wedding sees only that wedding, not your other weddings.
+  </Accordion>
+  <Accordion title="Can I change someone's phone number?">
+    Not directly. Remove them and add them again with the new number.
+  </Accordion>
+</AccordionGroup>

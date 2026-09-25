@@ -31,13 +31,39 @@ Use manual addition when you have a handful of guests to add or need to quickly 
     Use **Select Group** to add the guest to one or more groups. You can skip this and assign groups later. If you don't have any groups yet, tap **Create a group to organize guests**.
   </Step>
   <Step title="Save">
-    Tap **Save Guest**. The guest is added to your wedding immediately. To keep going, tap **Save & Add Another** instead — the form clears so you can enter the next guest.
+    Tap **Save Guest**. The guest is added to your wedding immediately and you'll see "🎉 Contacts added!". To keep going, tap **Save & Add Another** instead — you'll see "Guest saved! Add the next one." and the form clears so you can enter the next guest.
   </Step>
 </Steps>
 
+### If Save doesn't do anything
+
+**Guest Name** and **Phone Number** are required. If either is missing, or a number you typed isn't a valid phone number for the selected country, tapping **Save Guest** doesn't save — the cursor jumps to the first field that needs fixing. The alternate number fields are optional, but if you type something in one, it must be a valid number too (clear the field if you don't need it).
+
+### If the number already belongs to another guest
+
+Weddingkart doesn't put two different people on the same number by accident:
+
+- **Same number, different name** — the new guest isn't created, because that number already belongs to someone else in your wedding. Search your guest list for the number to find them. If two people genuinely share one phone (a couple on one handset, for example), add them as a single guest such as "Priya & Rahul".
+- **Same number, same name** — Weddingkart treats it as the same person and updates the existing guest instead of adding a copy. Any groups you picked are added to that guest.
+
+The same check applies when you edit a guest and change their number.
+
+## Editing a guest
+
+Tap a guest in the list to open their profile. You can change their name, **Phone Number**, **Phone Number 2**, **Phone Number 3**, groups (**Select Group**), **RSVP** (Yes, No, or Not Answered), and **RSVP No of Guests** (1 to 9 — only available when RSVP is Yes). Tap **Save** to keep your changes; you'll see "🎉 Contacts updated!".
+
 ## Adding from phone contacts
 
-Tap **Add Guest** → **Phone Contacts** to pick guests straight from your phone's contact list. This works in the iOS and Android apps only — contact picking isn't available on the web app, so use **Add Manually** or **Import from Excel** there.
+Tap **Add Guest** → **Phone Contacts** to pick guests straight from your phone's contact list. This works in the iOS and Android apps only — contact picking isn't available on the web app, so use **Add Manually** or **Import from Excel** there. On the web you'll see "Contacts aren't available in the browser", with buttons to **Add Manually** or **Import from Excel instead**.
+
+How it works:
+
+- The first time, your phone asks for permission to read your contacts. If you said no, you'll see "Contacts permission denied. Please allow access to import contacts." with **Request Permission Again**. If you chose "don't ask again", you'll see "Contacts permission permanently denied. Please enable access from app settings." — tap **Open App Settings** and allow Contacts for Weddingkart.
+- Only contacts that have a phone number are listed. If a contact has several numbers, the first one is used.
+- Search by name, tick the people you want, optionally pick a **Group**, then tap **Add Contacts**.
+- There's a limit on how many contacts you can pick in one go. If you reach it you'll see "Maximum N contacts allowed." (N is the current limit) — add that batch, then open **Phone Contacts** again for the next one.
+- Contacts saved without a country code are read as numbers from the same country as your own Weddingkart login number. If you have international guests saved without `+` and a country code, check their numbers after adding them.
+- The same duplicate rules as manual adding apply: a contact whose number already belongs to a different guest is skipped, and a contact you've already added is updated rather than duplicated.
 
 ## Letting guests add themselves
 
@@ -50,6 +76,10 @@ Tap **Add Guest** → **Invite via Joining Link** to create a link (and QR code)
   Still add at least one number per family yourself so no family is missed.
 </Tip>
 
+## Adding guests who are already in another group
+
+When you're viewing a group (not **All Guests**) and tap **Add Guest**, you'll also see **Add Existing Guests** — "Add guests already in another group". Use it to put people you've already added into this group without typing them again. The guests stay in their other groups too.
+
 ## Guest fields
 
 Every guest requires a name and at least one phone number. Everything else is optional.
@@ -59,6 +89,7 @@ Every guest requires a name and at least one phone number. Everything else is op
 | Name | Yes | The name filled in wherever a message uses the guest's name (`{{guest_name}}`) |
 | Phone number | Yes | Up to 3 numbers per guest; include country code for international |
 | Group | No | Assign on creation or any time afterward |
+| RSVP and RSVP No of Guests | No | Usually filled in by the guest's own RSVP reply; you can also set them by hand on the guest's profile |
 
 ## Guest attributes
 
@@ -71,11 +102,11 @@ Common attributes include:
 - `bus_number` — shuttle or bus group assignment
 - `meal_preference` — dietary requirement
 
-Once you set an attribute, you can use it in any WhatsApp message. While editing a message, tap a chip under **Insert a guest detail** — it adds a placeholder such as `{{hotel_name}}`, and Weddingkart replaces it with each guest's specific hotel name at send time. Every guest gets a personalised message from a single template.
+Once you set an attribute, you can use it in any WhatsApp message. While editing a message, tap a chip under **Insert a guest detail** — it adds a placeholder such as `{{hotel_name}}`, and Weddingkart replaces it with each guest's specific hotel name at send time. Every guest gets a personalised message from a single template. If you place a guest in a room on the [Rooming](/guests/rooming) screen, their `{{hotel_name}}` is set for you automatically.
 
 You can add attributes in three ways:
 
-- **In bulk from Excel** — include them as extra columns in your file (see [Excel Import](/guests/excel-import)).
+- **In bulk from Excel** — include them as extra columns in your file (see [Excel Import](/guests/excel-import)). The column header becomes the attribute name in lowercase with underscores, so a "Hotel Name" column becomes `{{hotel_name}}`. Only the columns you pick on the **Per-guest info** step are saved.
 - **Per guest** — open a guest's profile and tap **Add** in the **Per Guest Info** section to enter a label (for example, PNR or Hotel name) and a value.
 - **For the whole wedding** — tap **Attributes** on the Guests screen to open **Attribute Management**, where you can add an attribute, set its fallback text, combine two attributes into one, or delete one.
 
@@ -99,3 +130,35 @@ Once your guests are added, organize them into groups to control who receives wh
     Import your entire guest list in one step
   </Card>
 </CardGroup>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why won't Save Guest work?">
+    A required field is empty or a number isn't valid. The cursor moves to the first field that needs fixing. Check the name, the main phone number, and any alternate number you typed — clear an alternate number field if you don't need it.
+  </Accordion>
+  <Accordion title="I saved a guest but they're not in my list.">
+    Their number probably already belongs to a different guest in your wedding, so a second guest wasn't created. Search your guest list for the number to find who has it.
+  </Accordion>
+  <Accordion title="Two people share one phone. How do I add them?">
+    Add them as one guest with a combined name, such as "Priya & Rahul". Weddingkart won't create two different guests on the same number from the Add Guest form.
+  </Accordion>
+  <Accordion title="How do I add a guest's second or third number?">
+    Use **Alternate Number** and **Alternate Number 2** when adding, or **Phone Number 2** and **Phone Number 3** on the guest's profile. A guest can have at most three numbers.
+  </Accordion>
+  <Accordion title="Can I add an international number?">
+    Yes. Tap the country code next to the number and pick the country, or type the number starting with `+` and the country code. See [International Guests](/guests/international-guests).
+  </Accordion>
+  <Accordion title="Why can't I pick contacts on my computer?">
+    Browsers can't read a phone's contact list. Use the Android or iOS app to pick contacts, or use **Add Manually** or **Import from Excel** on the web.
+  </Accordion>
+  <Accordion title="I denied contacts permission by mistake. How do I fix it?">
+    Open **Phone Contacts** again and tap **Request Permission Again**. If you see "Contacts permission permanently denied", tap **Open App Settings** and allow Contacts for Weddingkart in your phone's settings.
+  </Accordion>
+  <Accordion title="Can I add the same contacts twice by accident?">
+    It's safe. A contact whose name and number match an existing guest updates that guest instead of creating a duplicate.
+  </Accordion>
+  <Accordion title="Where do I set a hotel name or pickup point for each guest?">
+    Open the guest's profile and tap **Add** under **Per Guest Info**, import it as a column from Excel, or place the guest in a room on the [Rooming](/guests/rooming) screen to fill in their hotel name automatically.
+  </Accordion>
+</AccordionGroup>

@@ -19,11 +19,15 @@ The conversation continues back and forth with no friction on either side.
 
 ## The inbox
 
-Tap **Inbox** or **Chat** in the Weddingkart app to see the list of every guest you have a conversation with for this wedding.
+Tap **Chat** in the bottom bar to open your **Team Inbox** — the list of every guest you have a conversation with for this wedding. Use the **Search by name or phone number** box at the top to find a guest. Before any guest has replied, the screen reads **Your Team Inbox is empty**.
+
+Everyone on the wedding team shares the same inbox, and new guest messages arrive live for everyone. Saving quick replies and sending attachments need **Admin** or **Member** access (see [Team collaboration](/account/team-collaboration)). Guests never see the inbox — they only ever use WhatsApp.
+
+If the bar at the top says **Reconnecting to chat**, the app has lost its live connection and is getting it back; **You are now connected.** means it's live again.
 
 ### Filter chips
 
-Two chips sit above the list: **All** and **Unread (n)**. Tap **Unread** to see only conversations with messages you haven't read yet. If there's nothing unread, an empty state takes over so the screen never feels broken.
+Three chips sit above the list: **All**, **Unread (n)**, and **Needs attention (n)**. Tap **Unread** to see only conversations with messages you haven't read yet. **Needs attention** shows chats the WhatsApp assistant has handed to you (see [Automatic assistant replies](#automatic-assistant-replies)). If a filter has nothing to show, you see **You're all caught up** with *No unread chats. Switch to "All" to see every conversation.* (or *No guests currently need bot escalation.* on Needs attention).
 
 ### Pin a chat
 
@@ -31,11 +35,17 @@ Long-press any conversation and choose **Pin chat**. Pinned chats float to the t
 
 ### Mute a chat
 
-Long-press a conversation and choose **Mute chat**. Muted chats show a 🔕 next to the guest's name and stop pushing notifications to your phone. They still appear in the inbox and keep collecting messages — they just stop pinging you. Useful for talkative friends threads while you focus on logistics.
+Long-press a conversation and choose **Mute chat** (the menu notes *Mute is local to this device for now*). Muted chats show a 🔕 next to the guest's name and stop showing new-message notifications while the Weddingkart app is open. When the app is closed or in the background, your phone may still show them. Muted chats still appear in the inbox and keep collecting messages. Useful for talkative friends threads while you focus on logistics.
 
 <Note>
-  Pinning and muting are **per-device** — each team member curates their own inbox. If you sign in to a second phone, the pins and mutes don't follow you.
+  Pinning and muting are **per-device** and **per-wedding** — each team member curates their own inbox. If you sign in to a second phone, the pins and mutes don't follow you.
 </Note>
+
+## Notifications
+
+Every team member on the wedding gets a push notification on each device they're signed in on when a guest sends a message. The title shows the guest's WhatsApp name and the couple's names (for example *Priya: Rahul & Anjali*). The body shows the text, or a label such as **📷 [Image]**, **📄 [Document]**, **🎤 [Voice Message]**, **🎥 [Video]**, or **📍 [Location]**. Tap the notification to open that guest's chat directly.
+
+Notifications need to be allowed for Weddingkart in your phone's settings. A title ending in **(Previously Held)** means the message was held until the guest picked your wedding (see [Guests in more than one wedding](#guests-in-more-than-one-wedding)).
 
 ## Inside a chat
 
@@ -63,16 +73,25 @@ Tap any other message to add or remove it from the selection. Tap the **✕** in
 
 ### Replying and the 24-hour window
 
-WhatsApp lets you reply freely for 24 hours after the guest's last message. While that window is open, the message box shows **Replies here are free — no credits used.** and gives you:
+WhatsApp lets you reply freely for 24 hours after the guest's last message. Every new message from the guest restarts the 24 hours; your own replies don't. While that window is open, the message box shows **Replies here are free — no credits used.** and gives you:
 
-- **📎 Attach** — send an **Image**, **Video**, **Audio**, or **Document**.
-- **/ Quick replies** — pick a saved reply to drop into the message box. Tap **Manage** to add or edit your saved replies.
+- **📎 Attach** — send an **Image**, **Video**, **Audio**, or **Document**. Images and videos come from your gallery. Formats WhatsApp accepts: images JPG, PNG, WEBP; video MP4, 3GP, MOV; audio MP3, M4A, AAC, OGG, OPUS, AMR (the audio picker only offers these); documents PDF, DOC, DOCX, XLSX. Other file types may be rejected by WhatsApp.
+- **/ Quick replies** — pick a saved reply to drop into the message box, where you can edit it before sending. Tap **Manage** to add, edit, or delete saved replies (each has a **Title** and a **Message**). Quick replies are shared by the whole team on this wedding and don't carry over to other weddings. They're inserted exactly as written — there are no automatic placeholders such as the guest's name.
 - **🎤 Voice note** — tap the mic to record, then send (or tap the bin to discard).
 - **Emoji** picker.
 
-A "Replying to" line above the box shows which of the guest's numbers your reply will go to.
+A "Replying to" line above the box shows which of the guest's numbers your reply will go to. If a guest has more than one number, their messages share one chat, and your reply goes to whichever number wrote last.
 
-Once the window has expired, a banner reads **24-hour window expired. Only text messages can be sent.** Attachments, quick replies, and voice notes are hidden until the guest writes again; plain text still goes through.
+Once the window has expired, a banner reads **24-hour window expired. Only text messages can be sent.** Attachments, quick replies, and voice notes are hidden until the guest writes again; plain text still goes through, but WhatsApp requires it to go out in a standard reply format, so any line breaks are joined into one line. Plain-text replies typed in the chat don't use credits; sending an announcement with the megaphone does.
+
+<Warning>
+  If your wedding sends from [your own WhatsApp number](/account/own-whatsapp-number), a text reply after the window has closed may not be delivered — it stays with a clock icon. Use the megaphone below to send an announcement instead.
+</Warning>
+
+If sending media fails, you'll see a short message explaining why:
+
+- **Couldn't send that image. Please try again.** (or video, audio, document) — the upload didn't go through; check your connection and retry. **Couldn't read that file.** or **Couldn't open that document.** means the picked file couldn't be loaded — pick it again or try another file.
+- **Microphone permission is needed to record a voice message.** — allow microphone access for Weddingkart in your phone settings. **That recording was too short. Hold on a moment before sending.** — record for a little longer.
 
 ### Send an announcement from the chat
 
@@ -110,7 +129,7 @@ Tap an image to open the full-screen viewer. The viewer's built-in **Share** but
 
 ### Documents
 
-- **PDFs** open inside the app in the bundled PDF viewer — no leaving Weddingkart to read a ticket or invitation proof.
+- **PDFs** open inside the app in the bundled PDF viewer — no leaving Weddingkart to read a ticket or invitation proof. On the web app, PDFs open in a new browser tab instead.
 - **Other formats** (xlsx, docx, and so on) hand off to your phone's default app for that file type.
 - If the sender didn't name the file, the bubble falls back to the filename from the URL instead of showing a bare "Document".
 - Each document bubble shows the **file size** next to the filename, so you can spot the 30 MB PDF before tapping.
@@ -145,6 +164,32 @@ Messages preserve WhatsApp-style formatting (`*bold*`, `_italic_`, `~strike~`, m
 
 **Tap the timestamp row** on any message (the small "10:42 ✓✓" line under the bubble) to open the **Message info** sheet. It shows the full timestamp and a plain-English delivery status — "Read by the guest", "Delivered to the guest's phone", "Sent — delivered to WhatsApp servers", "Pending — not yet sent to WhatsApp" — so you don't have to remember which tick means what.
 
+## Messages from people not on your guest list
+
+A chat only appears in your inbox when the sender's number matches a guest on this wedding. A message from a number that isn't on your guest list does not show up in the inbox:
+
+- **On Weddingkart's shared number**, the sender gets no automatic reply (so an invited guest is never told they aren't invited), and the message is passed to the Weddingkart team to follow up.
+- **On your own WhatsApp number**, the sender gets: *"Thanks for your message — we've passed it along to the team, they'll get back to you shortly."* The number's owners and collaborators are alerted by push notification and on WhatsApp.
+
+To chat with that person from the inbox, [add them as a guest](/guests/adding-guests) with the exact number they messaged from; their later messages then appear in the inbox. Guests of a wedding that hasn't gone live yet are treated the same way, so make sure your wedding is live before guests start replying.
+
+### Guests in more than one wedding
+
+If the same phone number is a guest in more than one Weddingkart wedding, WhatsApp shows them a list and asks which wedding they're messaging about. Their messages are held until they pick, then appear in the chosen wedding's inbox. The guest can reply **RESET** at any time to pick a different wedding.
+
+## Automatic assistant replies
+
+On weddings where Weddingkart's WhatsApp assistant is turned on, it can answer common guest questions automatically. When it can't help, it flags the chat **Needs attention** (an amber label and left border in the inbox) and the team gets a push titled **Needs your attention** — *"✨ Neeti needs your help replying to …"*.
+
+Inside the chat, a **Bot ON** chip in the header controls the assistant for that one guest. Tap it and choose **Pause bot until end of day** or **Pause bot until tomorrow morning**. While paused, the chip reads **Bot OFF** and a banner says *Bot paused until … — tap to release*; tap the banner or choose **Resume bot for this conversation** to turn it back on. The chip is hidden on weddings where the assistant isn't on.
+
+## Web vs mobile
+
+Two-way chat works in the web app and the mobile apps, with a few differences on web:
+
+- **PDFs** open in a new browser tab rather than the in-app viewer.
+- **Voice notes** need a browser that can record WhatsApp-compatible audio. If yours can't, you'll see *"This browser can't record a WhatsApp-compatible voice message. Try Chrome or Safari, or use the mobile app."* If the browser blocks the microphone: *"Couldn't access the microphone. Check the mic permission for this site in your browser and try again."*
+
 ## Key features
 
 - **Real-time messages** — all team members on your wedding account see incoming guest messages as they arrive.
@@ -174,6 +219,35 @@ Two-way chat handles individual guest needs that bulk announcements can't addres
 <Note>
   Two-way chat is included in the **Standard plan**. It is not available in the Basic plan.
 </Note>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Why is a guest's message not in my inbox?">
+    Their number probably doesn't match a guest on this wedding (for example, they wrote from a different phone), or the wedding isn't live yet. Add or correct the guest's number — new messages from them will then appear.
+  </Accordion>
+  <Accordion title="Does replying in chat cost credits?">
+    No. Text, attachments, and voice notes you send from the chat don't use credits. Sending an announcement with the 📣 megaphone does, just like on the Announcements screen.
+  </Accordion>
+  <Accordion title="Why did the attach, quick reply, and mic buttons disappear?">
+    The guest's 24-hour window has expired. You can still send plain text, or use the megaphone to send an announcement. The buttons come back as soon as the guest writes again.
+  </Accordion>
+  <Accordion title="Are quick replies private to me?">
+    No. Quick replies are saved per wedding and shared with every Admin and Member on it. They aren't copied to your other weddings.
+  </Accordion>
+  <Accordion title="Can I put the guest's name in a quick reply automatically?">
+    No. Quick replies are inserted exactly as saved. You can edit the text in the message box before tapping send.
+  </Accordion>
+  <Accordion title="I muted a chat but still got a notification.">
+    Mute hides notifications while the app is open. When the app is closed, your phone may still show them. Mute is also per device, so muting on one phone doesn't affect another.
+  </Accordion>
+  <Accordion title="Can the guest see who on my team replied?">
+    No. Every reply reaches the guest on WhatsApp from your wedding's number, whoever on the team sent it.
+  </Accordion>
+  <Accordion title="Is there a file size limit for attachments?">
+    Weddingkart doesn't set its own limit, but WhatsApp does, and a very large file may fail to send. If you see "Couldn't send that …", try a smaller file.
+  </Accordion>
+</AccordionGroup>
 
 ## Related pages
 

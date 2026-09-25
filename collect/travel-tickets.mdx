@@ -18,6 +18,38 @@ You send guests a WhatsApp message asking them to reply with their travel ticket
 
 Your logistics team can then plan pickups right in the app (see [Plan arrivals and pickups](#plan-arrivals-and-pickups)) or export all travel data to Google Sheets.
 
+### What guests can send
+
+- **PDF** — an airline e-ticket, an IRCTC ticket, or a confirmation email saved as PDF.
+- **Photo or screenshot** — works just as well as a PDF, as long as it's readable. Sideways photos are straightened automatically.
+- **One ticket per file.** Each file a guest sends is treated as its own ticket. If a guest sends three files, you get three tickets.
+
+Every file is first checked to see what it is — a travel ticket, an ID card, or some other document. A document about travel that isn't a ticket for a specific journey — a payment receipt, an invoice, a fee slip, a travel-pass record — is **not** counted as a travel ticket. It's saved as another document instead.
+
+### What the AI extracts
+
+For each passenger and each leg of the journey, the AI records:
+
+- **Mode** — flight or train
+- **Flight or train number** and **passenger name**
+- **Departure** city/station and date/time, and **arrival** city/station and date/time
+- **Airport or station codes**, and the **terminal** for flights
+- Extra notes that matter for pickup, such as a platform or a boarding-station change
+- **Trains only:** PNR, coach, seat/berth, class (e.g. SL, 3A, 2A) and booking status (e.g. CNF, RAC, WL)
+
+The AI only records what's printed on the ticket. If the arrival time isn't printed (common on some train tickets), it leaves the time blank instead of guessing. A blank arrival time on its own doesn't make a ticket bad.
+
+### What happens after a guest sends a ticket
+
+1. Once the file is recognised as a ticket, the guest gets an automatic WhatsApp reply. By default it says: *"Thank you for sharing your travel ticket! We have received and processed it successfully. This information will be used to ensure your smooth pickup and drop at the wedding destination. See you soon!"* You can change or turn off this reply (see [Customise the automatic reply](#customise-the-automatic-reply)).
+2. Your team gets an app notification that the guest has sent a travel ticket.
+3. The AI reads the ticket and adds the details. While it's still working, the ticket shows **Processing…**.
+4. If something looks wrong, the ticket is flagged as bad for you to review. The guest isn't told — they get the same reply either way, and no follow-up message goes out unless you send one.
+
+<Note>
+  If a file can't be processed at all, your team gets a notification starting *"Couldn't auto-process a file from…"* with the guest's name. Open the guest's chat, check the file, and follow up with them yourself — or [add their travel manually](#add-travel-manually).
+</Note>
+
 ## Request travel tickets
 
 <Steps>
@@ -39,6 +71,28 @@ Your logistics team can then plan pickups right in the app (see [Plan arrivals a
   Sending an announcement is optional. Guests can upload their travel ticket by replying to any message in the WhatsApp chat at any time, and the AI will process it the same way.
 </Note>
 
+The big button at the top of **Travel & Arrivals** always shows your most urgent next step. In order of priority: **Add arrival points** / **Finish travel setup**, **Assign N upcoming pickups**, **Fix N bad tickets**, **Ask guests for tickets**, **Ask for tickets again**, and **Ask more guests for tickets**.
+
+<Tip>
+  **Ask for tickets again** doesn't pick the guests for you — you still choose recipients in the next step. The **Pending** list helps you find who hasn't sent a ticket yet.
+</Tip>
+
+If you see *"Couldn't create the WhatsApp message. Try again."*, the ticket-request message couldn't be prepared. Wait a moment and tap the button again.
+
+## Track collection progress
+
+- **Asked X of Y guests** — how many guests have been sent a ticket-request message, out of your whole guest list. If tickets arrived without any request going out, it shows **Collected without a request going out**.
+- **Received** — the number of ticket files received, including bad ones. A guest who sent two files counts twice.
+- **Pending** — guests who were sent a ticket request but haven't sent any ticket yet.
+- **Bad** — tickets flagged for review. Tickets you've marked valid aren't counted.
+- **N arrivals · N departures** — arrival and departure legs are counted separately, so a return flight isn't mistaken for another guest arriving.
+
+Tap **Received** or **Pending** to open **Travel Ticket Submissions**, where you can search guests by name and tap a guest to open their ticket. Tap **Bad** to see bad tickets. Under **Recent Tickets**, tap **View All >** to see every ticket and search by guest or passenger name.
+
+### Mark a ticket invalid
+
+If a ticket was sent by mistake or plans changed, long-press it, pick a reason — **Test**, **Mistake**, **Plans changed**, or **Other** — add an optional note, and tap **Mark invalid**. Invalid tickets are hidden from the **View All** list and the arrival board. To bring one back, turn on the **Invalid** filter and long-press the ticket to restore it. In **View All** you can also select several tickets and disable them together.
+
 ## View collected tickets
 
 <Steps>
@@ -55,25 +109,61 @@ Your logistics team can then plan pickups right in the app (see [Plan arrivals a
 
 ## AI auto-extraction
 
-When a guest sends a ticket, the AI reads it within seconds and writes the extracted details directly to the guest's profile. You do not need to open the ticket manually or type anything. The same extraction works for IRCTC train tickets, airline e-tickets, and forwarded confirmation emails saved as PDF.
+When a guest sends a ticket, the AI reads it and writes the extracted details directly to the guest's profile. You do not need to open the ticket manually or type anything. The same extraction works for IRCTC train tickets, airline e-tickets, and forwarded confirmation emails saved as PDF.
 
 <Tip>
   A PDF or a clear screenshot both work. If the AI can't read a ticket, it's flagged rather than silently dropped — see [Fix bad tickets](#fix-bad-tickets).
 </Tip>
 
+- **Several passengers on one ticket** — each named passenger gets their own travel entry, all under the same ticket.
+- **No passenger name on the ticket** — the travel is recorded under the guest who sent it.
+- **Return tickets and connecting journeys** — each leg is recorded separately, so an outbound and a return on one ticket show up as an arrival and a departure.
+- **A ticket for someone else** — the ticket stays with the guest who sent it; the passenger names come from the ticket itself.
+
 ### Fix bad tickets
 
-The **Travel & Arrivals** screen shows **Received**, **Pending**, and **Bad** counts. Tap **Bad** to see tickets that need attention, each with a reason:
+The **Travel & Arrivals** screen shows **Received**, **Pending**, and **Bad** counts. Tap **Bad** to open **Bad Travel Tickets**, where each ticket shows a reason:
 
-- **Couldn't read it** or **No arrival place** — tap **Ask to re-send** to request a clearer copy from the guest.
-- **Wrong week** — the travel date falls outside the wedding dates. If it's actually fine, tap **Mark valid** and add a note so your team knows why.
-- **Not a valid ticket** — the file doesn't look like a real ticket.
+- **Couldn't read it** — almost no text could be read (a blurry photo, or a file that couldn't be opened), or no journey details were found. Tap **Ask to re-send** to request a clearer photo or the PDF.
+- **No arrival place** — the ticket was read, but no leg shows an arrival station or airport, which is needed to plan a pickup. Tap **Ask to re-send** for a clearer or more complete ticket.
+- **Wrong week** — every date on the ticket is **more than 5 days** before the wedding's first event or after its last event. If even one leg falls inside that window, the ticket is fine. Common causes: the wrong week, last year's ticket, or a genuinely longer stay. If it's actually fine, tap **Mark valid** and add a note so your team knows why.
+- **Not a valid ticket** — the flight/train number or PNR that was read doesn't actually appear on the document, so it's probably not a real journey ticket. Tap **Ask to re-send** to request the actual ticket.
+- **Processing…** — the ticket is still being read. Check back in a moment.
 
 Tap any row to open the file and check it yourself.
+
+**Ask to re-send** sends the guest a WhatsApp message asking them to re-send a clearer ticket. After that the button reads **Re-send sent**, so a double-tap won't message the guest twice. **Wrong week** tickets have no re-send button — a new copy would carry the same dates — so follow up with the guest yourself if needed.
+
+**Mark valid** opens a box with the note *"valid (extended stay)"* pre-filled. Edit it if you like, then tap **Mark valid**. The note is saved with the ticket and the ticket leaves the bad list.
+
+If you see *"Override failed: …"* or *"Couldn't send request: …"*, the action didn't go through — try again in a moment.
+
+<Note>
+  A re-sent ticket arrives as a new ticket; the old bad one isn't replaced. Long-press the old one and [mark it invalid](#mark-a-ticket-invalid) to keep your list tidy.
+</Note>
 
 ## Plan arrivals and pickups
 
 The **Travel & Arrivals** screen turns collected tickets into a pickup plan. First, finish the one-time setup: set the **City** your guests travel to and pick the **Arrival points** — the airports and stations near the venue. Weddingkart suggests nearby ones for you.
+
+### Set up your city and arrival points
+
+<Steps>
+  <Step title="Open Arrival Points">
+    Tap **Add arrival points** or **Finish travel setup**, or tap **EDIT** next to **City** or **Arrival points** under **FINISH SETUP**.
+  </Step>
+  <Step title="Set the wedding city">
+    Tap **Where is the wedding?** and search for your city (e.g. Udaipur). Only cities in Weddingkart's list appear — if yours doesn't, try a nearby major city.
+  </Step>
+  <Step title="Pick arrival points">
+    Under **Add from suggestions**, add the airports (**AIR**) and railway stations (**RAIL**) your guests will use; each shows its approximate drive time from the venue. For a station that isn't suggested, use **Add a railway station** and search any Indian railway station by name or code.
+  </Step>
+  <Step title="Adjust drive times and save">
+    Tap a saved point to edit its drive minutes to the venue, then tap **Save changes**.
+  </Step>
+</Steps>
+
+A ticket counts as an arrival or departure for the wedding when it arrives at or leaves from one of your saved points. On the same screen you can add a **Hospitality desk phone** — the escalation contact when a driver run stays unconfirmed.
 
 Then use:
 
@@ -87,18 +177,102 @@ If a guest shares travel details by phone instead of sending a ticket, open the 
   Timeline, Pickup Roster, and Driver Runs stay empty until you've set your city and arrival points.
 </Note>
 
+### Timeline
+
+Switch between **Arrivals** and **Departures**. Days are labelled against the wedding — **D-2**, **Wedding Day**, **D+1**, and so on. Tap the edit icon to correct an entry's travel date (the time is optional), or open the ticket to check it. If you see *"No arrivals or departures yet"*, either no tickets have come in, or none arrive at or leave from your saved arrival points.
+
+### Pickup Roster
+
+1. Choose an **Arrival point** and a date.
+2. Set the **Pickup window** with the slider — 30 to 240 minutes, in 30-minute steps (120 minutes by default).
+3. Tap **Build roster**.
+
+Guests are grouped by arrival time: the earliest arrival starts a group, and everyone landing within the pickup window of that first arrival joins it. The next arrival after that starts a new group, so a group never spans more than one window — the right size for one vehicle run. Each group shows its time window, passengers (**pax**) and guest parties. Groups whose window has started with no driver are highlighted and moved to the top.
+
+- Tap **Unassigned · tap to assign a driver** and enter the **Driver name** (required), and optionally a **Driver phone** (for one-tap calling) and a **Vehicle label** (e.g. Innova-7). Tap **Assign**.
+- On an assigned group, use **Call**, **Reassign**, or **Complete**.
+- **Share to driver** opens your phone's share sheet with a text summary of the roster — pick WhatsApp to send it. **Excel** shares the roster as a spreadsheet file.
+- Tap **Manual entry** to add someone who didn't send a ticket.
+
+If you see *"No arrivals at [point] on [date] yet."*, no ticket lands there that day — try another date or point.
+
+### Driver Runs
+
+**Driver Runs** lists every run with status filters: **All**, **Assigned**, **Unassigned**, **Confirmed**, **En route**, **Completed**, **No show**, and **Cancelled**. The top line shows how many runs **still need confirmation**. Tap **Call** to phone the driver and **Confirm** once they've confirmed.
+
+If you entered a driver phone, Weddingkart also sends the driver WhatsApp reminders before the pickup window — starting about 12 hours ahead, repeating every 3 hours, at most 4 reminders. The driver can reply **yes** to confirm. If a run is still unconfirmed about 2 hours before pickup, or the driver isn't on WhatsApp, a WhatsApp alert goes to your **Hospitality desk phone** (or to the wedding's admins if none is set).
+
+### Add travel manually
+
+Open the **⋮** menu and choose **Add travel manually**, or tap **Manual entry** on the Pickup Roster. Fill in:
+
+- **Direction** — **Arrival** or **Drop**
+- **Guest** (required)
+- **Arrival / drop point** (required) — one of your saved points
+- Date & time (required)
+- **Mode** — **Flight**, **Train**, or **Road**, plus the flight, train, or vehicle number
+
+Tap **Save entry**. The guest then appears on the roster like anyone who sent a ticket.
+
+## Customise the automatic reply
+
+On **Travel & Arrivals**, open the **⋮** menu and choose **Automated replies** to set what guests get back when they send a ticket:
+
+- Turn **Send an automated reply** on or off.
+- Choose **Include a text message** and/or **Include an image**. If both are off, no reply is sent.
+- Write a **Custom Message** — use **GUEST_NAME** to insert the guest's name — and upload a custom image.
+
+You can reset both the message and image to the defaults at any time.
+
 ## Send reminders
 
-To follow up with guests who haven't submitted their ticket, use the auto-created **Travel Tickets: Not Sent** group. This group contains only guests who have not yet uploaded a ticket, so you don't disturb guests who have already complied.
+To follow up with guests who haven't submitted their ticket, tap **Pending** on the **Travel & Arrivals** screen to see who you've asked but haven't heard from, then send your ticket request to just those guests. Check the list before you send, so you don't disturb guests who have already sent their ticket.
 
 ## Best practices
 
 - Request tickets at least 2 weeks before the wedding to give yourself time to plan transportation.
+- Finish city and arrival-point setup early, so arrivals land on the Timeline and roster as tickets come in.
+- Check the **Bad** list every day or two while tickets are arriving.
 - After syncing, share the Google Sheet with your transportation partner so they can view guest arrivals and assign vehicles.
 
 <Note>
   Travel ticket collection is available in the **Standard plan** only.
 </Note>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Do guests have to send a PDF, or is a screenshot okay?">
+    A clear screenshot or photo works just as well as a PDF. Tickets are flagged only when they can't be read or are missing the arrival place — never just for being an image.
+  </Accordion>
+  <Accordion title="A guest sent the same ticket twice. Will it count twice?">
+    Yes — each file is a separate ticket, so **Received** goes up by two. Long-press the extra copy and mark it invalid with the reason **Mistake**.
+  </Accordion>
+  <Accordion title="One ticket has four passengers. How does that show up?">
+    Each named passenger gets their own entry from the same ticket, and the ticket list shows every person and their legs under one ticket.
+  </Accordion>
+  <Accordion title="Why was a ticket marked 'Wrong week'?">
+    Every date on it is more than 5 days before the first event or after the last event. If the guest really is arriving early or staying longer, tap **Mark valid** and add a note.
+  </Accordion>
+  <Accordion title="Is the guest told their ticket is bad?">
+    No. They get the same automatic reply either way, and only hear more if you tap **Ask to re-send** or message them yourself.
+  </Accordion>
+  <Accordion title="Why is there no 'Ask to re-send' on a 'Wrong week' ticket?">
+    A new copy of the same ticket would have the same dates, so a re-send wouldn't help. Check with the guest yourself, or mark it valid.
+  </Accordion>
+  <Accordion title="A guest sent a payment receipt instead of a ticket. What happens?">
+    It isn't counted as a travel ticket and no travel details are created. Ask the guest for the actual ticket.
+  </Accordion>
+  <Accordion title="Why is my Timeline or Pickup Roster empty?">
+    Either your city and arrival points aren't set, or no tickets arrive at or leave from your saved points. Add the missing airport or station on the Arrival Points screen.
+  </Accordion>
+  <Accordion title="How does the roster decide who rides together?">
+    Guests arriving at the same point on the same day, within your pickup window of the group's first arrival, are grouped together. A smaller window gives more, tighter groups; a larger one gives fewer.
+  </Accordion>
+  <Accordion title="A guest told me their flight on the phone. How do I add it?">
+    Open the **⋮** menu and choose **Add travel manually**, or tap **Manual entry** on the Pickup Roster.
+  </Accordion>
+</AccordionGroup>
 
 ## Related pages
 

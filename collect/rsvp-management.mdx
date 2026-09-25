@@ -15,6 +15,16 @@ When you send an RSVP request, each guest receives a WhatsApp message with inter
 
 The guest taps once. Weddingkart records the response and headcount immediately. An automated reply goes back to the guest — no action needed from you. You can customise it (see [Customise the automatic replies](#customise-the-automatic-replies)).
 
+Some ready-made RSVP templates use a shorter pair of buttons instead — **Attending** and **Unable to Attend**. With those, **Attending** is recorded as 1 person.
+
+The number on the button is the guest's **total party size, including themselves**. A guest who taps **Attending - 3 People** is recorded as attending with a headcount of 3. **Not Attending** always records a headcount of 0.
+
+A few more things happen behind the scenes when a guest taps:
+
+- **The tap shows up in your inbox.** The button the guest tapped (for example, "Attending - 2 People") appears in their [Two-Way Chat](/collect/two-way-chat) conversation as their message, so you can see it in context.
+- **The response is tied to the message they answered.** Weddingkart records the RSVP against the guest and wedding that the RSVP message was sent for. If the same person is a guest at two weddings you manage, each wedding keeps its own answer.
+- **The change is logged.** Every RSVP change — including a guest changing their mind — appears in the wedding's **Activity** feed, for example "confirmed for 3 guests" or "declined".
+
 ## Why buttons outperform forms
 
 Sending a Google Form link over WhatsApp is the most common RSVP approach — and the one with the lowest completion rate. The form requires guests to switch apps, wait for a page to load, fill in fields, and tap Submit. Each step is a moment where guests drop off.
@@ -58,11 +68,56 @@ WhatsApp reply buttons remove every one of those steps. Everything happens insid
   </Step>
 </Steps>
 
+The RSVP screen also shows a **Recent Responses** list (tap **See all N responses** when there are more than five), and the **Attending / Declined / Pending** list has a **Search by name...** box and an **Export to Google Sheet** button.
+
+### How the numbers are calculated
+
+| What you see | What it means |
+| --- | --- |
+| **RSVP Live** / **RSVP Not Live** | **RSVP Live** appears once your RSVP message has been sent to at least 10% of your guest list. |
+| **N/M asked** | How many guests have been sent at least one RSVP announcement (N), out of your total guest list (M). |
+| **% response rate** | Guests who answered Yes or No, divided by guests asked. |
+| **Yes** / **No** | The number of **guests** (contacts on your list) who answered — not the number of people. A guest who tapped **Attending - 4 People** counts as 1 in **Yes**. |
+| **Pending** | Every guest who hasn't answered Yes or No — including guests you haven't sent the RSVP to yet. |
+
+Each guest in the **Attending** tab shows their party size (for example, "4 guests"). For the total number of people coming, sync to Google Sheets: the **Summary** tab shows **Total Guests Attending (with plus ones)**, which adds up the headcount of every guest who answered Yes. The **RSVP** tab has **RSVP**, **RSVP No of Guests**, and **RSVP Last Updated** columns for each guest.
+
+## Changing a response
+
+Guests can change their answer at any time by tapping a different button on the same RSVP message. The latest tap always wins — for example, a guest who first tapped **Attending - 2 People** and later taps **Not Attending** moves from **Yes** to **No**, and their headcount drops to 0. They get the matching automatic reply again.
+
+You can also change a guest's RSVP yourself — useful when a guest tells you by phone:
+
+<Steps>
+  <Step title="Open the guest">
+    Go to your guest list and tap the guest's name.
+  </Step>
+  <Step title="Set the RSVP">
+    Set **RSVP** to **Yes**, **No**, or **Not Answered**. If you pick **Yes**, choose the party size in **RSVP No of Guests** (1–9). For **No** and **Not Answered**, the headcount is fixed at 0.
+  </Step>
+  <Step title="Save">
+    Tap **Save**. The guest isn't messaged — changes you make yourself never send an automatic reply.
+  </Step>
+</Steps>
+
+## When a guest types instead of tapping
+
+Some guests reply in words — "Yes, we'll be 3 of us" — instead of tapping a button. A typed reply is **not** read as an RSVP button tap. It arrives in your [Two-Way Chat](/collect/two-way-chat) inbox like any other message, and the guest stays in **Pending** until something records their answer. You can:
+
+- Update their RSVP yourself (see [Changing a response](#changing-a-response)), or
+- Reply in the chat and ask them to tap one of the buttons on the RSVP message.
+
+If the **WhatsApp Bot** is switched on for your wedding, it reads replies like this and records the RSVP and headcount for you. When a guest sounds unsure ("probably 4 of us"), the bot keeps them in **Pending** rather than marking them as Yes. Guests on a [voice call announcement](/announcements/voice-announcements) can also give their RSVP on the call, and it's recorded the same way.
+
 ## Send reminders
 
 To follow up with guests who haven't responded, resend the RSVP announcement. Instead of sending to your entire guest list, target only non-respondents using the auto-created **RSVP: Not Responded** group. Guests who already confirmed will not receive a second request.
 
 The **RSVP: Not Responded** group updates in real time — the moment a guest responds, they leave the group automatically.
+
+Keep in mind that **RSVP: Not Responded** contains *every* guest who hasn't answered Yes or No — including guests who were never sent an RSVP message and guests who said they're unsure. That makes it a safe audience for a reminder: nobody who has already answered is included.
+
+Two sister groups are created automatically too: **RSVP: Attending** and **RSVP: Not Attending**. Use **RSVP: Attending** to send event-day details, venue directions, or travel requests only to guests who are coming.
 
 <Tip>
   Sending a second RSVP message to the Not Responded group typically pushes total response rates to around 90%.
@@ -71,6 +126,27 @@ The **RSVP: Not Responded** group updates in real time — the moment a guest re
 ## Customise the automatic replies
 
 On the RSVP screen, tap **Auto Replies** to change what guests get back after they tap a button. Accepting and declining guests are configured separately on the **Accept Reply** and **Decline Reply** tabs: for each, you can turn the reply on or off, choose whether it includes a text message and an image, edit the message, and upload a custom image instead of the default. Tap **Save** to apply, or **Reset** to go back to the default.
+
+Details worth knowing:
+
+- **Turning a reply off.** Switch off **Send an automated reply** and that side sends nothing ("When off, guests get no reply to their RSVP."). If you keep the reply on but turn off both **Include a text message** and **Include an image**, you'll see **Both text and image are off — no reply will be sent.**
+- **Personalise with variables.** Tap a chip under **Smart Variables (Click to Insert)** to add it to your message. **GUEST_NAME** becomes the guest's name as it appears in your guest list. **NUM_GUESTS** becomes the party size from their RSVP — it's only meaningful on the **Accept Reply** tab, and the **Decline Reply** preview shows it as 0.
+- **Preview.** The WhatsApp-style **Preview** updates as you type, so you can check exactly what guests will see.
+- **The default replies.** Unless you write your own, an accepting guest gets a thank-you mentioning the couple's names. If they said more than 1 person, it adds that you're excited to celebrate with them and the number of guests in total. A declining guest gets a short "sorry you can't make it" note. Each default comes with a default image.
+- **Reset.** **Reset** asks you to confirm — "Are you sure you want to reset Accept RSVP settings to default? This will affect both custom image and custom message." Resetting one tab doesn't touch the other.
+- **Paused weddings.** If your wedding is no longer live, a guest's tap is still recorded, but no automatic reply is sent.
+
+<Note>
+  On the **web** app, uploading a custom reply image isn't supported yet — you'll see **File upload on web is not yet fully supported**. Upload the image from the iOS or Android app instead; your message text can be edited on either.
+</Note>
+
+## Messages you might see
+
+- **"Start collecting RSVPs"** — you haven't sent an RSVP message yet. Tap **Send RSVP Request** to pick a template, choose guests, and send.
+- **"RSVP Not Live"** — your RSVP message has reached fewer than 10% of your guests so far. Send it to more guests.
+- **"No RSVP responses yet"** — nobody has answered yet. Responses appear as soon as guests tap a button.
+- **"No guests found"** — your search on the responses list didn't match any guest name. Try a different search term.
+- **"Couldn't pick that image. Please try again."** — the image you chose for an automatic reply couldn't be opened. Pick it again, or try a different image.
 
 ## Best practices
 
@@ -81,6 +157,41 @@ On the RSVP screen, tap **Auto Replies** to change what guests get back after th
 <Note>
   RSVP collection is included in the **Standard plan**. It is not available in the Basic plan.
 </Note>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Does 'Attending - 2 People' mean the guest plus two more?">
+    No. The number is the total party size, including the guest. **Attending - 2 People** means 2 people in total.
+  </Accordion>
+  <Accordion title="What if a guest is bringing more than 9 people?">
+    The largest button is **Attending - 9 People**, and the **RSVP No of Guests** picker on the guest's page also goes up to 9. For bigger families, add the extra members as separate guests on your list so each one's RSVP is tracked on its own.
+  </Accordion>
+  <Accordion title="Why does Yes show 40 when I know about 90 people are coming?">
+    **Yes** counts guests (contacts on your list), not people. A family that tapped **Attending - 4 People** counts once. Sync to Google Sheets and check **Total Guests Attending (with plus ones)** on the **Summary** tab for the full headcount.
+  </Accordion>
+  <Accordion title="Can a guest change their answer?">
+    Yes. They tap a different button on the same RSVP message and the latest tap replaces the earlier one. They get the matching automatic reply again, and the change shows in **Activity**.
+  </Accordion>
+  <Accordion title="A guest replied 'yes' as a text message. Why are they still Pending?">
+    Typed replies aren't read as button taps. Update the guest's RSVP yourself from their page, or ask them to tap a button on the RSVP message. If the WhatsApp Bot is on for your wedding, it can record typed answers for you.
+  </Accordion>
+  <Accordion title="Why is my Pending count bigger than the number of guests I sent the RSVP to?">
+    **Pending** includes every guest who hasn't answered Yes or No — including guests who haven't been sent an RSVP message yet.
+  </Accordion>
+  <Accordion title="Will a reminder go to guests who already answered?">
+    Not if you send it to **RSVP: Not Responded**. That group only contains guests who haven't answered Yes or No, and it's worked out from each guest's current RSVP.
+  </Accordion>
+  <Accordion title="Does changing a guest's RSVP myself send them a message?">
+    No. Only a guest's own button tap triggers the automatic reply.
+  </Accordion>
+  <Accordion title="Can I stop the reply for declines but keep it for acceptances?">
+    Yes. Accept and decline replies are set separately. Open **Auto Replies**, go to the **Decline Reply** tab, and switch off **Send an automated reply**.
+  </Accordion>
+  <Accordion title="Can I upload a custom reply image from the web app?">
+    Not yet. Upload it from the iOS or Android app. The web app shows **File upload on web is not yet fully supported**.
+  </Accordion>
+</AccordionGroup>
 
 ## Related pages
 

@@ -13,6 +13,30 @@ You send guests a WhatsApp message asking them to reply with a photo of their ID
 
 Your team can then export all collected IDs via Google Sheets and share the sheet with venue security or hotel reception staff.
 
+### What guests can send
+
+- **Photos** sent in the chat, or images sent as a WhatsApp document.
+- **PDFs**, including a downloaded e-Aadhaar. A PDF with several pages can hold more than one ID — for example a Voter ID followed by a Driving Licence. Each document is saved as its own ID card.
+- Masked Aadhaar numbers (such as `XXXX XXXX 2085`) are accepted as normal.
+
+### What the AI reads
+
+From each ID the AI tries to read the **holder's name**, **ID number**, **document type**, **date of birth** (or just the year of birth when the card only prints a year), **address**, **gender**, **father's name**, and **issue and expiry dates**. If a field isn't printed or can't be read, it's left blank. The AI never guesses a day or month of birth from a year alone.
+
+The document types it recognises are: **Aadhaar card**, **PAN card**, **Passport**, **Driving Licence**, **Voter ID**, **Ration card**, and **Visa**. Anything else is saved as **Unknown**.
+
+### What happens when a guest sends an ID
+
+1. The guest gets an automatic WhatsApp reply confirming the ID was received. When both sides of the card are on file, the default reply is: "Thanks GUEST_NAME — we've received both sides of your ID. It's on file and will be used for a smooth check-in."
+2. Your team members get a notification saying the guest has sent an ID card, with a link to the ID details.
+3. The ID appears on the **ID Cards** screen.
+
+Guests are never told that their ID is wrong, blurry, or missing a side. Any problems show up for your team in the app, not for the guest.
+
+<Tip>
+  To change the automatic reply, open **ID Cards** → **Customize ID Cards Automated Replies**. You can turn **Send an automated reply** on or off, and choose **Include a text message** and/or **Include an image**. You can use GUEST_NAME, BRIDE_NAME and GROOM_NAME in the message. If both text and image are off, you'll see "Both text and image are off — no reply will be sent."
+</Tip>
+
 ## Request ID cards
 
 <Steps>
@@ -47,30 +71,115 @@ Your team can then export all collected IDs via Google Sheets and share the shee
   </Step>
 </Steps>
 
+### Reading the ID Cards screen
+
+- **Live** appears once at least 20% of your guests have sent an ID. Before that it shows **Not Live**.
+- **Received** counts ID files, not guests — a guest who sent a front and a back counts more than once.
+- **Pending** is the number of guests who got an ID request announcement but haven't sent any ID yet.
+- **Bad** lists IDs that may need a second look: the document type wasn't recognised, the ID number is missing, an Aadhaar number doesn't have all 12 digits, or the name looks cut short (only one word was read). If nothing is flagged you'll see "No bad ID cards" and "All received ID cards look valid."
+- In the ID list, the ID number is masked so only the last 4 characters show. If the name on the card is different from the guest who sent it, you'll see "Sent by" with the sender's name.
+- In **View All**, filter by **Front**, **Back**, **Front + Back**, or **Combined by AI**. Search needs at least 2 characters.
+
+The Google Sheet's **ID Cards** tab has one row per ID with: WhatsApp sender name, phone numbers, document link, file ID, ID card type, name as per ID card, ID card number, address as per ID card, gender, expiry date, upload time, and the guest's groups.
+
 ### Front and back
 
 Each ID card is tagged **Front**, **Back**, or **Front + Back**, based on what the AI could read on it. If a guest sends the front and back as two separate photos, the AI recognises them as a pair and stitches them into a single PDF, marked **Combined by AI**. Tap any card to check exactly what the guest sent.
+
+How pairing works:
+
+- The two photos must come from the **same guest** and arrive **within 10 minutes** of each other.
+- They must be opposite sides (never two fronts), and not two different document types — an Aadhaar front won't be paired with a PAN back.
+- If the two sides show a **different name or ID number**, they're never combined. This stops one guest's front being stitched to a relative's back.
+- Passports, PAN cards, single photos showing both sides, and multi-page PDFs are treated as **Front + Back** straight away — nothing to pair.
+- If only one side arrives, it stays on file and shows **Back not received** or **Front not received**. The guest is not asked for the missing side — ask them yourself in [Two-Way Chat](/collect/two-way-chat) if you need it.
+- If a guest sends two fronts close together, neither is combined automatically.
+
+<Note>
+  **Front + Back** is decided from what the AI reads: a name and ID number mean the front, an address means the back. Driving Licences, Voter IDs and ration cards often print the address on the front, so they can be tagged **Front + Back** when only the front was sent. Tap the card to confirm.
+</Note>
 
 ### Upload an ID on a guest's behalf
 
 Got an ID by email or at the desk? Open the guest from your guest list and use **Upload** in the **ID Cards** section. The file is read the same way as one sent on WhatsApp — the details appear a few seconds later.
 
+- Accepted files: **PDF, JPG, JPEG, PNG, WEBP**, up to **25 MB**.
+- While it's being read you'll see "Reading the document… Ns". Large files can take up to a minute.
+- The guest does **not** get a WhatsApp confirmation for files you upload.
+- The AI decides the real document type. If you upload a travel ticket in the ID Cards section, it's saved as a travel ticket.
+
+If you see:
+
+- "Unsupported file type. Upload a PDF, JPG, PNG or WEBP." — pick a file in one of those formats.
+- "File is too large. Maximum size is 25 MB." — compress the file or take a smaller photo.
+- "The uploaded file is empty." or "Could not read that file. Try selecting it again." — select the file again.
+- "Still processing. Refresh in a moment to see if it arrived." — the upload probably went through. Refresh before uploading again, or you may end up with a duplicate.
+
 ## Check who has the right documents
 
-Tap **ID Requirements & Status** on the ID Cards screen to track not just *whether* guests sent an ID, but whether it's the *right* one.
+Tap **ID Requirements & Status** on the ID Cards screen to track not just *whether* guests sent an ID, but whether it's the *right* one. The screen has two tabs: **Status** and **Settings**.
 
 - **Settings** — turn on **Enable ID requirements** and create requirement profiles, for example "Domestic" accepting Aadhaar or "Foreign" requiring a passport plus a visa. Mark one profile as the **Default**, or turn on **Accept any document** if any ID will do. Guests can still send any ID — nothing is auto-rejected.
 - **Status** — see each guest's status (**Complete**, **Partial**, **Wrong type**, **Missing**, **Needs review**) and filter by it. Tap **Request** to message all guests with a given status asking for the correct document. Guests you can't reach right now are skipped automatically.
 
+### Setting up profiles
+
+For each profile you choose:
+
+- **Profile name** — for example Domestic or Foreign.
+- **Accepted documents** — any one of these counts. Options: Aadhaar, PAN card, Passport, Driving Licence, Voter ID, Ration card, Visa.
+- **Also required** — documents needed on top, for example a Visa for foreign guests.
+- **Accept any document** — "Any ID on file counts as complete." You can't combine this with a list of accepted documents.
+
+Save your profiles before using **Set as default** — otherwise you'll see "Save first, then set as default." If you see "Pick at least one accepted document (or turn on "accept any")", tick a document type or turn on Accept any document. "Give the profile a name" means the name field is empty.
+
+<Note>
+  The app applies the **Default** profile to every guest. If requirements are on but no profile is set as Default, guests show **Collected** (sent any ID) or **None** (nothing yet) instead of a judged status.
+</Note>
+
+### How each status is worked out
+
+Only the latest version of each ID counts. Unrecognised documents count as "Other".
+
+- **Complete** — the guest has an accepted document, plus everything under Also required. With Accept any document, any ID counts.
+- **Partial** — they have an accepted document but are still missing something from Also required.
+- **Wrong type** — they sent a recognised ID, but not one the profile accepts (for example a PAN card when Aadhaar is needed).
+- **Missing** — nothing on file yet.
+- **Needs review** — they only sent documents the AI couldn't identify. Tap the ID to check it yourself.
+
+The **IDs complete** percentage at the top counts Complete (and Collected) guests out of all guests. When requirements are off, the tab shows "ID requirements are off. Showing which guests have sent any ID."
+
+### Sending a Request
+
+Request is available for **Missing**, **Partial**, **Wrong type**, and **Needs review** — either per guest, or in bulk with **Request (N)** after you pick one of those statuses in **Filter by status**. The bulk button is hidden while a search is active.
+
+The default message is: "Hi GUEST_NAME! For a smooth check-in, the event team needs your NEEDED_DOCS. Could you please share a clear photo here? Thank you!" NEEDED_DOCS is filled with what that guest still needs, like "Aadhaar or Passport". You can write your own under **Request message (optional)** in Settings.
+
+A guest is skipped when:
+
+- they were already asked in the **last 6 hours**;
+- they're already **Complete**;
+- WhatsApp won't deliver the message — usually because the guest hasn't messaged you in the last 24 hours. Use an ID Collection announcement for these guests instead.
+
+After sending you'll see "Requested from N guest(s) · N skipped". A bulk request covers up to 200 guests at a time.
+
+If you see:
+
+- "Guest count changed since you confirmed — please review and retry" — statuses changed while you were confirming. Check the list and tap Request again.
+- "WhatsApp is not configured for this wedding" — connect WhatsApp for the wedding first.
+- "Pick a status (e.g. Missing) before requesting in bulk." — choose a status in the filter.
+
 ## Send reminders
 
-To follow up with guests who haven't uploaded their ID, use the auto-created **ID Cards: Not Sent** group. This group contains only guests who haven't submitted yet, so confirmed guests are not disturbed.
-
-You can resend the ID collection announcement directly to this group. If a guest uploads the wrong document, they can send a replacement at any time and their profile will update.
+To follow up with guests who haven't uploaded their ID, tap **Pending** on the ID Cards screen to see who you've asked but haven't heard from, then send the ID collection announcement to just those guests. Check the list before you send, so guests who already sent an ID aren't disturbed. To ask for a *different* document, use **Request** under **ID Requirements & Status** instead. If a guest uploads the wrong document, they can send a replacement at any time and their profile will update. The earlier file stays on file too. When the new ID is the same document for the same person, it replaces the older copy in the status count.
 
 ## Privacy and security
 
-ID data is stored securely and is only accessible to team members on your Weddingkart account. Guests upload directly to your wedding's private channel — their documents are not shared with any third party outside of the team members you give access to.
+- ID card screens, ID Requirements & Status, and uploads are available to your wedding's team members (admins and members).
+- Guests never see other guests' IDs.
+- In the app's ID list the ID number is masked to the last 4 characters. The Google Sheet export has the **full** ID number and address, so share it only with people who need it.
+- To read the document, each ID is processed by AI.
+- There's no option in the app to delete a single ID card.
 
 <Note>
   ID card collection is available in the **Standard plan** only.
@@ -81,6 +190,43 @@ ID data is stored securely and is only accessible to team members on your Weddin
 - Request ID cards at least 1–2 weeks before the wedding to avoid last-minute submissions.
 - Share the Google Sheet with your hotel reception or venue security team in advance, so they have time to process the IDs before check-in.
 - Regularly sync the Google Sheet to ensure it reflects the latest uploads.
+- Ask guests to send both sides one after the other, so they're combined automatically.
+- Check the **Bad** list before sharing the sheet with your venue.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can guests send a PDF instead of a photo?">
+    Yes. Photos, images sent as documents, and PDFs all work. A multi-page PDF with several IDs is split into one ID card per document.
+  </Accordion>
+  <Accordion title="A guest sent the front and back separately. Why weren't they combined?">
+    They're only combined when both arrive from the same guest within 10 minutes, are opposite sides of the same type of ID, and don't show different names or ID numbers. Otherwise each side stays on file on its own.
+  </Accordion>
+  <Accordion title="Will the guest be asked for the missing back side?">
+    No. Guests get the same friendly confirmation either way. You'll see "Back not received" on the card and can ask them yourself.
+  </Accordion>
+  <Accordion title="The ID photo is blurry or the name looks wrong. What do I do?">
+    It may show under **Bad** if the name, number or type couldn't be read properly. Guests aren't told automatically. Message the guest in Two-Way Chat, or use **Request** from ID Requirements & Status, and ask for a clearer photo.
+  </Accordion>
+  <Accordion title="One guest sent IDs for their whole family. Where do they go?">
+    All of them are saved under the guest who sent them. Where the name on a card is different from the sender, the list shows "Sent by" with the sender's name. For ID Requirements, they count toward the sender's status.
+  </Accordion>
+  <Accordion title="A guest sent someone else's ID by mistake. Can I remove it?">
+    There's no delete option for a single ID card in the app. Ask the guest to send their own ID. It's added alongside the other file.
+  </Accordion>
+  <Accordion title="Why was a guest skipped when I tapped Request?">
+    Either they were asked in the last 6 hours, they're already Complete, or WhatsApp wouldn't deliver the message — usually because they haven't messaged you in the last 24 hours. Send them an ID Collection announcement instead.
+  </Accordion>
+  <Accordion title="Why do all my guests show Collected or None?">
+    Requirements are on, but no profile is set as **Default**. Open Settings, save a profile, then choose **Set as default**.
+  </Accordion>
+  <Accordion title="Does uploading an ID for a guest send them a message?">
+    No. Files you upload yourself are read the same way as WhatsApp uploads, but the guest gets no confirmation.
+  </Accordion>
+  <Accordion title="Why does Received show more than the number of guests?">
+    Received counts ID files, not guests. A front and a back, or several family IDs from one guest, each count separately.
+  </Accordion>
+</AccordionGroup>
 
 ## Related pages
 

@@ -41,7 +41,18 @@ For large groups of international guests, include their numbers in your Excel fi
 
 ## How Weddingkart handles missing country codes
 
-If a phone number in your Excel file has no country code, Weddingkart assumes it's an Indian number (+91). This applies regardless of which country you or your account are in. When adding guests manually, the number is read in whichever country is selected in the country code picker (India by default).
+How a number without a `+` and country code is read depends on how you add it:
+
+| How you add the guest | A number without a country code is read as… |
+|-----------------------|---------------------------------------------|
+| Excel import | An Indian number (+91) first — whatever country you or your account are in |
+| Add Manually | A number in the country selected in the country code picker (India by default) |
+| Phone Contacts | A number in the same country as your own Weddingkart login number |
+
+For Excel, if the number isn't a valid Indian number, Weddingkart then tries reading its first digits as a country code. That's why a UK number written as `447911123456` (country code included, just no `+`) still imports correctly. But a foreign number written without its country code can go wrong in two ways:
+
+- If it happens to look like a valid Indian mobile number (10 digits starting with 6, 7, 8, or 9), it's saved as an Indian number — for example, a US number `917 555 1234` would become `+91 91755 51234`.
+- Otherwise its first digits may be read as some other country's code, or the number may be rejected with a warning like "No valid phone numbers found for (name)".
 
 This means:
 
@@ -49,8 +60,12 @@ This means:
 - For every non-Indian number, include the `+` country code to avoid incorrect assumptions.
 
 <Warning>
-  Do not leave out country codes for international guests in your import. Weddingkart treats every number without one as Indian, which will cause delivery failures for your international guests.
+  Do not leave out country codes for international guests in your import. Weddingkart reads a number without one as Indian first, which will cause delivery failures for your international guests.
 </Warning>
+
+## Fixing a number that was saved with the wrong country
+
+Open the guest's profile, tap the country code next to the number, pick the right country, correct the digits if needed, and tap **Save**. If you'd rather fix it in Excel, correct the number (with `+` and country code) and re-import — but note that a completely different number is added as a new guest and the old one stays, so delete the old guest afterwards. See [Re-importing an updated file](/guests/excel-import#re-importing-an-updated-file).
 
 ## WhatsApp messaging for international guests
 
@@ -60,6 +75,34 @@ However, WhatsApp charges different rates per message depending on the destinati
 
 Check the pricing details before sending bulk announcements to international guests.
 
+A guest can only receive messages on a number that has WhatsApp. If a message can't reach a number, the message's detailed report for that guest says "We couldn't reach this number on WhatsApp" — either the number isn't on WhatsApp, or the guest hasn't accepted WhatsApp's terms recently. Double-check the country code first; a wrong country code is the most common cause for international guests.
+
 <Card title="Payments and credits" icon="credit-card" href="/account/payments-credits">
   View credit costs by country for WhatsApp messaging
 </Card>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Do international guests need to install anything?">
+    No. They get messages in the WhatsApp app they already use.
+  </Accordion>
+  <Accordion title="I typed a US number and it saved as an Indian number. Why?">
+    The country code picker was still on India (+91). Tap the country code next to the number and pick the right country, or type the whole number starting with `+1`.
+  </Accordion>
+  <Accordion title="Do I need a + in Excel?">
+    For non-Indian numbers, yes — include `+` and the country code, like `+44 7911 123456`. Indian numbers can be written without it.
+  </Accordion>
+  <Accordion title="My overseas relative's number imported as Indian. What happened?">
+    The number was written without its country code and looked like a valid Indian mobile number, so it was saved as +91. Fix it on the guest's profile, or correct it in Excel with the `+` country code and re-import.
+  </Accordion>
+  <Accordion title="Do messages to international guests cost more?">
+    They can. Indian guests cost 1 credit per message; other countries may cost more, depending on WhatsApp's rate for that country. See [Payments and credits](/account/payments-credits).
+  </Accordion>
+  <Accordion title="Can one guest have an Indian number and a foreign number?">
+    Yes. A guest can have up to three numbers, each with its own country code.
+  </Accordion>
+  <Accordion title="Phone contacts I added from abroad have the wrong country. Why?">
+    Contacts saved in your phone without a country code are read in the country of your own Weddingkart login number. Edit the guest and pick the right country, or save the contact with its `+` country code before adding it.
+  </Accordion>
+</AccordionGroup>

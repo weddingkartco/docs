@@ -26,7 +26,7 @@ When you import an Excel file, Weddingkart suggests groups from your sheet names
 
 **Store custom attributes per guest**
 
-Attach any custom data to a guest — hotel name, pickup point, meal preference, bus number. These attributes can be inserted into WhatsApp messages so each guest receives a message with their own specific details.
+Attach any custom data to a guest — hotel name, pickup point, meal preference, bus number. These attributes can be inserted into WhatsApp messages so each guest receives a message with their own specific details. If you plan rooms on the [Rooming](/guests/rooming) screen, the hotel name is filled in automatically for every guest you place.
 
 **Track guest status at a glance**
 
@@ -40,6 +40,49 @@ For each guest you can see:
 **Export to Excel or Google Sheets**
 
 Open **Export Guest Data** to get your guest list and everything you've collected out of Weddingkart. Guest data like RSVP responses, ID cards, and travel tickets is organized into a Google Sheet that you refresh with **Sync Now**. You can also sync travel ticket and ID card files to a Google Drive folder, or use **Push to Your Excel** to fill your own Excel file with Weddingkart data and download the enriched copy.
+
+## How Weddingkart tells guests apart
+
+A guest in Weddingkart is one name with up to three phone numbers, and phone numbers are how Weddingkart tells guests apart:
+
+- **Two different people aren't put on one number by accident.** When you add a guest manually or from your phone contacts and the number already belongs to a *different* guest (a different name) in your wedding, the new guest isn't created. Search your guest list for the number to see who already has it.
+- **Adding the same person again doesn't create a duplicate.** If the name and number match a guest you already have, Weddingkart updates that guest instead of adding a second copy — so adding the same contacts twice is safe.
+- **Excel re-imports match by phone number too.** See [Excel Import](/guests/excel-import#re-importing-an-updated-file) for exactly what changes when you upload a file again.
+
+A guest often stands for a whole household (for example, "Sharma Family" on one phone). The RSVP headcount on that guest tells you how many people are coming.
+
+## Who can manage guests
+
+What you can do depends on your access role in the wedding team (see [Team Collaboration](/account/team-collaboration)):
+
+| Action | Admin | Member | View Only |
+|--------|-------|--------|-----------|
+| See the guest list and groups | Yes | Yes | Yes |
+| Add, edit, or delete guests | Yes | Yes | No |
+| Import from Excel | Yes | Yes | No |
+| Create, rename, merge, duplicate, or delete groups | Yes | Yes | No |
+| Plan rooms on the Rooming screen | Yes | Yes | No — can see the stay chart and summary only |
+
+If a View Only member tries to change something, the change is refused.
+
+## Deleting a guest vs removing them from a group
+
+These are two different actions, and the app asks you to confirm each one:
+
+- **Remove from group** — "Are you sure you want to remove this guest from the group?" The guest stays in your wedding and in any other groups they belong to.
+- **Delete** — "Are you sure you want to permanently delete this guest?" The guest is removed from your whole wedding.
+
+Tick the guests in the list, then use the icons at the top of the screen. The remove-from-group icon isn't shown while you're viewing **All Guests**, because every guest is always part of All Guests — use delete there instead.
+
+## Messages you might see
+
+| Message | What it means | What to do |
+|---------|---------------|------------|
+| "🎉 Contacts added!" | The guests you added or picked were saved. | Nothing — they're in your list. |
+| "Failed to add contacts" | The save didn't go through. | Check your connection and try again. |
+| "🎉 Contacts updated!" | Your edits to a guest were saved. | Nothing. |
+| "Failed to update contacts" | The edit didn't go through. | Try again. |
+| "No guests added yet" | Your wedding has no guests yet. | Tap **Add Guest**, **Import from Excel**, or **Add Yourself as Guest** to send yourself a test first. |
 
 ## Next steps
 
@@ -56,4 +99,36 @@ Open **Export Guest Data** to get your guest list and everything you've collecte
   <Card title="International Guests" icon="globe" href="/guests/international-guests">
     Add and message guests outside India
   </Card>
+  <Card title="Hotel rooms & rooming list" icon="bed" href="/guests/rooming">
+    Plan who stays where, night by night, and share the list with the hotel
+  </Card>
 </CardGroup>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="What's the fastest way to add a big guest list?">
+    Use [Excel Import](/guests/excel-import). Weddingkart finds the name and phone columns on its own, suggests groups from your sheet names and columns, and imports everyone in one go.
+  </Accordion>
+  <Accordion title="Can one guest have more than one phone number?">
+    Yes — up to three. In the app, fill in **Alternate Number** and **Alternate Number 2**. In Excel, add a second phone column, or put several numbers in one cell separated by a comma, semicolon, or slash.
+  </Accordion>
+  <Accordion title="I added a guest but they don't show up. Why?">
+    Most often the number already belongs to a different guest in your wedding, so Weddingkart didn't create a second guest on it. Search your guest list for the number — you'll find the guest who already has it.
+  </Accordion>
+  <Accordion title="Does deleting a group delete the guests in it?">
+    No. Deleting a group only removes the group. The guests stay in your wedding. To remove a guest completely, select them and use delete.
+  </Accordion>
+  <Accordion title="Can a guest be in more than one group?">
+    Yes. A guest can be in as many groups as you like, and when you send to several groups at once they still get the message only once.
+  </Accordion>
+  <Accordion title="Can a View Only team member add guests?">
+    No. View Only members can see the guest list and groups but can't add, edit, import, or delete.
+  </Accordion>
+  <Accordion title="Can I add guests from my phone contacts on the web app?">
+    No. Browsers can't read your phone's contact list, so picking contacts works only in the Android and iOS apps. On the web, use **Add Manually** or **Import from Excel**.
+  </Accordion>
+  <Accordion title="Do my guests see the groups I put them in?">
+    No. Groups are internal to Weddingkart — they aren't WhatsApp groups and guests never see them.
+  </Accordion>
+</AccordionGroup>

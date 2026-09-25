@@ -20,6 +20,10 @@ Weddingkart delivers all announcements through the official **WhatsApp Business 
 Using a personal WhatsApp number or broadcast list to send bulk messages puts your account at risk and limits delivery. The WhatsApp Business API removes both of those problems — messages go through a verified business channel, guests see a named sender, and your personal number is never involved.
 </Note>
 
+### Who can send
+
+Team members with the **Admin** or **Member** access role can create, send and schedule announcements. **View Only** members can see the same screens but cannot send or schedule anything — ask an Admin to change your access role if you need to. See [Team collaboration](/account/team-collaboration).
+
 ## Announcement types
 
 Weddingkart includes templates for every stage of the wedding communication timeline.
@@ -54,31 +58,71 @@ Weddingkart includes templates for every stage of the wedding communication time
   </Step>
   <Step title="Fill in the template variables">
     Each template has placeholders for details like guest name, wedding date, venue, and time. Fill these in for the message content. Guest names are personalized automatically from your guest list.
+
+    Under **How would you like to address your guest?** choose **Actual Name** (each guest's name from your list) or **Custom Title** — for example "Friends & Family", or "GUEST_NAME Ji" to add a suffix to every name. You can also tap a chip under **Insert a guest detail** to add a per-guest value such as `{{hotel_name}}`; guests with no value on record get that detail's fallback text instead (see [Guest attributes](/guests/adding-guests#guest-attributes)).
   </Step>
   <Step title="Attach media (optional)">
-    Attach a PDF (such as your wedding invitation card), image, or video to the announcement. Not all templates support attachments — the option appears when it's available.
+    Attach a PDF (such as your wedding invitation card), image, or video to the announcement. Not all templates support attachments — the option appears when it's available. The **Add Attachment** sheet shows the size limit for each type (by default images up to 5 MB, videos up to 16 MB and documents up to 100 MB).
+
+    Some templates *require* an attachment — you can't continue until one is uploaded. Others accept only certain types (for example an image but not a video).
   </Step>
   <Step title="Select recipients">
     Choose individual guests or one or more guest groups. If a guest appears in multiple selected groups, they receive the message only once — no duplicates.
+
+    Tap the exclusions bar (it reads *No exclusions — tap to skip groups* until you set some) to open **Don't send to**: switch on **Exclude guests who declined RSVP**, or pick groups whose guests should be left out. Before you send, the review screen shows **Will receive** with the recipient count — tap it to see how the number was worked out, including anyone excluded.
   </Step>
   <Step title="Send or schedule">
     Tap **Send Now** to deliver immediately, or choose **Schedule for Later** to pick a future date and time. The announcement goes out automatically at the scheduled moment.
+
+    For larger sends, a **Confirm Announcement** sheet asks you to type the number of recipients before it sends. This is deliberate: a WhatsApp send is irreversible — you cannot delete the messages once they are sent.
   </Step>
 </Steps>
 
+<Tip>
+Tap **Send it to me** at the bottom of the editor to receive the exact announcement on your own WhatsApp before adding any guests. You are added to the guest list as yourself so it can be delivered to you.
+</Tip>
+
+## What it costs
+
+Each announcement uses credits from the wedding's balance:
+
+- **Per phone number, not per guest.** A guest with two or three phone numbers on file is messaged — and charged — on each number.
+- **By country.** A message to an Indian number costs 1 credit. Other countries are priced from WhatsApp's per-country rates, usually at more than 1 credit — tap **What's a credit?** on the **Wallet** screen for the rates.
+- **Personalised cards** (a card or cover page with each guest's name on it) cost 1 extra credit for each number messaged.
+- The template's type makes no difference — an invitation costs the same as a reminder.
+
+The total is rounded up to a whole number of credits and deducted when you tap send. If a message fails to reach a guest, the credits for it are returned to your balance automatically. See [Payments & Credits](/account/payments-credits).
+
+<Note>
+On the **Free** plan you can send to at most 5 guests at a time. Pick a plan on the **Wallet** screen to send to everyone.
+</Note>
+
 ## Tracking delivery
 
-After sending, the Announcements dashboard shows delivery status for every guest:
+After sending, tap **View Delivery Status** (or open the announcement's report later). The **Summary** tab lists every status with a count, and the **Detailed Report** tab lists each guest:
 
-- **Sent** — the message left the system
-- **Delivered** — it reached the guest's phone
-- **Read** — the guest opened it
+| Status | What it means |
+|---|---|
+| **Not Sent Yet** | Weddingkart hasn't sent it yet — the send is still working through your list |
+| **Processing** | Weddingkart is processing the message |
+| **Sent** | Sent by Weddingkart but not yet on the guest's WhatsApp (their phone may be off) |
+| **Delivered** | Reached the guest's WhatsApp |
+| **Read** | The guest opened it |
+| **Failed** | Not delivered — the detailed report shows why |
+| **Waiting to deliver** | A free-form message: the guest was sent a short opener and it will be delivered once they reply |
+| **Not delivered (no reply)** | A free-form message whose opener the guest didn't reply to in time |
 
-You can also see RSVP responses and other guest interactions directly from the dashboard.
+Tap a status with a count to see those guests. The report refreshes by itself for about 10 minutes after a send; after that, tap the refresh icon. You can also see RSVP responses and other guest interactions directly from the dashboard.
+
+For failed messages, the detailed report shows a reason such as **Not on WhatsApp** (the number has no WhatsApp account), **Re-engagement required**, **Media upload failed** or **Service unavailable**. On the **Failed** filter, **Copy names & numbers** copies that list so you can follow up another way. **Retry failed media sends** (shown when anything failed) tries again for guests whose message failed because of a media problem; other failures are skipped. If a guest who was *Not on WhatsApp* later becomes reachable, a banner says *"N guests are now reachable on WhatsApp."* with a **Resend** button.
+
+**Send Report to WhatsApp** sends a spreadsheet of the report to your own WhatsApp.
 
 ## Resending announcements
 
 If some guests haven't responded, you can resend the same announcement to just those guests. Select the non-responders and send again — guests who already responded are not re-messaged.
+
+Sending an announcement again re-sends it to everyone it is addressed to, and uses credits again. If you tap send a second time straight after a send, Weddingkart stops you with *"This announcement is already being sent right now. Give it a moment — you don't need to send it again."* or *"This announcement was just sent…try in N seconds."* — this protects you from double-sending by accident.
 
 ## About templates
 
@@ -125,12 +169,74 @@ To turn it on, open **Who your guests hear from** (see above) and switch on **Sh
 - Turning it off asks you to confirm. Templates in the shared library that were written only from yours are removed from it.
 - The switch doesn't appear if the event sends from Weddingkart's own number, or if no number is connected.
 
+## If you see a message
+
+| On screen | What it means | What to do |
+|---|---|---|
+| **Cannot Send Announcement** — *"You don't have enough credits to send this Announcement. Available credits: X. You need approx Y credits"* | The send needs more credits than the wedding has | Tap **Recharge Now** to top up, or send to fewer guests |
+| *"Since its a free wedding, you are not allowed to send message to more than 5 guests at a time"* | The wedding is on the Free plan | Pick a plan on the **Wallet** screen, or send to 5 guests or fewer |
+| *"This announcement can't be sent without an attachment. Please upload one first."* | The template needs a photo, video or PDF | Upload one under **Add Attachment** |
+| *"This announcement can't be sent without an image. Please generate one first."* | You chose **Generate Image with AI** but haven't generated one | Generate the image, or switch to uploading your own |
+| *"Attachment type video is not allowed for this announcement's template."* (or image / document) | The attached file type doesn't match what the template accepts | Replace it with an allowed type, or pick a different template |
+| *"Parameter values cannot contain 4 consecutive spaces or newlines"* | A filled-in blank has a line break or a run of spaces — WhatsApp rejects these | Put the text on one line |
+| *"Message too long: N/1000 characters (GUEST_NAME excluded). Trim the text and try again."* | The filled-in message is over 1,000 characters | Shorten it, or put the details in an image you attach |
+| *"No valid phone numbers found for the selected recipients."* | None of the selected guests has a phone number | Add numbers on the guest list, or choose other guests |
+| *"This wedding is no longer live. Sending messages is disabled."* | The wedding has become read-only (10 days after the wedding date) | Use the countdown banner's options before this happens, or contact Weddingkart |
+| *"This annocement is not valid anymore."* | The announcement's template is no longer available | Tap **Create New Announcement** and start again |
+
+If your event sends from [your own WhatsApp number](/account/own-whatsapp-number), you may also see *"Template announcements aren't available when sending from your own WhatsApp Business number…"* — use one of [your own approved templates](/announcements/own-templates) or a free-form message instead.
+
+## What happens if…
+
+- **A guest is in two of the groups I selected?** They get the message once. With **Send only to common guests**, only guests in *every* selected group receive it.
+- **I add or remove guests from a group after scheduling?** For group sends, the recipient list is worked out when the message goes out, so the change is picked up. Individually picked guests are fixed when you schedule.
+- **Some guests can't receive it?** Everyone else still gets the message. The failed guests show as **Failed** in the report with a reason, and their credits are returned.
+- **A guest's number isn't on WhatsApp?** The report shows **Not on WhatsApp**. Call or text them, or correct the number on the guest list.
+- **A guest replies?** Their reply lands in your team's [chat inbox](/collect/two-way-chat) as a one-to-one conversation — other guests never see it.
+- **The message says Sent but never Delivered?** The guest's phone is probably off or offline. The status changes to Delivered if and when it reaches them.
+- **I sent the wrong thing?** Sent WhatsApp messages cannot be recalled. Send a short correction as a new announcement.
+
 ## Best practices
 
 - **Time your messages well.** Send between 9 AM and 8 PM local time. Avoid late-night or early-morning messages — guests are less likely to read them and more likely to mute you.
 - **Use guest names.** Templates that include the guest's name consistently see higher read and response rates.
 - **Segment your guest groups.** Bride-side guests, groom-side guests, and out-of-town guests often need different information. Create groups in advance and target them separately.
 - **Test before broadcasting.** Send to yourself or a small test group first to verify the message looks correct before sending to all guests.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="How many credits will this announcement use?">
+    One credit per Indian phone number, usually more for other countries, plus 1 extra per number for personalised cards. A guest with several numbers is messaged on each. Top up from the **Wallet** screen if you're short — the app tells you how many you need.
+  </Accordion>
+  <Accordion title="Do I get credits back if a message fails?">
+    Yes. When WhatsApp reports that a message failed, the credits for that message are returned to the wedding's balance automatically.
+  </Accordion>
+  <Accordion title="Why can I only send to 5 guests?">
+    The wedding is on the Free plan, which caps each send at 5 guests. Buying a plan on the **Wallet** screen removes the cap.
+  </Accordion>
+  <Accordion title="Can I edit or delete a message after it's sent?">
+    No. WhatsApp messages can't be edited or unsent once delivered, which is why larger sends ask you to type the recipient count first. Send a follow-up announcement to correct anything.
+  </Accordion>
+  <Accordion title="Why can't I change some of the words?">
+    Ready-made messages are pre-approved by WhatsApp, so only the blanks can change. To say something else, attach an image with your text or write your own message.
+  </Accordion>
+  <Accordion title="What does 'Waiting to deliver' mean?">
+    It's a free-form (write your own) message. WhatsApp only allows free-form messages inside an open chat, so the guest was sent a short opener first; your message is delivered once they reply.
+  </Accordion>
+  <Accordion title="Why does it say 'Not on WhatsApp'?">
+    WhatsApp reported that the number has no WhatsApp account. Check the number for typos or a missing country code, or reach the guest by phone.
+  </Accordion>
+  <Accordion title="Can I preview the message before guests get it?">
+    Yes — tap **Send it to me** in the editor. The exact announcement arrives on your own WhatsApp.
+  </Accordion>
+  <Accordion title="Why can't my team member send announcements?">
+    They probably have the **View Only** access role. An Admin can change it to **Member** on the Teams Management screen.
+  </Accordion>
+  <Accordion title="Can I send after the wedding is over?">
+    For 10 days after the wedding date. After that the wedding becomes read-only and sending is disabled.
+  </Accordion>
+</AccordionGroup>
 
 ## What's next
 

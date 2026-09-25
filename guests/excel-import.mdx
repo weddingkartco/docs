@@ -5,9 +5,11 @@ description: Import your entire guest list from an Excel file in one step
 
 Excel import is the fastest way to add a large number of guests to Weddingkart. Upload your existing spreadsheet and Weddingkart reads your columns, adds every guest, and creates groups automatically — all in a single step.
 
+Admins and Members can import. View Only team members can't.
+
 ## Prepare your file
 
-Weddingkart imports `.xlsx` files. Your file needs at minimum a name column and a phone number column — column headers can be anything, and Weddingkart detects which column is which. Every other column is optional and can be imported as a guest attribute, used to create groups, or both.
+Weddingkart imports `.xlsx` files. If your list is a `.csv`, `.xls`, or Google Sheet, save or download it as `.xlsx` first — the file picker only accepts `.xlsx`. Your file needs at minimum a name column and a phone number column — column headers can be anything, and Weddingkart detects which column is which. Every other column is optional and can be imported as a guest attribute, used to create groups, or both.
 
 Put column headers in the first row and avoid merged cells. If your file has more than one sheet, you choose which sheets to import; hidden sheets are skipped unless you tick them.
 
@@ -34,6 +36,14 @@ For this file, Weddingkart suggests groups such as `brideside=yes` and `groomsid
   Another way to split your list is by sheet: put bride's-side guests on a "Brideside" sheet and groom's-side guests on a "Groomside" sheet, and each sheet becomes a group.
 </Tip>
 
+### How Weddingkart reads your columns
+
+- **Header row** — Weddingkart looks for the header in row 1 and, if it isn't there, in the next few rows, so a title line above the headers is fine. Headers like "Name" or "Members" are read as the name; "Phone", "Mobile", "Contact Number", "Phone 2", "Alternate Mobile", or "Spouse Phone" are read as phone numbers. A header like "Contact Name" or "Emergency Contact" is not treated as a phone column, because it usually holds a person's name.
+- **No header row at all** — if a sheet is just two columns (names and numbers) with no headers, Weddingkart reads every row as a guest and tells you which columns it used, for example: "Sheet 'Guests' had no header row — we read every row as a guest (Name = column 1, Phone = column 2). If that's wrong, fix the column mapping." If that guess is wrong, add a header row and re-upload. If it can't tell which column is the name, the sheet isn't imported and you'll see a warning asking you to add a 'Name' and 'Phone' header row and re-upload.
+- **Several numbers for one guest** — use separate phone columns, or put the numbers in one cell separated by a comma, semicolon, or slash (`98765 43210 / 91234 56789`). Notes next to a number, such as `9876543210 (office)`, are fine. A guest can have up to three numbers; the first number (in column order) is their main number.
+- **Group names** — groups made from columns are named `column=value` in lowercase (for example, `brideside=yes`, `hotel_name=the leela`). Groups made from sheet names are the sheet name in lowercase. If you already have a group with the same name in your wedding, the guests are added to that group rather than a new one, and it's pre-selected for you.
+- **Per-guest info names** — each attribute is named after its column in lowercase with underscores, so "Hotel Name" becomes `{{hotel_name}}`.
+
 ## Import steps
 
 <Steps>
@@ -44,38 +54,75 @@ For this file, Weddingkart suggests groups such as `brideside=yes` and `groomsid
     Tap **Add Guest** → **Import from Excel**, then tap **Select Sheet from Device** and choose your `.xlsx` file. The same screen has a **Sample Excel Template** you can download to get started.
   </Step>
   <Step title="Upload your file">
-    Wait for Weddingkart to process the file. It detects names, phone numbers, and groups, and shows progress as it works through each sheet. If your file has more than one sheet, choose which ones to import.
+    Wait for Weddingkart to process the file. It detects names, phone numbers, and groups, and shows progress as it works through each sheet — "Opening workbook", "Processing sheet 2/5 — …", "Validating guest names", then "Finishing up". Large files can take a minute; if it runs long you'll see "This is taking longer than usual. Your file is still being processed — give it another minute, or close and try again with a smaller sheet." To pick a different file, tap **Change File**.
+
+    If your file has more than one sheet, you're asked to choose which ones to import: "We found more than one sheet in this file. Choose which ones to import." Row counts next to each sheet are approximate. Tap **Import 1 sheet →** (or **Import N sheets →**); you must keep at least one sheet ticked.
 
     - If there are errors in your sheet, the import stops — fix the errors and import the file again.
     - If some rows have issues (for example, a missing phone number, a duplicate number, or a name that doesn't look right), you'll see warnings with a summary. Warnings don't block the import, and Weddingkart also sends them to you on WhatsApp so you can fix them later.
+    - If there's nothing to fix, you'll see "N guests found, no issues — ready to import."
 
     Tap **Next: Choose Groups** to continue.
   </Step>
   <Step title="Review groups">
     On **Review Groups**, Weddingkart shows the groups it found. Use **Select all**, **Suggested**, or **Clear all**, or tick groups one by one. You don't need to import every group — only select the ones you'll use for sending announcements. Groups are optional: tap **Continue without groups** to import guests ungrouped.
 
-    If you started the import from inside a group, you can also add every imported guest to that group.
+    If you started the import from inside a group, you can also add every imported guest to that group by ticking **Add all guests to - (group name)**.
   </Step>
   <Step title="Choose per-guest info">
-    On **Per-guest info**, pick which columns to import as guest attributes so you can use them in messages.
+    On **Per-guest info**, pick which columns to import as guest attributes so you can use them in messages. Every column Weddingkart found is ticked to start with — untick any you don't need. If there's nothing to pick you'll see "We didn't find per-guest info in your sheet", with suggestions for columns you could add.
   </Step>
   <Step title="Confirm the import">
     Tap **Import Guests**. Guests are added, groups are created for every group you selected, and the chosen per-guest info is saved.
+
+    You'll see **Import Successful!** and an **Import Summary**: how many guests were added or updated (for example, "240 of 250 guests added or updated"), how many rows were skipped ("10 skipped — no valid phone or duplicate rows"), how many groups were created, how many attributes were added, and how many warnings were sent to you on WhatsApp.
   </Step>
 </Steps>
 
-## After import
+## Warnings and errors, explained
 
-Groups appear immediately on the Guests screen of your wedding. You can add or remove guests from any group at any time.
+Warnings point to a sheet and cell (for example, `Guests:A11 -> …`) so you can find the row. Errors stop the import; warnings don't.
 
-If you re-upload an updated version of the same file, Weddingkart matches guests by phone number:
+| What you see | What it means | What to do |
+|--------------|---------------|------------|
+| "ERROR - Could not find any valid sheet in the Excel file that has a name and number column." | No sheet had both a name column and a phone column. | Add headers like "Name" and "Phone" and upload again. |
+| "Sheet '…' was skipped — no Name column detected." | That sheet had no name column. Other sheets still import. | Add a header named "Name" (or "Members") and re-upload. |
+| "Sheet '…' was skipped — no Phone/Contact column detected." | That sheet had no phone column. | Add a header named "Phone", "Mobile", or "Contact Number" and re-upload. |
+| "Sheet '…' was skipped — no header row found with both a Name column and a Phone/Contact column." | Weddingkart couldn't find a usable header row. | Add a header row with "Name" and "Phone". |
+| "Sheet '…' was empty — skipped" | The sheet had no data. | Nothing, unless you expected guests there. |
+| "No valid phone numbers found for (name)" | The row has no number Weddingkart could read. The row is skipped. | Fix the number and re-upload. |
+| "Invalid number for (name): (number)" | A number couldn't be read as a valid phone number. | Check the digits and country code. |
+| "More than 3 numbers found for (name). Using only the first 3" | The row has more than three numbers. | Keep the three that matter, first one being the main number. |
+| "Multiple names found for phone number (number): …" | The same number appears on more than one row. | See [Duplicates in the same file](#duplicates-in-the-same-file). |
+| `"(name)" contains a relationship word, not a proper name` | The name looks like "Mausi" or "Chacha ji" rather than a person's name. | Optional — the guest is still imported. Fix the name if you'll use it in messages. |
+| `"(name)" contains numbers` / `contains non-alphabetic characters` | The name has digits or unusual symbols. | Optional — still imported. |
+| `"(name)" contains multiple names — suggested: "…"` | The name has a `/` or `,`, like "Rahul/Priya". | Optional — still imported as written. |
+| "name is missing but phone number is present" | The row has a number but no name. | Add a name — this row isn't imported. |
+| "name exceeds 200 characters" | The name is longer than 200 characters. | Shorten it — this row isn't imported. |
+| "name had leading formula character (=, +, -, @) — auto-cleaned" | The cell started with `=`, `+`, `-`, or `@` and Excel treated it as a formula. Weddingkart recovered the text. | Check the name looks right. |
+| "attribute '…' exceeds 1000 characters — skipped" | That per-guest info value is too long. | Shorten it; the rest of the row still imports. |
+| "Guest with phone (number): column '…' had conflicting values ('yes' vs 'no'); kept 'no'." | The same guest appears twice with different values in a group column. The later value wins. | Fix the sheet if the earlier value was right. |
+| "Header row column is not named. Please name the column." | A column has data but no header. | Give the column a header. |
 
-- Guests already in the system have their name updated and are added to the groups you select.
-- New phone numbers are added as new guests.
-- Removed phone numbers are not deleted automatically — you remove them manually if needed.
+Name checks never block the import — they're there so a guest doesn't receive "Hi Mausi" on WhatsApp. Casing alone (ALL CAPS or all lowercase) isn't flagged.
+
+## Duplicates in the same file
+
+If the same phone number appears on more than one row, Weddingkart creates one guest, using the name from the first row it finds. Groups from the later rows are added to that guest. You'll see "Multiple names found for phone number …" listing every name and sheet that used it, and the rows are highlighted in the report sent to you on WhatsApp.
+
+## Re-importing an updated file
+
+You can upload an updated version of your list at any time. Weddingkart matches each row to an existing guest by phone number — a match on any one of the guest's numbers counts:
+
+- **Matched guests** have their name updated to the name in the sheet, and the numbers in the sheet are saved on them. Numbers are never removed from a guest by a re-import.
+- **New phone numbers** are added as new guests.
+- **Guests missing from the new file** are not deleted — remove them manually if needed.
+- **Groups** are only added, never taken away — with one exception: for groups made from a column (like `mehendi=yes`), a guest's new value replaces the old one. Change a guest from Yes to No in the "Mehendi" column and they move from `mehendi=yes` to `mehendi=no`.
+- **Per-guest info** from the columns you pick overwrites the old value. An empty cell leaves the existing value alone.
+- **One row that has the numbers of two different existing guests** merges them: one guest is kept, updated with that row's name and numbers, and the other is removed. Check your sheet before uploading if two family members' numbers are on one row.
 
 <Warning>
-  Changing a guest's phone number in Excel and re-uploading adds the new number but does not remove the old one. Delete the old number manually in the app if you no longer need it.
+  Changing a guest's phone number to a completely new one in Excel and re-uploading adds a new guest with the new number — the old guest, with the old number, stays. Delete the old guest manually in the app if you no longer need it.
 </Warning>
 
 ## Cleaning your file before import
@@ -87,3 +134,38 @@ Weddingkart's free **Guest Excel Cleaner** tool at [weddingkart.co/tools/guest-e
 <Note>
   Every upload is checked automatically before anything is imported — rows without a valid phone number, duplicate phone numbers, and names that don't look right show up as warnings you can review.
 </Note>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Can I upload a CSV or an old .xls file?">
+    Not directly — the importer takes `.xlsx` only. Open the file in Excel or Google Sheets and save or download it as `.xlsx`, then upload that.
+  </Accordion>
+  <Accordion title="My file has a title line above the headers. Is that a problem?">
+    No. Weddingkart looks for the header row in the first few rows, so a title or blank line above it is fine.
+  </Accordion>
+  <Accordion title="Some rows were skipped. Why?">
+    A row is skipped when it has no phone number Weddingkart can read, has no name, or has a name over 200 characters. Rows whose number already appeared earlier in the file are merged into that earlier guest instead of added again. The warnings list, and the report sent to you on WhatsApp, name every affected row.
+  </Accordion>
+  <Accordion title="Can I import the same file again after fixing it?">
+    Yes. Guests are matched by phone number, so existing guests are updated rather than duplicated, and new numbers are added. Guests you removed from the file aren't deleted from Weddingkart.
+  </Accordion>
+  <Accordion title="I don't want a group for every column. Do I have to import them?">
+    No. On **Review Groups**, untick anything you don't need, tap **Clear all**, or tap **Continue without groups**.
+  </Accordion>
+  <Accordion title="Why are my group names in lowercase?">
+    Weddingkart saves group names in lowercase. Groups made from a column are named `column=value`, like `brideside=yes`. You can rename any group afterwards from **Manage Group**.
+  </Accordion>
+  <Accordion title="My workbook has hidden sheets. Will they be imported?">
+    Not unless you tick them. When a file has hidden sheets you'll see "This file has 1 hidden sheet. Hidden sheets are usually old or draft lists, so we skip them by default."
+  </Accordion>
+  <Accordion title="My foreign guests' numbers came out wrong.">
+    Numbers without a country code are read as Indian first. Add `+` and the country code to every non-Indian number and re-upload. See [International Guests](/guests/international-guests).
+  </Accordion>
+  <Accordion title="Where do the warnings go after I import?">
+    They're shown in the app before you import, and Weddingkart also sends you a report on WhatsApp, so you can fix them later.
+  </Accordion>
+  <Accordion title="Can a guest's column value put them in two groups from the same column?">
+    No. For groups made from a column, a guest has one value per column. If the same guest shows up twice with different values, the later value is kept and you'll see a "conflicting values" warning.
+  </Accordion>
+</AccordionGroup>

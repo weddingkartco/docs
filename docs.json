@@ -35,7 +35,8 @@
               "guests/adding-guests",
               "guests/excel-import",
               "guests/international-guests",
-              "guests/guest-groups"
+              "guests/guest-groups",
+              "guests/rooming"
             ]
           },
           {
@@ -45,6 +46,7 @@
               "announcements/ai-announcements",
               "announcements/scheduling",
               "announcements/announcement-packs",
+              "announcements/own-templates",
               "announcements/voice-announcements"
             ]
           },
@@ -61,6 +63,8 @@
             "group": "Account & Settings",
             "pages": [
               "account/team-collaboration",
+              "account/own-whatsapp-number",
+              "account/own-number-access",
               "account/google-sheets-integration",
               "account/payments-credits",
               "account/referral-program"

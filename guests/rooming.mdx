@@ -1,0 +1,232 @@
+---
+title: "Hotel rooms & rooming list"
+description: Put up your guests at the hotel, night by night, and keep the rooming list in step with the hotel
+---
+
+Rooming is where you plan who sleeps where. You add the hotel's rooms, choose which guests you're putting up, and place them on a chart of rooms and nights. When guests arrive, the same screen works as your front desk.
+
+Open the wedding and tap the **Rooming** card on the wedding home screen, or go to **More** → **Rooming**. The screen has three tabs — **Stay chart**, **Who needs a room**, and **Rooms** — and a summary strip across the top.
+
+<Note>
+  Admins and Members can do everything on the Rooming screen. View Only members can see the stay chart and the summary but can't change anything, choose who needs a room, or download the hotel files.
+</Note>
+
+## What the numbers mean
+
+| Figure | What it counts |
+|--------|----------------|
+| **Households housed** | Households with enough beds, out of all households you're putting up (for example, `12 / 20`) |
+| **Beds needed** | Beds the households you're putting up need. Each household needs as many beds as its RSVP headcount. Someone who said they're not coming needs none; someone who hasn't answered is counted as needing at least one. |
+| **Beds in total** | Everything your rooms sleep, extra beds included. It doesn't go down as you place people. It's highlighted when you need more beds than you have. |
+| **Adults**, **Children**, **Infants** | People placed in rooms. Children are under 12, infants under 2. |
+| **IDs needed** | Everyone placed in a room — adults, children, and infants — because the hotel needs an ID for each person |
+| **Rooms** | Rooms on your list |
+| **In house now** | People checked in right now, and how many rooms they're in |
+| **Not arrived yet** | Rooms nobody has checked into yet. Before the wedding, that's every room. |
+
+Infants sleep in a cot, so they don't take up a bed. A household is one guest in your list — often a whole family on one phone number.
+
+## Get started
+
+The first time you open Rooming, a **Set up rooming** card walks you through it. Rooming needs two things: rooms to put people in, and a list of who you're putting up.
+
+<Steps>
+  <Step title="Add your rooms">
+    Tap **Upload hotel sheet** to bring in the hotel's room list, or **Add a room by hand**.
+  </Step>
+  <Step title="Say who is staying">
+    Tap **Choose guests** and pick the guests you're putting up. Weddingkart also suggests groups that look like they need rooms — marked **LIKELY** — which you can add in one go with **Add all**.
+  </Step>
+  <Step title="Place them across the nights">
+    Open the **Stay chart** and put each guest in a room.
+  </Step>
+</Steps>
+
+## Add rooms
+
+### One at a time
+
+On the **Rooms** tab, tap **Add a room** and fill in:
+
+| Field | Required | Notes |
+|-------|----------|-------|
+| Hotel | Yes | The hotel or property name |
+| Building / block | No | Useful when a property has several wings or villas |
+| Floor | No | |
+| Room number | Yes | Must be unique within the same hotel |
+| Type | No | For example, Deluxe or Suite |
+| Sleeps | No | How many the room sleeps, plus any extra beds it can take |
+
+**Sleeps** is how many beds the room has (at least 1; 2 if you don't change it) plus how many extra beds it can take — kept separate because that's how hotels quote a room.
+
+Weddingkart won't let you add the same room number twice in the same hotel (and the same building / block). If you try, you'll see "(hotel) room (number) is already on the list". A room number like `107.0` from a spreadsheet is read as `107`.
+
+Removing a room takes it off your list. Anyone who was placed in it goes back to needing a room. The app asks "Remove (room)?" first — the room is archived, not deleted, so adding the same hotel and room number again brings it back.
+
+There's no edit option for a room once it's added. To change how many a room sleeps, its type, or its floor, upload the hotel's sheet with the new values — the hotel's sheet is treated as the final word on its own rooms.
+
+### From the hotel's sheet
+
+Most hotels keep their own room list. From the hotel sheet options you can:
+
+- **Blank sheet** — download an empty template to send the hotel.
+- **Upload their sheet** — upload whatever they send back.
+- **Send to hotel** — download your current rooming list to share with them.
+
+Send them the blank sheet, then upload whatever they send back. They can rename and reorder the columns — only the hotel name and room number are required.
+
+The blank sheet has these columns, with one row per family in a room:
+
+| Column | Required |
+|--------|----------|
+| Hotel Name | Yes |
+| Room Number | Yes |
+| Building / Block, Floor, Room Type | No |
+| Pax, Extra Bed | No |
+| Guest Name, Adults, Children, Infants | No |
+| Check In, Check Out, Notes | No |
+
+Common alternatives for column names are understood too — for example "Property" or "Venue" for the hotel, "Room No" for the room, "Arrival" and "Departure" for the dates, and "Rollaway" for an extra bed.
+
+When you upload, Weddingkart shows you a preview before anything changes: how many rows it read, rooms that will be added, changed, or removed, names it matched to your guests, names that aren't on your guest list, and any warnings. Tap **Apply** to use it or **Discard** to throw it away. Files can be up to 8 MB.
+
+What to know about uploading a hotel sheet:
+
+- **File type** — upload `.xlsx` or `.csv`. An old `.xls` file can't be read; save it as `.xlsx` or `.csv` first. Only the first sheet in the file is read.
+- **Title rows are fine** — Weddingkart looks for the header row in the first 25 rows, so a hotel logo or title above the table doesn't matter.
+- **Up to 5,000 rows** — anything beyond that isn't read, and you'll see a warning.
+- **The sheet replaces your room list.** Rooms that are on your list but not in the uploaded sheet are removed when you tap **Apply**, and anyone in them goes back to needing a bed. The preview shows these as rooms removed. If you have rooms at more than one hotel, upload one sheet that lists all of them.
+- **Names are matched exactly** — ignoring capital letters, extra spaces, and titles like Mr, Mrs, Dr, or Smt. A name that matches two guests (two "Sharma Family" guests, say) isn't matched, so nobody is put in the wrong room. Unmatched names are still placed in the room under the name as written, so the hotel's list stays complete.
+- **Matched guests are added to "who needs a room"** automatically, and their `{{hotel_name}}` is filled in.
+- **Missing numbers** — if a row doesn't say how many adults, a matched guest's RSVP headcount is used (1 if there's no match). If check-in or check-out is missing, the stay is set to the whole wedding and you'll see a warning.
+- **Placements you made by hand stay put.** Rooms that are already on your list keep their bookings when you upload again.
+- **One upload at a time** — if you upload again before applying or discarding the last one, you'll see "There is already an upload waiting for review. Apply or discard it first."
+
+| If you see | It means |
+|------------|----------|
+| "That file is too big. Keep it under 8MB." | The file is over 8 MB. |
+| "That file could not be read as a spreadsheet. Save it as .xlsx or .csv and try again." | The file isn't a readable `.xlsx` or `.csv` (often an old `.xls`). |
+| "That sheet has no rows in it." | The first sheet is empty. |
+| "Could not find the columns. The sheet needs at least a hotel name and a room number column." | No header row with a hotel column and a room column was found. |
+| "No usable rows found. Every row needs a hotel name and a room number." | Headers were found, but no row had both a hotel and a room number. |
+
+**Send to hotel** gives you an Excel file with one tab per hotel, listing the hotel, block, floor, room, type, guest name, adults, children, infants, check-in and check-out, whether the guest's ID has been sent, and notes.
+
+<Note>
+  Downloading the blank sheet and the hotel file works on the web app only for now. On the mobile app you'll see "Downloading is only available on the web app for now."
+</Note>
+
+## Choose who needs a room
+
+The **Who needs a room** tab is where you say who you're putting up. It's your choice — Weddingkart doesn't guess from RSVPs.
+
+- Use the chips at the top (**Everyone** or a single group) to narrow the list, or **Search by name or phone**.
+- Tick guests one by one, or tap **Select these** to tick everyone currently shown, then tap **Save**.
+- Guests who travel together are kept as one party and placed together. A guest marked **Separate from their party** gets their own booking.
+- Selecting more than 25 people at once asks you to confirm first: "Put up N households?"
+- Long lists show "Showing the first N of M. Search or pick a group to narrow it — both look at the whole list."
+- You can save up to 2,000 guests at a time. Beyond that you'll see "Too many guests selected at once (N). Save in batches of 2000 or fewer."
+
+When you save, you'll see "Updated who needs a room." Unticking a guest who already has a room frees up that room.
+
+On the **Set up rooming** card, groups whose names look like guests travelling in are marked **LIKELY**. If your wedding has no groups yet, you'll be told there's nothing to pick from and can still choose people one at a time with **Choose guests**.
+
+## Place guests on the stay chart
+
+The **Stay chart** shows your rooms down the side and the nights across the top. Each booking is a bar across the nights that guest is staying.
+
+<Steps>
+  <Step title="Pick a guest">
+    Open **Still needs a room** and tap a guest.
+  </Step>
+  <Step title="Pick a room">
+    Tap a room on the chart. The guest is booked for their whole stay, and their party is placed with them.
+  </Step>
+</Steps>
+
+To change a booking:
+
+- **Move it** — drag the bar to another room.
+- **Change the dates** — open the booking and set **First night** and **Leaving on**.
+- **Change the headcount** — set adults, children under 12, and infants under 2.
+- **Remove it** — tap **Remove from room**. The guest goes back to needing a room.
+
+If a room has more people than it sleeps, it's flagged so you can see it, but Weddingkart still lets you save it — for example, "4 beds in a room that sleeps 2 +1. Allowed — you know the room." Otherwise the booking shows how full the room is, such as "2 of 3 beds used".
+
+A household can be in more than one room on the same night — a big family often needs two rooms. The same guest can't be booked into the same room twice; moving a booking into a room they're already in shows "(name) is already in (room)".
+
+To keep a room free for last-minute arrivals, use **Hold … empty for walk-ins** on that room. The room shows as **Held for walk-ins**. If you tap it to place someone, you'll see "(room) is being held — This room is kept empty for walk-in guests. Putting somebody in it releases that hold." Tap **Use the room** to go ahead or **Keep it held**. You can't hold a room that already has guests in it: "(room) has guests in it — move them out before holding it".
+
+### Nights and dates
+
+The stay chart builds its nights from your events: from the night before your first event to the night of your last one, up to 30 nights. A new booking covers the whole stay. To change it, open the booking and set **First night** and **Leaving on** — both are limited to the wedding's own nights.
+
+<Tip>
+  If you see "This wedding has no event dates yet, so there are no nights to place anyone in. Add the events first.", add your wedding events with their dates, then come back.
+</Tip>
+
+### When something doesn't add up
+
+The side panel lists problems as "N things do not add up", for example:
+
+- "2 of 4 people have a bed" — a household is only partly placed.
+- "3 beds held, RSVP says 2" — a household has more beds than its RSVP headcount.
+- "Not attending, but still holds a room" — the guest RSVP'd no but is still in a room. Remove them to free it.
+- "Booked guest is no longer on the guest list" — the guest was deleted from your guest list but their booking is still there. Remove the booking.
+
+## At the front desk
+
+During the wedding, use **Check in** when a guest arrives and **Check out** when they leave. Tapped the wrong one? Tap **Undo**. Each room shows who is **In house now**, or **Nobody in it** when it's empty, and the summary strip keeps count of who hasn't arrived yet.
+
+A booking shows one of three states: "Not arrived — booked, but nobody has walked in yet.", "Checked in — in the room now.", or "Checked out — the room is free again." If you move a checked-in guest to another room, they stay checked in.
+
+If a guest leaves early, tap **Check out** when they go. To free the room for the remaining nights in your plan too, change their **Leaving on** date.
+
+## Rooms and WhatsApp messages
+
+When you place a guest in a room, Weddingkart fills in their `{{hotel_name}}` guest detail for you. Any announcement that uses `{{hotel_name}}` then tells each guest which hotel they're staying at — see [Guest attributes](/guests/adding-guests#guest-attributes) and [Announcements](/announcements/overview).
+
+- If a household is in rooms at two hotels, both hotel names are filled in, separated by a comma.
+- Move the guest and their hotel name follows. Remove them from every room and the hotel name Weddingkart filled in is cleared.
+- A hotel name you typed yourself or imported from Excel is never overwritten or cleared by Rooming.
+
+Room numbers stay private. Weddingkart never adds them to guest details or sends them to guests on its own.
+
+<Tip>
+  The **IDs needed** count in the summary strip is how many IDs the hotel will ask for — one for every person placed in a room, children and infants included. Collect them with [ID Cards](/collect/id-cards), then share them with the hotel's reception ahead of check-in.
+</Tip>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Does Weddingkart decide who needs a room from RSVPs?">
+    No. You choose who you're putting up on the **Who needs a room** tab. RSVPs are only used to work out how many beds each household needs.
+  </Accordion>
+  <Accordion title="Can I put more people in a room than it sleeps?">
+    Yes. The booking shows a warning that the room is over what it sleeps, but it's saved — you know the room better than the app does.
+  </Accordion>
+  <Accordion title="A guest is leaving a day early. What do I do?">
+    Tap **Check out** when they leave. To free the room for later nights in the plan as well, open their booking and change **Leaving on**.
+  </Accordion>
+  <Accordion title="What happens to guests when I remove a room?">
+    They go back to needing a room and show up in **Still needs a room**. The room is archived, not deleted — add the same hotel and room number again to bring it back.
+  </Accordion>
+  <Accordion title="I uploaded the hotel's sheet and some rooms disappeared.">
+    Rooms that aren't in the uploaded sheet are removed when you apply it. If you have more than one hotel, upload a single sheet that lists every hotel's rooms. You can check the "Rooms removed" count in the preview before tapping **Apply**.
+  </Accordion>
+  <Accordion title="Why weren't some names on the hotel sheet matched to guests?">
+    Names are matched exactly (ignoring case, extra spaces, and titles like Mr or Smt). Spelling differences, or a name that matches two guests, stay unmatched. Those people are still placed in the room under the name as written.
+  </Accordion>
+  <Accordion title="The stay chart is empty and says to add events first.">
+    The chart's nights come from your event dates. Add your events with their dates, then open Rooming again.
+  </Accordion>
+  <Accordion title="Why can't I download the blank sheet or the hotel file on my phone?">
+    Downloading works on the web app only for now. Open Weddingkart in a browser to download them.
+  </Accordion>
+  <Accordion title="Will guests get their room number on WhatsApp?">
+    Not automatically. Placing a guest fills in their hotel name only; room numbers are never added to guest details or sent on their own.
+  </Accordion>
+  <Accordion title="Do infants need a bed?">
+    No. Infants (under 2) sleep in a cot and don't count against a room's beds, but they do count towards **IDs needed**.
+  </Accordion>
+</AccordionGroup>

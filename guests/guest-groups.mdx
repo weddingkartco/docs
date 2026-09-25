@@ -37,6 +37,18 @@ Groups let you target specific subsets of guests with relevant messages. Common 
   </Step>
 </Steps>
 
+You can also create a group while adding a guest: in the **Select Group** list, tap **Create a group to organize guests**.
+
+### Group name rules
+
+- Group names are saved in lowercase, so "Family" and "family" are the same name.
+- Two groups in the same wedding can't have the same name. If you try, you'll see "Group with this name already exists" (when creating) or "A group with this name already exists" (when renaming). Pick a different name, or add guests to the existing group instead.
+- If creating a group fails for another reason, you'll see "Couldn't create group. Please try again."
+
+## The All Guests group
+
+**All Guests** is a built-in group that always contains every guest in your wedding. It isn't listed in **Manage Group**, and it can't be renamed, merged, or deleted. While you're viewing All Guests you can copy guests into other groups or delete guests, but you can't move them out of it or remove them from it — every guest is always in All Guests.
+
 ## Auto-created groups from Excel import
 
 When you import an Excel file, Weddingkart suggests groups from your sheet names and from the values in your other columns, and creates the ones you select. A guest on a "Brideside" sheet is added to the "brideside" group, and a guest with "Yes" in a "Brideside" column is added to the "brideside=yes" group.
@@ -54,7 +66,13 @@ You can add or remove guests from groups at any time:
 - **Copy a guest** — adds the guest to a new group without removing them from the current one
 - **Remove a guest from a group** — removes the guest from the group only; the guest record is not deleted
 
-To move, copy, or remove, tick the checkbox next to the guests in the list, then use the action icons at the top of the screen.
+To move, copy, or remove, tick the checkbox next to the guests in the list (or tap **Select All**), then use the action icons at the top of the screen. When moving or copying, choose one or more destination groups — if you don't pick any, you'll see "Please select at least one group". If your wedding has no other groups yet, you'll see "No groups available" and "Create a new group to get started".
+
+A few things to know:
+
+- **A guest can be in any number of groups.** Being in "Brideside" and "VIPs" at the same time is fine.
+- **Groups made from an Excel column hold one value per guest.** If you copy or move a guest into `mehendi=no`, they're taken out of `mehendi=yes` (and any other `mehendi=…` group) automatically, so they can't be in two answers for the same column.
+- **Removing isn't deleting.** Remove from group asks "Are you sure you want to remove this guest from the group?"; deleting asks "Are you sure you want to permanently delete this guest?" and removes them from the whole wedding.
 
 ## Other group operations
 
@@ -64,9 +82,13 @@ Tap **Manage Group** on the Guests screen to see all your groups. Each group's m
 
 **Duplicate** — creates a copy of a group with the same guests, under a new name.
 
-**Merge into…** — choose one or more groups and a group to merge them into. All members are combined into the group you merge into, and the other groups are removed. You can optionally give the final group a new name.
+**Merge into…** — choose one or more groups and a group to merge them into. All members are combined into the group you merge into, and the other groups are removed. You can optionally give the final group a new name in **Final group name (optional)**. A guest who was in several of the merged groups appears only once in the final group. If you've selected every group, you'll see "No other groups available as a merge target. Deselect at least one group to keep it."
 
-**Delete** — deleting a group removes the group only. The guests in it are not deleted.
+**Delete** — deleting a group removes the group only. The guests in it are not deleted. Deleting one group asks "Are you sure you want to delete the group ?" — tap **Yes, delete**. Deleting several at once tells you how many guests will be ungrouped: "This will ungroup N guests. The guests themselves will not be deleted. This cannot be undone." When it's done you'll see "🎉 Deleted N groups".
+
+Group names in the **Rename**, **Duplicate**, and **Merge into…** boxes follow the same [name rules](#group-name-rules) — a name already used by another group is refused.
+
+To select several groups, tap the select icon in **Manage Group**, tick the groups (or **Select all**), then tap **Delete** or **Merge into…** at the bottom.
 
 <Tip>
   If you haven't created any groups yet, **Manage Group** shows a **Quick start** section with common groups — Family, College friends, School friends, Office, Neighbours, and Vendors — that you can create with a tap.
@@ -93,3 +115,35 @@ When you send an announcement to more than one group, each guest receives the me
 <Tip>
   Keep the total number of groups under 10. More groups than that becomes difficult to manage and easy to mis-select when composing announcements.
 </Tip>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Are these WhatsApp groups?">
+    No. Groups are only for organizing your list inside Weddingkart. Guests never see them, and no WhatsApp group is created.
+  </Accordion>
+  <Accordion title="If I delete a group, are the guests deleted?">
+    No. Only the group is removed. The guests stay in your wedding and in any other groups they're in.
+  </Accordion>
+  <Accordion title="Can the same guest be in two groups?">
+    Yes, in as many as you like. When you send to several of their groups at once, they still get the message only once.
+  </Accordion>
+  <Accordion title="Why can't I delete or rename All Guests?">
+    All Guests is built in and always contains everyone, so it can't be renamed, merged, or deleted. Create your own groups for anything more specific.
+  </Accordion>
+  <Accordion title="Why can't I remove a guest while viewing All Guests?">
+    Every guest is always in All Guests. Open the specific group you want to remove them from, or use delete to remove them from the wedding.
+  </Accordion>
+  <Accordion title='I get "Group with this name already exists". What now?'>
+    A group with that name is already in your wedding — names are saved in lowercase, so "Family" and "family" clash. Use the existing group or choose another name.
+  </Accordion>
+  <Accordion title="I copied a guest into mehendi=no and they disappeared from mehendi=yes. Is that a bug?">
+    No. Groups made from an Excel column hold one answer per guest, so adding them to one value removes them from the others in that column.
+  </Accordion>
+  <Accordion title="Does re-importing my Excel remove guests from groups?">
+    No, a re-import only adds guests to groups. The exception is column groups: a guest's new value for a column (for example, Mehendi changed from Yes to No) replaces the old one. See [Excel Import](/guests/excel-import#re-importing-an-updated-file).
+  </Accordion>
+  <Accordion title="Does renaming a group affect past messages?">
+    No. Renaming keeps the same members and doesn't change announcements you've already sent.
+  </Accordion>
+</AccordionGroup>

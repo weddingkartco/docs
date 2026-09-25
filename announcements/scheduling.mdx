@@ -22,12 +22,16 @@ This is how professional event managers handle wedding communication: build the 
     On the review screen, under **Send Options**, pick **Schedule for Later** instead of **Send Now**.
   </Step>
   <Step title="Pick the date, time and time zone">
-    Select when you want the message to go out, and the time zone that time is in. The scheduled time must be in the future.
+    Select when you want the message to go out, and the time zone that time is in. The picker starts 10 minutes from now, and the time zone starts as your phone's — tap it to choose another (**Select Timezone** lets you search by city or region). The scheduled time must be in the future; if it isn't, you'll see *"Scheduled time must be in the future"* and the button stays disabled.
   </Step>
   <Step title="Confirm the schedule">
-    Tap **Schedule Announcement**. Weddingkart will send it automatically at the scheduled time without any further action from you.
+    Tap **Schedule Announcement**. Weddingkart will send it automatically at the scheduled time without any further action from you. The **Announcement Scheduled!** screen confirms the time, recipients and status, with **View All Schedules** and **Back to Announcements**.
   </Step>
 </Steps>
+
+<Info>
+Credits are not taken when you schedule. They are checked and deducted when the schedule sends, at the same rates as sending now — see [What it costs](/announcements/overview#what-it-costs). Make sure the wedding has enough credits at that moment.
+</Info>
 
 <Note>
 For group sends, the guest list is finalised when the message goes out, not when you schedule it. Guests added to or removed from the selected groups before then are included or excluded automatically.
@@ -37,12 +41,20 @@ For group sends, the guest list is finalised when the message goes out, not when
 
 All your schedules are listed in the **Schedules** section. Tap one to see its **Recipients** and actions:
 
-- **Change Time** — move the send time (at least 15 minutes in the future)
-- **Send Now** — send the announcement immediately without waiting for the scheduled time
+- **Change Time** — move the send time (at least 15 minutes in the future). Available on Draft and Scheduled schedules
+- **Send Now** — send a draft schedule immediately without waiting for the scheduled time
 - **Cancel** — stop a schedule before it sends
 - **Resume Schedule** — reactivate a cancelled schedule
 - **Activate Schedule** — turn a draft schedule on
 - **View Report** — see delivery for a schedule that has sent
+
+The **Recipients** panel shows how many guests the schedule will reach. For group sends it says **Recalculated when it sends**, because group membership is checked again at send time; for individually picked guests it says **Exact audience — fixed when scheduled**.
+
+A few rules to know:
+
+- If you pick a new time less than 15 minutes away with **Change Time**, you'll see *"Please schedule at least 15 minutes in the future"*. **Change Time** uses your phone's time zone.
+- The cancel confirmation says the action cannot be undone, but a cancelled schedule can still be brought back with **Resume Schedule** — as long as its time hasn't passed. Once the time has passed, create a new schedule instead.
+- A schedule that has sent can't be changed — it only offers **View Report**. To send the same announcement again, add a new schedule.
 
 ## Schedule status
 
@@ -54,7 +66,22 @@ Each schedule shows one of the following statuses:
 | **Scheduled** | Active and waiting to send |
 | **Sent** | Sent to recipients |
 | **Cancelled** | Stopped manually; can be resumed |
-| **Failed** | An error occurred during sending |
+| **Failed** | The schedule could not send; the reason is shown under it in the list |
+
+## When a schedule sends — or fails
+
+When a schedule goes out, everyone on the wedding team gets a WhatsApp message and an app notification: **Announcement sent** (with how many guests it went to) or **Announcement failed** (*"… failed to send. Tap to view details."*). Tap it to open the report.
+
+Before sending, Weddingkart checks the schedule again. If something is wrong it marks the schedule **Failed** and nothing is sent or charged. Common reasons shown under a failed schedule:
+
+| Reason shown | What to do |
+|---|---|
+| *"Insufficient credits. Available: X, Required: Y"* | Top up from the **Wallet** screen, then schedule it again |
+| *"This announcement can't be sent without an attachment. Please upload one first."* | Open the announcement, upload the attachment, then schedule again |
+| *"No guests found for this schedule. Verify that the selected guests or groups still exist."* | The selected groups are now empty or deleted — pick recipients again |
+| *"Wedding is not live. Scheduled announcements are blocked."* | The wedding has become read-only, so nothing more can be sent |
+
+Once sent, individual guests can still fail (for example a number that isn't on WhatsApp) — check the schedule's **View Report**. Credits for messages that fail are returned automatically.
 
 ## Useful scenarios for scheduling
 
@@ -82,9 +109,43 @@ Recorded voice announcements can be scheduled the same way. AI voice calls canno
 
 When you schedule, you choose the time zone the send time is in, and the **Schedules** section shows which time zone its times are displayed in. Account for where your guests are located — a message sent at 9 AM in Delhi reaches guests in a different time window than guests in London or New York.
 
+The Schedules list shows a line such as *"Times shown in IST (UTC+05:30)"* under the heading — every time in the list is converted to your phone's time zone, whatever zone you scheduled in. For example, a message scheduled for 9:00 AM London time appears as 2:30 PM on a phone set to India time (1:30 PM during British Summer Time).
+
 <Warning>
 Avoid scheduling messages before 8 AM or after 10 PM in the recipient's local time zone. Messages sent at unusual hours are often muted or ignored, and may signal to guests that your communication is disorganized.
 </Warning>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="How soon can I schedule a message?">
+    Any time in the future when you first schedule it. When you use **Change Time** on an existing schedule, the new time must be at least 15 minutes away.
+  </Accordion>
+  <Accordion title="Do I need to keep the app open?">
+    No. Scheduled announcements are sent by Weddingkart's servers, so your phone can be off.
+  </Accordion>
+  <Accordion title="When are credits deducted for a scheduled message?">
+    When it sends, not when you schedule it. If the wedding doesn't have enough credits then, the schedule fails with *"Insufficient credits…"* and nothing is charged.
+  </Accordion>
+  <Accordion title="What's the difference between Cancel and Resume?">
+    **Cancel** stops a schedule so it won't send. **Resume Schedule** turns a cancelled schedule back on at its original time — which only works while that time is still in the future.
+  </Accordion>
+  <Accordion title="Why is there no Send Now on my schedule?">
+    **Send Now** appears on draft schedules. For an active schedule, use **Change Time** to bring it forward, or cancel it and send the announcement directly from its editor.
+  </Accordion>
+  <Accordion title="I added guests to the group after scheduling. Will they get it?">
+    Yes, for group sends — the list is finalised when the message goes out. Guests picked individually are fixed when you schedule.
+  </Accordion>
+  <Accordion title="My schedule says Failed. What now?">
+    Read the reason under it in the **Schedules** list, fix it (top up credits, add the attachment, re-pick recipients) and schedule the announcement again. No credits are used for a failed schedule.
+  </Accordion>
+  <Accordion title="Can I schedule an AI voice call?">
+    No. AI voice calls are sent immediately. Recorded voice announcements can be scheduled.
+  </Accordion>
+  <Accordion title="Which time zone are my schedules in?">
+    Each schedule keeps the time zone you picked. The **Schedules** list displays all times in your phone's current time zone, noted under the heading.
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 

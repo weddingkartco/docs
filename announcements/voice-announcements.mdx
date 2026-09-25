@@ -23,29 +23,36 @@ For routine announcements (save the date, venue directions, RSVP requests), What
     In the **Announcements** section of the app, tap **Add Announcement** (the **+** button), then under **By phone call** choose **Play a recorded message**.
   </Step>
   <Step title="Add your recording">
-    Under **Add a Voice Recording**, either tap **Record** to record with your phone's microphone, or **Upload MP3** to use a file from your device. After recording or uploading, check:
+    Under **Add a Voice Recording**, either tap **Record** to record with your phone's microphone, or **Upload MP3** to use a file from your device. While recording, tap **Stop & Upload** when you're done, or **Cancel** to discard it. After recording or uploading, check:
     - The duration looks right (this determines cost per call)
     - It sounds right — use **Re-record** or **Upload new** to replace it
 
     **Recording requirements:**
-    - Format: record in the app, or upload an MP3
+    - Format: record in the app, or upload an MP3 or M4A file
+    - Size: up to 10 MB
     - Duration: 30–120 seconds recommended; longer calls cost more
     - Quality: Record in a quiet space, speak clearly at a moderate pace
+
+    If the app shows *"Microphone permission is required"*, allow microphone access for Weddingkart in your phone's settings. *"File size should be less than 10 MB"* or *"Recording is too large. Max 10 MB."* means the audio is too big — trim it or record a shorter message. If you see *"Upload failed. Tap to try again."*, tap it to retry.
   </Step>
   <Step title="Select recipients">
     Tap **Continue to Add Guests** and choose who receives the call:
     - **Groups** — select one or more guest groups, or send to all guests
     - **Individuals** — pick specific guests by name
 
-    If you select multiple groups, each guest receives only one call even if they belong to more than one group.
+    If you select multiple groups, each guest receives only one call even if they belong to more than one group. Each guest is called on the **first** phone number on their guest record; guests with no phone number are skipped.
   </Step>
   <Step title="Check the cost">
-    The review screen shows the estimated credit cost before you send. Voice calls are billed per minute, not per guest, and the rate depends on each guest's country — review this carefully, as voice calls cost more than WhatsApp messages.
+    The review screen shows the estimated credit cost before you send, with the reminder *"Voice calls are billed per minute of talk time, not per guest"*. The rate depends on each guest's country — review this carefully, as voice calls cost more than WhatsApp messages.
   </Step>
   <Step title="Send or schedule">
     Choose **Send Now** or **Schedule for Later**, then confirm. Calls are initiated automatically — you don't need to take any further action.
+
+    For larger sends, the **Confirm Announcement** sheet says *"You are about to make voice calls to N people. This will use credits from your balance."* and asks you to type the number of people to proceed.
   </Step>
 </Steps>
+
+Guests hear the recording only — they can't respond during the call, and nothing they say is captured. To collect answers, follow up with a WhatsApp announcement.
 
 ## Monitoring call status
 
@@ -62,9 +69,23 @@ After sending, you can view the delivery status for each call from the announcem
 
 Status updates in real time as calls are delivered.
 
+### Listen report
+
+On a voice announcement's report, tap the **Listen report** icon to see how much of your recording guests actually heard:
+
+- **Median** — the typical share of the recording guests listened to
+- **Heard full** — the percentage who listened to the end
+- **Hung up in first 3s** — guests who hung up almost immediately
+- **Voicemail** — calls that look like they reached voicemail rather than a person
+- **Per guest** — each guest's listen percentage; tap **Didn't hear past 5s** to show only the guests who barely listened
+
+Until calls finish you'll see *"No calls have completed yet."* Use the per-guest list to decide who needs a follow-up WhatsApp or a personal call.
+
 ## Pricing
 
-Voice call costs are calculated per minute of your recording, per guest, based on the guest's phone number country. Domestic (India) calls have a lower per-minute rate than international calls. The estimated cost is shown on the review screen before you send, and is deducted from your credits when you send.
+Voice call costs are calculated per minute of your recording, per guest, based on the guest's phone number country. Domestic (India) calls have a lower per-minute rate than international calls — 7 credits per minute in India. Each call's cost is rounded up to a whole number of credits. The estimated cost is shown on the review screen before you send, and is deducted from your credits when you send.
+
+The amount deducted at send time is an estimate. After each answered call ends, its charge can be adjusted — a call that ends before your recording finishes gives a little back, and one that runs longer takes a little more — so your balance can move slightly once the calls finish, and can dip below zero. Calls that are not answered, busy or fail are refunded in full (see below).
 
 <Info>
 Voice announcements use the same credits as WhatsApp messages. See [Payments & Credits](/account/payments-credits) for details on how credits work and how to top up.
@@ -91,6 +112,52 @@ Voice announcements use the same credits as WhatsApp messages. See [Payments & C
 <Info>
 If a call is not answered, the line is busy, or the call fails, the credits for that call are refunded automatically. Calls that reach voicemail are charged.
 </Info>
+
+## If you see a message
+
+| On screen | What it means | What to do |
+|---|---|---|
+| *"Insufficient credits. Available: X, Required: Y"* | The calls cost more than the wedding's balance | Top up from the **Wallet** screen, or call fewer guests |
+| *"No valid phone numbers found for the selected recipients"* | None of the selected guests has a phone number | Add numbers on the guest list, or pick other guests |
+| **Cannot Send Announcement** — *"No calls could be initiated"* | No call could be started | Check the recipients and try again |
+| *"These calls were just started. If you meant to call again, try in N seconds."* | You tapped send again right after a send | Wait — the first send is already calling. Only retry if you really mean to call everyone again |
+
+## What happens if…
+
+- **A guest is in two selected groups?** They get one call.
+- **A guest doesn't pick up?** The status shows **No answer** and the credits come back. There is no automatic retry — send again to the guests you want to reach (each new send is charged again).
+- **The call goes to voicemail?** Your recording plays into voicemail and the call is charged. The listen report counts it under **Voicemail**.
+- **A guest hangs up early?** The call is charged for the time it was connected, and the listen report shows how much they heard.
+- **I re-upload a new recording?** Calls you send after that play the new recording. Calls already made are unaffected.
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="How much does a voice announcement cost?">
+    India is 7 credits per minute of call time, per guest; other countries have their own rates. The review screen shows the estimate for your selected guests before you send.
+  </Accordion>
+  <Accordion title="Am I charged if the guest doesn't answer?">
+    No. Calls that aren't answered, are busy or fail are refunded automatically. Calls that reach voicemail are charged.
+  </Accordion>
+  <Accordion title="Why did my balance change after the calls finished?">
+    Credits are deducted up front using an estimate, then each answered call's charge is adjusted after it ends. Calls that end before your recording finishes give a little back; longer calls take a little more.
+  </Accordion>
+  <Accordion title="Which file types can I upload?">
+    MP3 or M4A, up to 10 MB. Or record directly in the app.
+  </Accordion>
+  <Accordion title="Can guests reply or press a button during the call?">
+    No. A recorded voice announcement only plays your message. Use WhatsApp announcements to collect replies.
+  </Accordion>
+  <Accordion title="Can I schedule a voice announcement?">
+    Yes. Recorded voice announcements can be scheduled with **Schedule for Later**. AI voice calls are sent immediately and can't be scheduled.
+  </Accordion>
+  <Accordion title="Which number is called if a guest has more than one?">
+    The first phone number on the guest's record.
+  </Accordion>
+  <Accordion title="How do I know if guests actually listened?">
+    Open the report and tap **Listen report**. It shows the median listen percentage, how many heard it to the end, early hang-ups and suspected voicemails.
+  </Accordion>
+</AccordionGroup>
 
 ## Related
 

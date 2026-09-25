@@ -11,6 +11,8 @@ Weddingkart uses a pay-per-wedding model — there is no monthly subscription. E
 
 Every feature is available to explore with no credit card required. You can add guests, create events, set up RSVPs, and test the full platform. Each new wedding starts with 50 free credits. The main limitation: you cannot send messages to more than 5 guests at a time.
 
+If you try to send to more than 5 guests on a free wedding, you see **"Since its a free wedding, you are not allowed to send message to more than 5 guests at a time"**. Choose 5 guests or fewer, or buy a plan. The limit protects the sending number from being flagged by WhatsApp for bulk messages from unpaid accounts.
+
 ### Basic — ₹4,999 + 18% GST per wedding
 
 Best for weddings that are just a few days away and only need WhatsApp messaging.
@@ -39,9 +41,13 @@ Best for most weddings where you need to manage the full guest lifecycle.
 
 The prices above are for India. Outside India, plans are priced in US dollars for your country and GST is not added. The **Wallet** screen always shows the price that applies to your wedding.
 
+### Offers
+
+When a launch offer is running, the **Wallet** shows a banner such as **"20% off every plan until …. Prices shown already include the discount."** The plan's regular price is shown struck through next to the offer price. The price on the **Pay** button is always the amount you're charged.
+
 ### Enterprise
 
-For agencies managing 10 or more weddings. Includes volume discounts, priority support, and custom integrations. Contact Weddingkart for a quote.
+For agencies managing 10 or more weddings. Includes volume discounts, priority support, and custom integrations. Contact Weddingkart for a quote — the **Wallet** lists the number: **+91 92176 10045**.
 
 ## How credits work
 
@@ -51,11 +57,57 @@ WhatsApp messages are sent using credits. The number of credits consumed per mes
 - **International guests:** credits per message vary by country, based on WhatsApp's per-country pricing. Tap **What's a credit?** on the **Wallet** screen to see the rates for every country.
 - **Personalised media:** messages with media personalised for each guest cost 1 extra credit per guest
 
-Voice calls are not paid for with credits. They are pay-as-you-go, billed only for the minutes you use: ₹7/min for a voice call and ₹17/min for an AI voice agent in India (plus taxes). Rates for other countries may vary.
+Some examples of what one message costs in credits:
+
+| Guest's country | Credits per message |
+|---|---|
+| India, Pakistan, Egypt | 1 |
+| Singapore, Australia, New Zealand, Malaysia, Saudi Arabia, Qatar | 2 |
+| USA / Canada, United Kingdom, France | 3 |
+| UAE | 4 |
+| Germany, Netherlands | 5 |
+
+<Note>
+Rates follow WhatsApp's own pricing and can change. The **What's a credit?** list on the **Wallet** screen is always the current source.
+</Note>
+
+A few details:
+
+- **The country comes from the guest's phone number.** A guest with a UK number costs the UK rate, even if they live in India. See [International guests](/guests/international-guests).
+- **Personalised media adds 1 credit per guest on top of the country rate.** For example, a personalised card sent to a guest in the UK costs 3 + 1 = 4 credits.
+- **Credits you buy are added to what you already have.** The 50 free credits don't disappear when you pay — the plan's credits are added on top.
+
+### Voice calls
+
+Voice calls and AI voice agents are not part of any plan's message allowance. They are pay-as-you-go, billed only for the minutes you use: ₹7/min for a voice call and ₹17/min for an AI voice agent in India (plus taxes). Rates for other countries may vary.
+
+- **The charge comes from the wedding's credits**, at 1 credit = ₹1. A one-minute voice call to an Indian number uses 7 credits.
+- **Credits are set aside when the calls start.** Weddingkart reserves enough credits for every selected guest's call to run to its maximum length. If the wedding doesn't have that many, the calls don't start and you see **"Insufficient credits. Available: …, Required: …"**. Top up and try again.
+- **Unused credits come back.** For AI voice agent calls, after each call you're charged for the time it actually lasted and the rest of the reserved credits comes back to the wedding. Calls that fail to go through are refunded.
 
 Credits are tied to the specific wedding they were purchased for. You cannot transfer credits from one wedding to another.
 
 If you run out of credits mid-wedding, you can top up at any time from the **Wallet** screen — no plan upgrade required.
+
+## Checking credits before a send
+
+Weddingkart checks your balance before every announcement. If you don't have enough credits for everyone you selected, nothing is sent and you see:
+
+**"You don't have enough credits to send this Announcement. Available credits: 120. You need approx 340 credits"** (with your own numbers).
+
+To fix it, top up at least the difference from the **Wallet**, or choose fewer guests. A send never stops halfway because credits ran out — the check happens before anything goes out.
+
+**Scheduled announcements** are checked again when they're due to send. If the wedding doesn't have enough credits at that moment, the scheduled send fails, nothing is sent, and you're notified. The message reads **"Insufficient credits. Available: …, Required: …"**. Top up, then schedule or send it again.
+
+## Refunds for undelivered messages
+
+If WhatsApp reports that a message **failed** — for example, because the number isn't on WhatsApp — the credits for that message are returned to the wedding automatically. This includes the extra credit for personalised media. You don't need to request it.
+
+Refunds appear in the wedding's credit history as **Refund (failed msg)**.
+
+<Note>
+Credits are only returned for messages WhatsApp marks as failed. Messages that were delivered but not read aren't refunded.
+</Note>
 
 ## Topping up credits
 
@@ -63,6 +115,12 @@ Once a wedding's plan is paid for, the **Wallet** screen shows **Top up credits*
 
 - In India, 1 rupee = 1 credit, plus 18% GST. The minimum top-up is ₹100, and you can quick-select ₹500, ₹1,000, ₹1,500, or ₹2,000.
 - Top-ups are available on the web app and the Android app. They aren't available in the iOS app yet.
+
+As you type an amount, the screen shows what you'll get — for example, **"1,000 credits + 18% GST"**. Before you type, it reads **"Min ₹100 · 1 rupee = 1 credit"**. Top-ups are only offered after the plan has been bought; on a free wedding, buy a plan first.
+
+<Tip>
+On an iPhone, top up from the web app instead. In the iOS app you see **"Top-ups aren't available on iOS yet."**
+</Tip>
 
 ## Making a payment
 
@@ -87,7 +145,72 @@ Once a wedding's plan is paid for, the **Wallet** screen shows **Top up credits*
   </Step>
 </Steps>
 
-## FAQs
+Any Admin or Member on the wedding can pay. View Only team members can't. See [Team Collaboration](/account/team-collaboration).
+
+### What you see after paying
+
+**On Android**, after a successful payment the app shows **Confirming payment...** with **Do not close the app** for a few seconds, then one of:
+
+- **"Payment confirmed. Credits added."** — you're done.
+- **"Payment received. Credits will appear in a few minutes."** — the payment went through, and your credits are still being added. You don't need to pay again.
+
+If the payment doesn't go through, you may see **"Payment did not go through. Please try again."** or **"Network error during payment. Please retry."** Closing the payment screen yourself cancels without any message.
+
+**On the web app**, you land on a page that says **Payment Successful!** or **Payment Failed!** — the second one reads **"It seems we have not received your payment."**
+
+**On iOS**, Apple handles the payment. You may see:
+
+- **"Credits added!"** — the purchase is complete.
+- **"Purchase pending approval — credits will arrive once it's approved."** — Apple is waiting for the purchase to be approved. Credits are added once it is.
+- **"Could not confirm your purchase yet. Your credits will appear shortly."** — Apple charged you and Weddingkart is still confirming it. Don't buy again.
+- **"Purchase canceled."** — you closed Apple's payment sheet.
+- **"In-app purchases are unavailable on this device."** — this iPhone can't make in-app purchases right now. Pay on the web app instead.
+
+If Apple refunds an in-app purchase, the credits from that purchase are removed from the wedding.
+
+## Credit history
+
+The **Wallet** shows an **Activity** section with the wedding's payments and credit use, and **All Credit Transactions** for the full list. Entries include:
+
+- **Payments**, marked **Razorpay** or **Apple In-App Purchase**, with the credits bought and a **Success** or **Pending** status
+- **WhatsApp → 120 guests** (for example) for an announcement send
+- **Voice call**, **Voice announcement**, and **Scheduled message** usage
+- **Refund (failed msg)** when credits come back for an undelivered message
+
+If you haven't paid or sent anything yet, you see **No payments yet** or **No credit usage yet**.
+
+## Invoices and receipts
+
+Weddingkart asks for your email address in the app. It's used to send invoices, payment receipts, and occasional updates. If you need a GST invoice with your company's details, contact Weddingkart with the wedding's details and your GSTIN.
+
+## After the wedding
+
+A wedding stays active during the event period and for 10 days after the wedding date. After that it becomes read-only: you can no longer send announcements or change the guest list. The app shows a countdown banner before this happens, with options to send a final message, extend the wedding, or download your data. Only an Admin can extend the wedding.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Money was deducted but my plan isn't active">
+    Payments can take a few minutes to confirm. If you saw **"Payment received. Credits will appear in a few minutes."** or **"Could not confirm your purchase yet. Your credits will appear shortly."**, wait a few minutes, then reopen the **Wallet**. Don't pay again — a second payment would be a second charge. If the plan still isn't active after that, contact Weddingkart with the payment reference from your bank, UPI app, or Apple receipt.
+  </Accordion>
+  <Accordion title="I ran out of credits in the middle of the wedding">
+    Top up from the **Wallet** on the web app or Android. Credits are added right after payment, and you can send again straight away. Nothing is sent half-way: if a send needs more credits than you have, it's blocked before any message goes out.
+  </Accordion>
+  <Accordion title="A scheduled announcement didn't go out">
+    If the wedding didn't have enough credits when it was due, the scheduled send failed and nothing was sent. Top up, then send or reschedule it.
+  </Accordion>
+  <Accordion title="The send says I can only message 5 guests">
+    The wedding is on the free plan. Buy Basic or Standard from the **Wallet** to send to everyone.
+  </Accordion>
+  <Accordion title="I can't find the top-up option">
+    Top-ups only appear after the wedding's plan is paid for. On an iPhone, open the web app to top up.
+  </Accordion>
+  <Accordion title="An international guest used more credits than I expected">
+    Messages to numbers outside India cost more credits, based on the country code of the guest's number. Check **What's a credit?** on the **Wallet** for each country's rate.
+  </Accordion>
+</AccordionGroup>
+
+## Common questions
 
 <AccordionGroup>
   <Accordion title="What if I run out of messages?">
@@ -103,6 +226,18 @@ Once a wedding's plan is paid for, the **Wallet** screen shows **Top up credits*
     There is no fixed time limit. The wedding remains active during the event period and for 10 days after the wedding date. After that it becomes read-only: you can no longer send announcements or change the guest list. The app shows a countdown banner before this happens, with options to send a final message, extend the wedding, or download your data.
   </Accordion>
   <Accordion title="Can I transfer credits between weddings?">
-    No. Credits are tied to the specific wedding they were purchased for and cannot be transferred to another wedding.
+    No. Credits are tied to the specific wedding they were purchased for and cannot be transferred to another wedding. The top-up screen mentions transferring unused credits to your next wedding — there's no way to do this in the app, so contact Weddingkart if you have unused credits on a finished wedding. Personal referral credits are different: they can be moved into any paid wedding you created. See [Referral Program](/account/referral-program).
+  </Accordion>
+  <Accordion title="Do I get credits back for messages that failed?">
+    Yes. When WhatsApp reports a message as failed, its credits are returned automatically and show as **Refund (failed msg)**.
+  </Accordion>
+  <Accordion title="Is GST charged outside India?">
+    No. Outside India, plans are priced in US dollars and GST isn't added.
+  </Accordion>
+  <Accordion title="Do team members, Google Sheets sync, or two-way chat replies use credits?">
+    Adding team members and syncing to Google Sheets or Drive don't use credits. Credits are used when you send WhatsApp messages or make voice calls. See [Two-way chat](/collect/two-way-chat) for how replies to guests work.
+  </Accordion>
+  <Accordion title="Does the price change with the number of guests?">
+    No. The plan price is per wedding. Only how many messages you send, and to which countries, affects how many credits you use.
   </Accordion>
 </AccordionGroup>

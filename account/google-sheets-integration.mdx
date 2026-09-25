@@ -13,6 +13,15 @@ Google Sheets sync is available on the **Standard plan** only. It is not include
 
 This integration is useful when you need to share guest data with people who don't have Weddingkart access — such as your catering team, logistics partners, or family coordinators. Instead of giving them app access, you share a Google Sheet link directly.
 
+## How the sheet is created
+
+You don't need to set anything up or connect a Google account.
+
+- **Weddingkart creates the sheet for you** shortly after you create the wedding. It lives in Weddingkart's Google account and is named after the wedding, in the form "Weddingkart Guest Details …".
+- **Each wedding has one sheet** (the **Master Sheet**) with several tabs. Syncing updates the same sheet — the link doesn't change.
+- **The person who created the wedding gets a WhatsApp message with the link** when the sheet is first created, and again each time a sync you start finishes.
+- **Team members get the link on WhatsApp** when they're added to the team, if the sheet already exists. See [Team Collaboration](/account/team-collaboration).
+
 ## What's included in the export
 
 The exported sheet contains one row per guest with the following columns:
@@ -23,6 +32,27 @@ The exported sheet contains one row per guest with the following columns:
 - Travel ticket status and extracted details (arrival time, departure city)
 - ID card status
 - Custom guest attributes
+
+### Tabs in the sheet
+
+The Master Sheet is split into these tabs:
+
+| Tab | What it contains |
+|---|---|
+| **Introduction** | The bride's and groom's names, the wedding ID, when the sheet was last updated, and a short note about Weddingkart |
+| **Share and Earn** | Each team member's personal Weddingkart referral link, with a ready-to-share message. See [Referral Program](/account/referral-program). |
+| **Summary** | A dashboard: total guests invited, total attending (with plus-ones), RSVP breakdown (Yes / No / Not Answered, with percentages), and how many ID cards and travel tickets were collected. It shows when it was last updated. |
+| **RSVP** | One row per guest: **Name**, **Phone 1**, **Phone 2**, **Phone 3**, **RSVP**, **RSVP No of Guests**, **RSVP Last Updated**, **Special Note**, then one column per guest group after the **Groups -->** marker |
+| **ID Cards** | One row per ID card a guest sent: sender name and phones, a **Document Link**, **ID Card Type**, the name, number, address, gender, and expiry date read from the card, and **Uploaded At**. Group columns are added at the end. |
+| **Travel Tickets** | One row per ticket: sender name and phones, a **Ticket Link**, **Mode** and **Mode Number**, **Person Name**, departure and arrival city, station or airport code, terminal, date, and time, plus **PNR**, **Coach**, **Seat / Berth**, **Class**, **Booking Status**, and **Requires Late Pickup**. Group columns are added at the end. |
+| **Other Files** | Any other files guests sent, with a **File Link** and when they were sent |
+| **Guest Attributes** | **Name** and phones, then one column for each custom guest attribute you use |
+
+A few details:
+
+- **Guests can have up to three phone numbers**, shown as **Phone 1**, **Phone 2**, and **Phone 3**.
+- **If a guest was deleted** after sending a document, their ID card or ticket row stays, and the guest details show **deleted guest**.
+- **Header rows are bold and filterable**, so you can filter by RSVP, group, or arrival date straight away.
 
 ## Syncing to Google Sheets
 
@@ -43,14 +73,102 @@ The exported sheet contains one row per guest with the following columns:
 
 You can also tap **Export to Google Sheet** from the RSVP, ID card, and travel ticket response screens.
 
+### What you see while it syncs
+
+| On screen | What it means |
+|---|---|
+| **Queued — waiting to start** | Your sync is in line and will start shortly. |
+| **Starting sync...** | The sync has started. |
+| **3 of 8 sheets updated** (for example) | The sync is working through the tabs one by one. |
+| **Synced just now** | The sync finished. Open the link to see the latest data. |
+| **Last updated** followed by a date and time | When the sheet was last refreshed. |
+| **Sync failed** with a **Retry** button | Something went wrong. Tap **Retry**. |
+
+The screen also says **"You can leave this page. The sync will continue in the background."**
+
+If you start another sync right after one, you may see one of these messages instead of a new sync starting:
+
+- **"Your task is already in queue, please wait for few more mins"** — a sync you started less than a minute ago is still waiting or running. Wait for it to finish.
+- **"Guest sheet is just got updated, please check"** — a sync finished less than a minute ago. Open the sheet; it's already current.
+- **"Guest sheet is updating, please check after few mins"** — your new sync has started.
+
+### Who can sync
+
+- **Admins and Members** can tap **Sync Now** and sync documents to Google Drive.
+- **View Only** team members can open the sheet link, but can't start a sync. See [Team Collaboration](/account/team-collaboration).
+
 ## Syncing documents to Google Drive
 
 The same **Export Guest Data** screen has a **Google Drive** section. Tap **Sync to Google Drive** to copy the original travel ticket and ID card files (PDFs and images) that guests submitted into a Google Drive folder.
 
+**Travel Tickets** and **ID Cards** sync separately, each with its own button and status:
+
+- **Not synced yet** — nothing has been copied to Drive for this type yet.
+- **Syncing...** with a progress count — files are being copied. You can leave the page; the export continues in the background.
+- **12 files synced**, or **3 new, 9 already up to date** (for example) — the sync finished. Only new files are copied each time; files already in Drive aren't copied again.
+- **No files to sync** — guests haven't sent any files of this type yet.
+- **Sync failed** or **Export failed** with a **Retry** button — tap **Retry**.
+
+When files are in Drive, tap **Open Google Drive Folder** to see them, or **Re-sync** to copy any new files. If you tap sync while one is already running, you see **"Export already in progress"**.
+
 ## Sharing the sheet
 
-Once exported, share the Google Sheet link directly through Google Sheets using its standard sharing options. You can share with specific email addresses or generate a view-only link for your catering or logistics team.
+The sheet link is already set so that **anyone who has the link can open it and add comments**. You don't need to change any sharing settings — just send the link to your catering or logistics team.
+
+- **The sheet is view-only for everyone, including you.** You can read, filter, sort, and comment, but you can't edit cells.
+- **Every sync rewrites each tab** with the latest data from Weddingkart. Anything added to the sheet by hand wouldn't survive the next sync.
+- **To edit the data or build your own reports**, make your own copy in Google Sheets (**File** > **Make a copy**). Your copy won't update when Weddingkart syncs, so make a fresh copy when you need current data.
+- **Anyone with the link can see guest names and phone numbers**, so only share it with people who should have that information.
 
 <Tip>
 Re-sync the sheet right before sharing with your catering or logistics team to make sure you're sending them the most current data.
 </Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The sheet isn't showing my latest changes">
+    Tap **Sync Now** in **More** > **Export Guest Data** and wait for **Synced just now**. Then reload the sheet in your browser — an open Google Sheets tab may not show new data until you reload it.
+  </Accordion>
+  <Accordion title="The sync keeps saying it's already in queue">
+    A sync is already running for this wedding. Large guest lists take longer. Wait a few minutes, then check **Last updated**. If the status changes to **Sync failed**, tap **Retry**.
+  </Accordion>
+  <Accordion title="I can't edit the sheet">
+    That's expected. The sheet is view-only so that every sync can safely replace its data. Use **File** > **Make a copy** in Google Sheets to get an editable copy.
+  </Accordion>
+  <Accordion title="The Sync Now button does nothing or shows a permission error">
+    Check your access role on the wedding. View Only team members can open the sheet but can't sync it. Ask an Admin to change you to Member.
+  </Accordion>
+  <Accordion title="A guest's ticket or ID card is missing from the sheet">
+    The sheet only includes documents Weddingkart has received. Check the guest in the app first. If the document is there, tap **Sync Now** and wait for the sync to finish.
+  </Accordion>
+</AccordionGroup>
+
+## Common questions
+
+<AccordionGroup>
+  <Accordion title="Do I need a Google account?">
+    No. Weddingkart creates and owns the sheet. Anyone with the link can open it in a browser. You only need a Google account if you want to make your own editable copy.
+  </Accordion>
+  <Accordion title="Does the link change when I sync?">
+    No. Each wedding keeps the same sheet link. Syncing updates the data in place.
+  </Accordion>
+  <Accordion title="How long does a sync take?">
+    Usually a few minutes. It depends on the size of the guest list and how many documents guests sent. You can leave the screen while it runs.
+  </Accordion>
+  <Accordion title="Can my team members get the sheet?">
+    Yes. Team members receive the link on WhatsApp when they're added, if the sheet already exists. You can also forward the link to them.
+  </Accordion>
+  <Accordion title="Why are there separate columns for each group?">
+    Each guest group gets its own column after **Groups -->**, so you can filter the sheet to one group — for example, everyone in "Bride's family".
+  </Accordion>
+  <Accordion title="What's the difference between the Google Sheet and Google Drive sync?">
+    The Google Sheet holds the data — names, RSVPs, and the details read from tickets and ID cards. Google Drive sync copies the original files (PDFs and images) guests sent.
+  </Accordion>
+  <Accordion title="Can changes in the sheet flow back into Weddingkart?">
+    No. The sheet is one-way, from Weddingkart to Google Sheets. To change guest data, edit it in the app and sync again.
+  </Accordion>
+  <Accordion title="Does syncing use credits?">
+    No. Syncing to Google Sheets or Google Drive doesn't use credits.
+  </Accordion>
+</AccordionGroup>
