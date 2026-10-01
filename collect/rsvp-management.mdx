@@ -17,6 +17,8 @@ The guest taps once. Weddingkart records the response and headcount immediately.
 
 Some ready-made RSVP templates use a shorter pair of buttons instead — **Attending** and **Unable to Attend**. With those, **Attending** is recorded as 1 person.
 
+Sending from [your own WhatsApp number](/account/own-whatsapp-number) with your own templates? Your buttons can say anything — **I Will Attend**, **Not Sure Yet**, **Sorry I Can't Attend** — as long as you tell Weddingkart what each one means. See [Use your own RSVP templates](#use-your-own-rsvp-templates).
+
 The number on the button is the guest's **total party size, including themselves**. A guest who taps **Attending - 3 People** is recorded as attending with a headcount of 3. **Not Attending** always records a headcount of 0.
 
 A few more things happen behind the scenes when a guest taps:
@@ -24,6 +26,30 @@ A few more things happen behind the scenes when a guest taps:
 - **The tap shows up in your inbox.** The button the guest tapped (for example, "Attending - 2 People") appears in their [Two-Way Chat](/collect/two-way-chat) conversation as their message, so you can see it in context.
 - **The response is tied to the message they answered.** Weddingkart records the RSVP against the guest and wedding that the RSVP message was sent for. If the same person is a guest at two weddings you manage, each wedding keeps its own answer.
 - **The change is logged.** Every RSVP change — including a guest changing their mind — appears in the wedding's **Activity** feed, for example "confirmed for 3 guests" or "declined".
+
+## Use your own RSVP templates
+
+If your wedding sends from [your own WhatsApp number](/account/own-whatsapp-number), you can use RSVP templates you made yourself — in Weddingkart or directly in Meta Business Manager. WhatsApp only tells Weddingkart the text of the button a guest tapped, not what it means, so each button needs to be set up once. Until it is, taps on that template are **not** recorded as RSVPs and no automatic reply is sent.
+
+<Steps>
+  <Step title="Find the template">
+    In **Announcements**, start a new announcement and open the template list. A template whose buttons aren't set up shows **Buttons not set up. Taps won't be recorded as RSVPs.**
+  </Step>
+  <Step title="Set up the buttons">
+    Tap **Set up buttons**. For each button, choose what happens when a guest taps it: **RSVP: Yes**, **RSVP: Maybe**, **RSVP: No**, **RSVP: number of people**, **Opt out (stop messages)**, or **Just show it in chat**. Weddingkart pre-fills a suggestion from the button text (marked **Suggested**) — check each one.
+  </Step>
+  <Step title="Save">
+    Tap **Save buttons**. Every button needs an answer first — until then you'll see **Choose what each button does to save.** The template now shows **RSVP tracking on**, with what each button does.
+  </Step>
+</Steps>
+
+Good to know:
+
+- **No re-approval.** What a button means is stored only in Weddingkart — Meta never sees it — so setting up or changing buttons doesn't send the template back to Meta for review. You can change it any time.
+- **You'll be reminded before sending.** If you pick a template whose buttons aren't set up, Weddingkart asks **Set up these buttons first?** before it goes out. Choose **Set up now**, or **Send anyway** to send it as it is.
+- **Guests who answered early still count.** If guests tapped a button before you set it up, their answers are recorded as RSVPs the moment you save. They don't get an automatic reply for those earlier taps, because they answered before the buttons were set up.
+- **Stop buttons stay stop buttons.** A button that reads like an opt-out — **STOP**, **Unsubscribe**, **Opt out** — can only be set to **Opt out (stop messages)**, so a guest asking not to be messaged is always honoured.
+- **Templates you create in Weddingkart** ask what each button does while you're creating them, so they're ready to use straight away.
 
 ## Why buttons outperform forms
 
@@ -61,7 +87,7 @@ WhatsApp reply buttons remove every one of those steps. Everything happens insid
     Go to the **Wedding Homepage** and tap **RSVP** in the progress overview.
   </Step>
   <Step title="Review response counts">
-    The RSVP screen shows three counts: **Yes**, **No**, and **Pending**. Tap any of them to see the guest list, split into **Attending**, **Declined**, and **Pending** tabs. Counts update in real time as guests tap their buttons.
+    The RSVP screen shows the counts: **Yes**, **Maybe**, **No**, and **Pending**. Tap any of them to see the guest list, split into **Attending**, **Declined**, and **Pending** tabs. Counts update in real time as guests tap their buttons.
   </Step>
   <Step title="Export to a spreadsheet">
     Once responses start coming in, tap **Export** to open **Export Guest Data**, then tap **Sync Now** under Google Sheets. The sheet includes guest name, response, headcount, and response date. Already keeping your own guest list in Excel? Use **Push to Your Excel** there to upload it and download a copy with the Weddingkart data filled in.
@@ -76,9 +102,10 @@ The RSVP screen also shows a **Recent Responses** list (tap **See all N response
 | --- | --- |
 | **RSVP Live** / **RSVP Not Live** | **RSVP Live** appears once your RSVP message has been sent to at least 10% of your guest list. |
 | **N/M asked** | How many guests have been sent at least one RSVP announcement (N), out of your total guest list (M). |
-| **% response rate** | Guests who answered Yes or No, divided by guests asked. |
+| **% response rate** | Guests who answered Yes, Maybe or No, divided by guests asked. |
 | **Yes** / **No** | The number of **guests** (contacts on your list) who answered — not the number of people. A guest who tapped **Attending - 4 People** counts as 1 in **Yes**. |
-| **Pending** | Every guest who hasn't answered Yes or No — including guests you haven't sent the RSVP to yet. |
+| **Maybe** | Guests who tapped a button set up as **RSVP: Maybe** (for example **Not Sure Yet**), or told the WhatsApp Bot they're not sure yet. A Maybe never adds to the headcount, and a later Yes or No replaces it. |
+| **Pending** | Every guest who hasn't answered at all — including guests you haven't sent the RSVP to yet. |
 
 Each guest in the **Attending** tab shows their party size (for example, "4 guests"). For the total number of people coming, sync to Google Sheets: the **Summary** tab shows **Total Guests Attending (with plus ones)**, which adds up the headcount of every guest who answered Yes. The **RSVP** tab has **RSVP**, **RSVP No of Guests**, and **RSVP Last Updated** columns for each guest.
 
@@ -107,7 +134,7 @@ Some guests reply in words — "Yes, we'll be 3 of us" — instead of tapping a 
 - Update their RSVP yourself (see [Changing a response](#changing-a-response)), or
 - Reply in the chat and ask them to tap one of the buttons on the RSVP message.
 
-If the **WhatsApp Bot** is switched on for your wedding, it reads replies like this and records the RSVP and headcount for you. When a guest sounds unsure ("probably 4 of us"), the bot keeps them in **Pending** rather than marking them as Yes. Guests on a [voice call announcement](/announcements/voice-announcements) can also give their RSVP on the call, and it's recorded the same way.
+If the **WhatsApp Bot** is switched on for your wedding, it reads replies like this and records the RSVP and headcount for you. When a guest says they're not sure yet, the bot records them as **Maybe** rather than marking them as Yes. Guests on a [voice call announcement](/announcements/voice-announcements) can also give their RSVP on the call, and it's recorded the same way.
 
 ## Send reminders
 
@@ -115,7 +142,9 @@ To follow up with guests who haven't responded, resend the RSVP announcement. In
 
 The **RSVP: Not Responded** group updates in real time — the moment a guest responds, they leave the group automatically.
 
-Keep in mind that **RSVP: Not Responded** contains *every* guest who hasn't answered Yes or No — including guests who were never sent an RSVP message and guests who said they're unsure. That makes it a safe audience for a reminder: nobody who has already answered is included.
+Keep in mind that **RSVP: Not Responded** contains *every* guest who hasn't answered at all — including guests who were never sent an RSVP message. That makes it a safe audience for a reminder: nobody who has already answered is included.
+
+Guests who answered **Maybe** are in their own group, **RSVP: Maybe** — it appears once at least one guest has said maybe. Send them a gentle nudge closer to the date.
 
 Two sister groups are created automatically too: **RSVP: Attending** and **RSVP: Not Attending**. Use **RSVP: Attending** to send event-day details, venue directions, or travel requests only to guests who are coming.
 
@@ -125,14 +154,16 @@ Two sister groups are created automatically too: **RSVP: Attending** and **RSVP:
 
 ## Customise the automatic replies
 
-On the RSVP screen, tap **Auto Replies** to change what guests get back after they tap a button. Accepting and declining guests are configured separately on the **Accept Reply** and **Decline Reply** tabs: for each, you can turn the reply on or off, choose whether it includes a text message and an image, edit the message, and upload a custom image instead of the default. Tap **Save** to apply, or **Reset** to go back to the default.
+On the RSVP screen, tap **Auto Replies** to change what guests get back after they tap a button. Accepting, declining and undecided guests are configured separately on the **Accept**, **Decline** and **Maybe** tabs: for each, you can turn the reply on or off, choose whether it includes a text message and an image, edit the message, and upload a custom image instead of the default. Tap **Save** to apply, or **Reset** to go back to the default.
 
 Details worth knowing:
 
+- **Maybe replies.** The **Maybe** tab works like the other two; its switch is **Reply when a guest taps Maybe**. It only matters for templates with a button set up as **RSVP: Maybe** (see [Use your own RSVP templates](#use-your-own-rsvp-templates)) and for guests who tell the WhatsApp Bot they're not sure yet.
+- **No Weddingkart label.** RSVP replies go out exactly as written — they don't carry a "Sent automatically by Weddingkart" line.
 - **Turning a reply off.** Switch off **Send an automated reply** and that side sends nothing ("When off, guests get no reply to their RSVP."). If you keep the reply on but turn off both **Include a text message** and **Include an image**, you'll see **Both text and image are off — no reply will be sent.**
 - **Personalise with variables.** Tap a chip under **Smart Variables (Click to Insert)** to add it to your message. **GUEST_NAME** becomes the guest's name as it appears in your guest list. **NUM_GUESTS** becomes the party size from their RSVP — it's only meaningful on the **Accept Reply** tab, and the **Decline Reply** preview shows it as 0.
 - **Preview.** The WhatsApp-style **Preview** updates as you type, so you can check exactly what guests will see.
-- **The default replies.** Unless you write your own, an accepting guest gets a thank-you mentioning the couple's names. If they said more than 1 person, it adds that you're excited to celebrate with them and the number of guests in total. A declining guest gets a short "sorry you can't make it" note. Each default comes with a default image.
+- **The default replies.** Unless you write your own, an accepting guest gets a thank-you mentioning the couple's names. If they said more than 1 person, it adds that you're excited to celebrate with them and the number of guests in total. A declining guest gets a short "sorry you can't make it" note. Each of those comes with a default image. A guest who says maybe gets a short "no worries, we've noted you as a maybe" note with no image — add one on the **Maybe** tab if you like.
 - **Reset.** **Reset** asks you to confirm — "Are you sure you want to reset Accept RSVP settings to default? This will affect both custom image and custom message." Resetting one tab doesn't touch the other.
 - **Paused weddings.** If your wedding is no longer live, a guest's tap is still recorded, but no automatic reply is sent.
 
@@ -184,6 +215,12 @@ Details worth knowing:
   </Accordion>
   <Accordion title="Does changing a guest's RSVP myself send them a message?">
     No. Only a guest's own button tap triggers the automatic reply.
+  </Accordion>
+  <Accordion title="My template's buttons say 'I Will Attend' and 'Not Sure Yet'. Will RSVPs be tracked?">
+    Yes, once you set the buttons up. Templates you made yourself — in Weddingkart or in Meta Business Manager — need each button matched to an answer once. See [Use your own RSVP templates](#use-your-own-rsvp-templates). It doesn't need Meta's approval again.
+  </Accordion>
+  <Accordion title="A guest tapped my button before I set it up. Is their answer lost?">
+    No. When you save the button setup, earlier taps on that template are recorded as RSVPs. Those guests don't get an automatic reply for the earlier tap.
   </Accordion>
   <Accordion title="Can I stop the reply for declines but keep it for acceptances?">
     Yes. Accept and decline replies are set separately. Open **Auto Replies**, go to the **Decline Reply** tab, and switch off **Send an automated reply**.
