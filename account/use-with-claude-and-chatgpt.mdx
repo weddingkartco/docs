@@ -141,25 +141,52 @@ Then run `/mcp` inside Claude Code, choose **weddingkart**, and pick **Authentic
 ## Set up in ChatGPT
 
 <Steps>
-  <Step title="Open Apps & Connectors">
-    In ChatGPT, open **Settings**, then **Apps & Connectors**.
+  <Step title="Open Plugins">
+    In ChatGPT, open **Plugins** in the left sidebar. Click **Add** (top right), then **Create custom MCP server**.
+    <Frame>
+      <img src="/images/ai-setup/chatgpt-1-add.webp" alt="ChatGPT Plugins page with Add open and Create custom MCP server highlighted" />
+    </Frame>
   </Step>
-  <Step title="Turn on Developer mode">
-    Open **Advanced settings** and turn **Developer mode** on.
+  <Step title="Fill in the connector">
+    Enter the name **Weddingkart** and the URL `https://mcp.weddingkart.co/mcp`. Keep **OAuth** as the authentication. Tick **I understand and want to continue** and click **Create as a plugin**.
+    <Frame>
+      <img src="/images/ai-setup/chatgpt-2-form.webp" alt="Create custom MCP server form filled in with Weddingkart and the connector URL" />
+    </Frame>
   </Step>
-  <Step title="Create the connector">
-    Click **Create**. Enter the name **Weddingkart**, the URL `https://mcp.weddingkart.co/mcp`, and choose **OAuth** as the authentication.
+  <Step title="Enter your mobile number">
+    The Weddingkart sign-in window opens. Enter your mobile number and click **Send OTP**.
+    <Frame>
+      <img src="/images/ai-setup/chatgpt-3-phone.webp" alt="Weddingkart sign-in page for ChatGPT" />
+    </Frame>
   </Step>
-  <Step title="Sign in">
-    The Weddingkart sign-in page opens. Enter your mobile number, click **Send OTP**, enter the OTP you receive on WhatsApp or SMS, and click **Verify**.
+  <Step title="Enter the OTP">
+    Enter the OTP you receive on WhatsApp or SMS and click **Verify**.
+    <Frame>
+      <img src="/images/ai-setup/chatgpt-4-otp.webp" alt="Weddingkart OTP page for ChatGPT" />
+    </Frame>
   </Step>
   <Step title="Allow">
-    Review what the connector can and can't do, and click **Allow**. You can now ask ChatGPT about your weddings.
+    Review what the connector can and can't do, and click **Allow**.
+    <Frame>
+      <img src="/images/ai-setup/chatgpt-5-allow.webp" alt="Weddingkart permission page for ChatGPT" />
+    </Frame>
+  </Step>
+  <Step title="Pick Weddingkart in a chat">
+    In a new chat, click **+** and pick **Weddingkart**.
+    <Frame>
+      <img src="/images/ai-setup/chatgpt-6-menu.webp" alt="ChatGPT composer menu with Weddingkart highlighted" />
+    </Frame>
+  </Step>
+  <Step title="Ask">
+    Ask about your guests, RSVPs, events or travel. ChatGPT answers from your live wedding data.
+    <Frame>
+      <img src="/images/ai-setup/chatgpt-7-answer.webp" alt="ChatGPT answering a guest count and RSVP question from a Weddingkart test wedding" />
+    </Frame>
   </Step>
 </Steps>
 
 <Note>
-Whether **Developer mode** is available depends on your ChatGPT plan and workspace. If you don't see it, your plan or your workspace admin may not allow custom connectors.
+We tested this on ChatGPT Plus. If you don't see **Create custom MCP server** under **Plugins → Add**, turn on **Developer mode** in **Settings → Plugins**. If that is missing too, your plan or workspace admin doesn't allow custom connectors.
 </Note>
 
 <Card title="Stuck? Chat with us on WhatsApp" icon="whatsapp" href="https://wa.me/919217610045">
@@ -201,7 +228,7 @@ Once connected, ask in plain English. Name the wedding if you are on more than o
 ## Disconnect
 
 - **Claude:** open **Customize → Connectors** and remove the **Weddingkart** connector.
-- **ChatGPT:** open **Settings → Apps & Connectors** and remove the **Weddingkart** connector.
+- **ChatGPT:** open **Settings → Plugins**, click **Weddingkart**, then **Uninstall**.
 - **To revoke every connection at once** (for example, if you lost a device), contact Weddingkart support.
 
 ## Troubleshooting
