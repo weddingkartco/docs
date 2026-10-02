@@ -1,0 +1,210 @@
+---
+title: "Use Weddingkart in Claude and ChatGPT"
+description: Connect the Weddingkart connector to Claude or ChatGPT and ask questions about your weddings in plain English
+---
+
+You can use Weddingkart from inside **Claude** and **ChatGPT**. You add the **Weddingkart connector** to your AI assistant once and sign in with your phone number and an OTP. After that, you can ask the assistant questions about your weddings in plain English, such as "Who hasn't RSVP'd for the sangeet?" or "How many guests land in Udaipur on the 12th?". The assistant reads the answer from your live Weddingkart data.
+
+The connector is an **MCP server**. MCP (Model Context Protocol) is the standard way AI assistants such as Claude and ChatGPT connect to outside apps. You don't need to know anything about MCP to use it: you paste one web address into your assistant's settings, sign in, and click **Allow**.
+
+<Note>
+The connector is **read-only**. It can look things up in your weddings, but it can't send messages, change guests, change RSVPs, spend credits, or make payments. For all of those, use the Weddingkart app.
+</Note>
+
+## The connector URL
+
+Every setup below asks for the same address:
+
+```
+https://mcp.weddingkart.co/mcp
+```
+
+<Warning>
+The `/mcp` at the end is required. If you enter `https://mcp.weddingkart.co` without `/mcp`, Claude shows **"Couldn't check the server"** or a **404** error. Copy the full address above.
+</Warning>
+
+## What you can ask
+
+The connector can look up the following for every wedding you are on:
+
+- **Your weddings** — a list of the weddings you are on, and your role on each one (for example Admin, Member, or View Only).
+- **Guest totals and RSVP split** — how many guests a wedding has, and how many have said yes, no, maybe, or haven't answered.
+- **Guest lists with filters** — list guests and filter them by RSVP (yes, no, not answered, maybe), by group, by name, by whether they have uploaded a travel ticket, and by whether they have uploaded an ID card. Guest phone numbers are included **only if you ask for them**.
+- **Groups** — the wedding's guest groups and how many guests are in each.
+- **Events** — the wedding's events (for example Haldi, Mehendi, Sangeet, Wedding, Reception) and who can see each event.
+- **Guests of one event** — the guests invited to a particular event.
+- **RSVP change history** — who changed their RSVP, what it changed from and to, when, and how the change was made: through the WhatsApp bot, in the app, or on a voice call.
+- **Travel arrivals and departures** — who arrives or leaves on a given date, grouped by airport or railway station.
+- **How-to answers** — how to do something in Weddingkart, answered from Weddingkart's approved help content.
+- **Current prices for that wedding** — the assistant fetches the current price of a feature for that wedding live from Weddingkart at the moment you ask. Prices are never taken from these docs. To compare plans, see [weddingkart.co/pricing](https://weddingkart.co/pricing).
+
+## What it can't do
+
+The connector cannot change anything in Weddingkart. It **cannot**:
+
+- Send WhatsApp messages or announcements to guests
+- Add, edit, or delete guests
+- Change anyone's RSVP
+- Spend credits
+- Make payments
+
+For all of these, open the Weddingkart app.
+
+## Who can see what
+
+The connector shows you exactly what the Weddingkart app would show you, and nothing more:
+
+| Your role on the wedding | What the connector shows |
+|---|---|
+| **Admin** | Everything an Admin sees in the app |
+| **Member** | Everything a Member sees in the app |
+| **View Only** | Everything View Only sees in the app (read-only, like the app) |
+| **On-ground staff** | Only the how-to and help answers — no guest or wedding data |
+| **Guest** | Nothing |
+
+- **You only see weddings you are on.** If you aren't on a wedding's team, the connector can't read it. To get access, ask an Admin to add you — see [Team Collaboration](/account/team-collaboration).
+- If you're removed from a wedding in the app, the connector stops showing that wedding too.
+
+## Set up in Claude
+
+<Steps>
+  <Step title="Open Connectors">
+    In Claude, open **Settings**, then **Connectors**.
+  </Step>
+  <Step title="Add a custom connector">
+    Click **Add custom connector**. Enter the name **WeddingKart** and the URL `https://mcp.weddingkart.co/mcp`.
+  </Step>
+  <Step title="Keep the defaults">
+    Leave **Sign in now** and **Register automatically** as they are (both are on by default). Click **Add**.
+  </Step>
+  <Step title="Connect">
+    Click **Connect**. The Weddingkart sign-in page opens.
+  </Step>
+  <Step title="Enter your mobile number">
+    Enter the mobile number you use with Weddingkart. India (+91) is selected by default. For a number from another country, pick the country from the flag menu, or type the `+` country code. Click **Send OTP**.
+  </Step>
+  <Step title="Enter the OTP">
+    The OTP is sent to you on WhatsApp or by SMS. Enter it and click **Verify**.
+  </Step>
+  <Step title="Review and allow">
+    The next screen lists what the connector can and can't do. Read it and click **Allow**. You're returned to Claude, and the connector shows as connected.
+  </Step>
+  <Step title="Try it">
+    Start a new chat. Turn **WeddingKart** on in the tools menu, then ask **"list my weddings"**. Claude replies with the weddings you are on and your role on each.
+  </Step>
+</Steps>
+
+### Set up in Claude Code (for developers)
+
+If you use Claude Code in a terminal, add the connector with one command:
+
+```bash
+claude mcp add --transport http weddingkart https://mcp.weddingkart.co/mcp
+```
+
+Then run `/mcp` inside Claude Code, choose **weddingkart**, and pick **Authenticate**. Your browser opens the Weddingkart sign-in page. Sign in with your phone number and OTP, and click **Allow**.
+
+## Set up in ChatGPT
+
+<Steps>
+  <Step title="Open Apps & Connectors">
+    In ChatGPT, open **Settings**, then **Apps & Connectors**.
+  </Step>
+  <Step title="Turn on Developer mode">
+    Open **Advanced settings** and turn **Developer mode** on.
+  </Step>
+  <Step title="Create the connector">
+    Click **Create**. Enter the name **WeddingKart**, the URL `https://mcp.weddingkart.co/mcp`, and choose **OAuth** as the authentication.
+  </Step>
+  <Step title="Sign in">
+    The Weddingkart sign-in page opens. Enter your mobile number, click **Send OTP**, enter the OTP you receive on WhatsApp or SMS, and click **Verify**.
+  </Step>
+  <Step title="Allow">
+    Review what the connector can and can't do, and click **Allow**. You can now ask ChatGPT about your weddings.
+  </Step>
+</Steps>
+
+<Note>
+Whether **Developer mode** is available depends on your ChatGPT plan and workspace. If you don't see it, your plan or your workspace admin may not allow custom connectors.
+</Note>
+
+## Sign-in tips
+
+- **Typed the wrong number?** Tap **Change number** on the OTP screen. Your number stays filled in so you can correct it.
+- **Didn't get the OTP?** Tap **Resend OTP**. Check both WhatsApp and SMS.
+- **Entered the wrong OTP?** Just type it again.
+- **Indian numbers** must be 10 digits.
+- **Still stuck?** Tap **Facing trouble? Chat with us** on the sign-in page to reach Weddingkart support on WhatsApp.
+
+## Example questions
+
+Once connected, ask in plain English. Name the wedding if you are on more than one. Some ideas:
+
+- "Who hasn't RSVP'd for the sangeet?"
+- "How many guests land in Udaipur on the 12th, by airport?"
+- "Which guests changed their RSVP to no this week?"
+- "How many people are coming from the bride's side?"
+- "Which events is the Mehta family invited to?"
+- "Which guests still haven't uploaded their ID card?"
+- "Who is leaving from Jaipur station on the 14th?"
+- "Give me the phone numbers of guests who haven't answered." (Phone numbers are shared only when you ask, like here.)
+- "How do I send an RSVP reminder?"
+- "What does an AI call cost for this wedding?" (Answered live from Weddingkart for that wedding, not from these docs.)
+
+## Privacy and security
+
+- **Sign-in is secure.** The connector uses OAuth, the standard sign-in method for connecting apps, with your phone number and an OTP.
+- **Access expires.** Each access token lasts 1 hour and is refreshed automatically for up to 30 days. After that, you sign in again.
+- **You can revoke access** at any time — see [Disconnect](#disconnect).
+- **Every request is logged** by Weddingkart.
+- **Daily data limits** apply to each connection, to protect your guests' data.
+- **Guest phone numbers** are shared with the AI assistant only when you ask for them. Once shared, they are handled under that assistant's own privacy terms (Anthropic for Claude, OpenAI for ChatGPT).
+
+## Disconnect
+
+- **Claude:** open **Settings → Connectors** and remove the **WeddingKart** connector.
+- **ChatGPT:** open **Settings → Apps & Connectors** and remove the **WeddingKart** connector.
+- **To revoke every connection at once** (for example, if you lost a device), contact Weddingkart support.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Couldn't check the server / 404">
+    The connector URL is missing `/mcp` at the end. Remove the connector and add it again with the full address `https://mcp.weddingkart.co/mcp`.
+  </Accordion>
+  <Accordion title="&quot;You don't have access to wedding N&quot;">
+    You aren't on that wedding's team, so the connector can't read it. Ask one of the wedding's Admins to add you in the app. See [Team Collaboration](/account/team-collaboration).
+  </Accordion>
+  <Accordion title="&quot;Can't see this in the WeddingKart app either&quot;">
+    Your role on the wedding doesn't include that screen in the app, so the connector won't show it either. For example, on-ground staff only get how-to answers. Ask an Admin if you need a different access role.
+  </Accordion>
+  <Accordion title="&quot;Daily limit reached&quot;">
+    Your connection has hit its daily data limit. Ask a narrower question (for example, one event or one date instead of the whole guest list), or try again tomorrow.
+  </Accordion>
+  <Accordion title="&quot;Couldn't read that right now&quot;">
+    A temporary problem. Wait a moment and ask again.
+  </Accordion>
+  <Accordion title="Sign-in or OTP problems">
+    See [Sign-in tips](#sign-in-tips). If you still can't sign in, tap **Facing trouble? Chat with us** on the sign-in page.
+  </Accordion>
+</AccordionGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Is it safe?">
+    Yes. You sign in with your own phone number and OTP through OAuth, and you approve access by clicking **Allow**. The connector is read-only, shows only the weddings you are on, and shows only what your role can see in the app. Access tokens expire and refresh automatically, every request is logged, and you can disconnect at any time. Guest phone numbers are shared with the assistant only when you ask for them.
+  </Accordion>
+  <Accordion title="Does it cost extra?">
+    The Weddingkart connector is included with Weddingkart. Your Claude or ChatGPT subscription is separate and is paid to Anthropic or OpenAI. For Weddingkart plans, see [weddingkart.co/pricing](https://weddingkart.co/pricing).
+  </Accordion>
+  <Accordion title="Can it message my guests?">
+    No. The connector can't send WhatsApp messages or announcements, and it can't change guests or RSVPs. To message guests, use the Weddingkart app.
+  </Accordion>
+  <Accordion title="Which AI assistants does it work with?">
+    Claude (including Claude Code) and ChatGPT today. It also works with any other AI assistant that supports MCP connectors with OAuth sign-in — use the same URL, `https://mcp.weddingkart.co/mcp`.
+  </Accordion>
+  <Accordion title="Do I need a separate Weddingkart account?">
+    No. Sign in with the same phone number you use in the Weddingkart app. The connector shows the same weddings you see in the app.
+  </Accordion>
+</AccordionGroup>

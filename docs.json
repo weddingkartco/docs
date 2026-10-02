@@ -66,6 +66,7 @@
               "account/own-whatsapp-number",
               "account/own-number-access",
               "account/google-sheets-integration",
+              "account/use-with-claude-and-chatgpt",
               "account/payments-credits",
               "account/referral-program"
             ]
