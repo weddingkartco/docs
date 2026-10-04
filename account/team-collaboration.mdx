@@ -7,7 +7,7 @@ Team collaboration lets multiple people — event managers, coordinators, the br
 
 ## What team members can do
 
-When you add a team member, you choose their **Access Role**. Admins and Members can:
+When an Admin adds a team member, they choose that person's **Access Role**. Admins and Members can:
 
 - Manage the guest list
 - Send announcements and WhatsApp messages
@@ -20,7 +20,7 @@ When you add a team member, you choose their **Access Role**. Admins and Members
 | Access Role | What they can do |
 |---|---|
 | **Admin** | Full access to every feature, including deleting the wedding |
-| **Member** | Manage guests, RSVPs, travel, IDs, and send messages — everything except a few admin-only actions such as deleting the wedding |
+| **Member** | Manage guests, RSVPs, travel, IDs, and send messages — everything except admin-only actions such as managing the team or deleting the wedding |
 | **View Only** | See the same screens as the rest of the team, but cannot add, edit, delete, or send anything |
 
 <Note>
@@ -41,15 +41,15 @@ The table below lists what each access role can do on a wedding.
 | Create or edit events | ✓ | ✓ | — |
 | Tap **Sync Now** for Google Sheets, or sync documents to Google Drive | ✓ | ✓ | — |
 | Pay for a plan or top up credits | ✓ | ✓ | — |
-| Add, edit, or remove team members | ✓ | ✓ | — |
+| Add, edit, or remove team members | ✓ | — | — |
 | Change the **WhatsApp Bot** settings and knowledge | ✓ | — | — |
 | Extend the wedding's dates | ✓ | — | — |
 | Delete the wedding | ✓ | — | — |
 
 A few more things to know:
 
-- **Members can manage the team.** A Member can add people, change anyone's access role, and remove people — the same as an Admin. Only give Member access to people you trust to manage the team.
-- **View Only is enforced when someone tries to change something.** A View Only person sees the same buttons as everyone else, but any action that adds, edits, deletes, or sends is refused. They may see the message **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
+- **Only Admins manage the team.** Only an Admin can add people, change an access role, or remove someone. Members and View Only people see the team list but can't change it. Nobody can change their own access role, so nobody can promote themselves.
+- **View Only people can't change anything.** In the web app, the buttons that add, edit, delete, or send are hidden for them. If an action still gets through to the server, it is refused, and they may see **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
 - **Moving referral credits into a wedding** depends on who created the wedding, not on access role. Only the person who created the wedding can transfer their personal referral credits into it. See [Referral Program](/account/referral-program).
 - **Access to your own WhatsApp number is separate.** Your role on a wedding doesn't let someone send from, or create templates on, a WhatsApp Business number you connected. That's a separate grant, covered in [Share your number with your team](/account/own-number-access).
 
@@ -76,7 +76,7 @@ A few more things to know:
   </Step>
 </Steps>
 
-You can change a team member's role or remove them later from the same **Teams Management** screen.
+You can change a team member's role or remove them later from the same **Teams Management** screen. Only an Admin sees these controls.
 
 ### The fields on the invite screen
 
@@ -100,11 +100,22 @@ Tap a person's card in **Teams Management** to open their details.
 - **To change their name, wedding role, or access role:** make the change and tap **Update**. You see **"🎉 Team Member Updated!"**.
 - **To change their phone number:** you can't edit the phone number of an existing team member. Remove them and add them again with the new number.
 - **To remove them:** tap **Delete**, then confirm **Yes, delete** in the **Delete Member?** dialog. They lose access to the wedding straight away. You see **"🎉 Team Member Deleted!"**.
+- **To change your own access role:** you can't. Ask another Admin to change it for you.
 - **To leave a wedding yourself:** open your own card and tap **Delete**. The dialog warns **"You will lose access to this wedding. Are you sure?"** After you confirm, the app returns you to the home screen and the wedding disappears from your list.
 
 <Warning>
-A wedding must always have at least one Admin. If you try to remove the only Admin, you see **"Cannot delete the only admin of the wedding"**. Make someone else an Admin first, then remove the original Admin.
+A wedding must always have at least one Admin. If you try to remove the only Admin, you see **"Cannot delete the only admin of the wedding"**, and changing the only Admin to another role is refused too (**"Cannot demote the only admin of the wedding"**). Make someone else an Admin first, then change or remove the original Admin.
 </Warning>
+
+## Field staff (web)
+
+Hamper runners, reception desk staff, and pickup drivers don't need an app login. In the web app, open **Team** and tap **Field staff**, then **Add field staff** to make a link for one person.
+
+- **They open the link on their phone.** No app and no team membership is needed. The first time on a phone, they confirm with a one-time code (OTP); after that the same phone stays signed in.
+- **Pick the kind of helper.** The options are **Hamper runner** (gives out hampers room by room), **Reception desk**, and **Pickup driver** (sees only their own pickups).
+- **Links are copied, not sent.** Weddingkart doesn't message the link for you. Copy it and share it yourself.
+- **Links end on their own.** A link stops working when the wedding is over, or as soon as you tap **Remove** (or **Remove all field staff**). Each card shows whether the link is Active, Removed, or Ended, and how many phones have used it.
+- **Only the wedding's owner can add or remove field staff.** Other team members see **Only the wedding owner can add field staff** and should ask the person who created the wedding.
 
 ## Real-time collaboration
 
@@ -151,8 +162,8 @@ When they open the link, Weddingkart takes them straight to that screen in the w
 - **Add team members early.** Set up your team at the start of wedding setup so everyone has access before activity begins.
 - **Include family stakeholders if needed.** If the bride, groom, or a family point of contact wants to monitor responses, add them as a team member.
 - **Give the least access that works.** Make people who only need to watch progress **View Only**, so only the people running the wedding can message guests.
-- **Keep two Admins.** A second Admin can still extend the wedding or change the WhatsApp Bot if the first Admin is unavailable.
-- **Divide responsibilities.** Admins and Members can all send messages and edit guests, so agree on task ownership — for example, designate one person to monitor guest chat and another to track RSVPs.
+- **Keep two Admins.** Only Admins can manage the team, extend the wedding, or change the WhatsApp Bot, so a second Admin covers you if the first is unavailable.
+- **Divide responsibilities.** Admins and Members can send messages and edit guests, so agree on task ownership — for example, designate one person to monitor guest chat and another to track RSVPs.
 
 ## Common questions
 
@@ -167,10 +178,10 @@ When they open the link, Weddingkart takes them straight to that screen in the w
     **Wedding Role** (Event Manager, Bride, Groom, Relative, Weddingkart Team, Others) describes who the person is. **Access Role** (Admin, Member, View Only) decides what they can do. Only the access role affects permissions.
   </Accordion>
   <Accordion title="Can a Member remove an Admin?">
-    Yes. Members can add, edit, and remove anyone on the team, including Admins, as long as at least one Admin stays on the wedding.
+    No. Only Admins can add, edit, or remove team members. Even an Admin can't remove or demote the last Admin on a wedding.
   </Accordion>
   <Accordion title="Can a Member delete the wedding?">
-    No. Only Admins can delete the wedding, extend its dates, or change the WhatsApp Bot.
+    No. Only Admins can manage the team, delete the wedding, extend its dates, or change the WhatsApp Bot.
   </Accordion>
   <Accordion title="Can View Only people see guest phone numbers and chats?">
     Yes. View Only people see the same screens as Admins and Members, including the guest list and messages. They just can't change or send anything.
