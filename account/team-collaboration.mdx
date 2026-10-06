@@ -7,7 +7,7 @@ Team collaboration lets multiple people — event managers, coordinators, the br
 
 ## What team members can do
 
-When an Admin adds a team member, they choose that person's **Access Role**. Admins and Members can:
+When an Admin adds a team member, they choose that person's job, which sets their **Access Role** (Admin, Member, or View Only). Admins and Members can:
 
 - Manage the guest list
 - Send announcements and WhatsApp messages
@@ -42,13 +42,13 @@ The table below lists what each access role can do on a wedding.
 | Tap **Sync Now** for Google Sheets, or sync documents to Google Drive | ✓ | ✓ | — |
 | Pay for a plan or top up credits | ✓ | ✓ | — |
 | Add, edit, or remove team members | ✓ | — | — |
-| Change the **WhatsApp Bot** settings and knowledge | ✓ | — | — |
+| Change the **WhatsApp Bot** settings and knowledge | ✓ | ✓ | — |
 | Extend the wedding's dates | ✓ | — | — |
 | Delete the wedding | ✓ | — | — |
 
 A few more things to know:
 
-- **Only Admins manage the team.** Only an Admin can add people, change an access role, or remove someone. Members and View Only people see the team list but can't change it. Nobody can change their own access role, so nobody can promote themselves.
+- **Only Admins manage the team.** Only an Admin can add people, change an access role, or remove someone. Members and View Only people see the team list but can't change it. If someone opens a screen their job doesn't cover, the app says they don't have access and to ask the wedding owner. Nobody can change their own access role, so nobody can promote themselves.
 - **View Only people can't change anything.** In the web app, the buttons that add, edit, delete, or send are hidden for them. If an action still gets through to the server, it is refused, and they may see **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
 - **Moving referral credits into a wedding** depends on who created the wedding, not on access role. Only the person who created the wedding can transfer their personal referral credits into it. See [Referral Program](/account/referral-program).
 - **Access to your own WhatsApp number is separate.** Your role on a wedding doesn't let someone send from, or create templates on, a WhatsApp Business number you connected. That's a separate grant, covered in [Share your number with your team](/account/own-number-access).
@@ -63,10 +63,13 @@ A few more things to know:
     Tap the **Add Team Member** button. The **Invite to team** screen opens.
   </Step>
   <Step title="Enter their details">
-    Enter the team member's **Name** and **Phone Number**, pick their **Wedding Role**, and choose an **Access Role** — Admin, Member, or View Only. You can type the number or pick it from your phone's contacts.
+    Enter the team member's **Name** and **Phone Number**, pick their **Wedding Role**, and then choose what they do under **What is their job?** — for example Co-planner, Family viewer, Comms manager, Inbox responder, or Travel desk (tap **More jobs** for others). You can pick more than one job. A live preview shows what they will and won't be able to do. You can type the number or pick it from your phone's contacts.
+  </Step>
+  <Step title="Set the options (optional)">
+    Under **Options** you can turn on **Show phone numbers** (otherwise guest numbers appear partly hidden), choose when access ends (**No end date**, **After the wedding**, or **On a date**), and set a **Daily credit limit** that stops this person sending more than that many credits a day.
   </Step>
   <Step title="Tap Save">
-    When the member is added, you see **"🎉 Team Member Created!"** and they appear in the team list.
+    When the member is added, you see **"🎉 Team Member Created!"** and they appear in the team list. If the WhatsApp invite couldn't be delivered, the app tells you the member was added but the invite wasn't sent, so you can share the app link with them yourself.
   </Step>
   <Step title="They receive a WhatsApp notification">
     The invited person receives a WhatsApp message informing them they've been added to the team. If the wedding's Google Sheet has been created, they also receive its link on WhatsApp.
@@ -80,14 +83,14 @@ You can change a team member's role or remove them later from the same **Teams M
 
 ### The fields on the invite screen
 
-All four fields are required.
+The name, phone number, wedding role, and at least one job are required.
 
 - **Name** — how the person appears in the team list.
 - **Phone Number** — the number they will log into Weddingkart with. The country code starts as India (+91); change it for a team member with a number from another country.
 - **Wedding Role** — who the person is to the wedding: **Event Manager**, **Bride**, **Groom**, **Relative**, **Weddingkart Team**, or **Others**. If you pick **Others**, a **Specify Role** field appears so you can type their role. The wedding role is a label only — it doesn't change what the person can do.
-- **Access Role** — **Admin**, **Member**, or **View Only**. This is what controls their permissions.
+- **Job** — what the person does, such as **Co-planner** or **Family viewer**. This is what controls their permissions, and you can change it later with **Change access** on the team list. Jobs that only look (for example **Family viewer**) give View Only access; the rest give Member access.
 
-If you tap **Save** without a wedding role, you see **"Please select a wedding role"**. Without an access role, you see **"Please select an access role"**.
+If you tap **Save** without a wedding role, you see **"Please select a wedding role"**. If no job is picked, you see **"Pick at least one job."**
 
 <Tip>
 You can add someone before they have ever used Weddingkart. As soon as they sign up with the phone number you entered, the wedding is waiting in their account.
@@ -113,6 +116,7 @@ Hamper runners, reception desk staff, and pickup drivers don't need an app login
 
 - **They open the link on their phone.** No app and no team membership is needed. The first time on a phone, they confirm with a one-time code (OTP); after that the same phone stays signed in.
 - **Pick the kind of helper.** The options are **Hamper runner** (gives out hampers room by room), **Reception desk**, and **Pickup driver** (sees only their own pickups).
+- **Hamper runners mark each family.** For every hamper a runner taps **Given**, or **Not delivered** and one reason (**Not in room**, **Family refused**, **Asked to come later**, or **Wrong room / can't find**). Families marked **Not delivered** wait under their own tab for another try. When the wedding has rooming, each family shows its room. The planner chooses whether a delivery photo is **Required**, **Optional** (the default), or **Not needed**.
 - **Links are copied, not sent.** Weddingkart doesn't message the link for you. Copy it and share it yourself.
 - **Links end on their own.** A link stops working when the wedding is over, or as soon as you tap **Remove** (or **Remove all field staff**). Each card shows whether the link is Active, Removed, or Ended, and how many phones have used it.
 - **Only the wedding's owner can add or remove field staff.** Other team members see **Only the wedding owner can add field staff** and should ask the person who created the wedding.
@@ -175,7 +179,7 @@ When they open the link, Weddingkart takes them straight to that screen in the w
     No. Adding team members doesn't use credits. Credits are only used when you message or call guests.
   </Accordion>
   <Accordion title="What's the difference between Wedding Role and Access Role?">
-    **Wedding Role** (Event Manager, Bride, Groom, Relative, Weddingkart Team, Others) describes who the person is. **Access Role** (Admin, Member, View Only) decides what they can do. Only the access role affects permissions.
+    **Wedding Role** (Event Manager, Bride, Groom, Relative, Weddingkart Team, Others) describes who the person is. **Job** (such as Co-planner or Family viewer) decides what they can do, and sets their access level (Admin, Member, or View Only). Only the job affects permissions.
   </Accordion>
   <Accordion title="Can a Member remove an Admin?">
     No. Only Admins can add, edit, or remove team members. Even an Admin can't remove or demote the last Admin on a wedding.
@@ -196,7 +200,7 @@ When they open the link, Weddingkart takes them straight to that screen in the w
     Not directly. Remove them and add them again with the new number.
   </Accordion>
   <Accordion title="How do I let family members, like the bride or my daughter, add guests?">
-    Add them as team members: **Team** → **Add Team Member**, enter their name and the phone number they'll log in with, pick a **Wedding Role** such as **Bride** or **Relative**, and choose **Member** as the **Access Role**. Members can add and edit guests. Choose **View Only** if they should only follow along.
+    Add them as team members: **Team** → **Add Team Member**, enter their name and the phone number they'll log in with, pick a **Wedding Role** such as **Bride** or **Relative**, and pick the **Co-planner** job. Co-planners can add and edit guests. Pick **Family viewer** if they should only follow along.
   </Accordion>
   <Accordion title="I added our planner as View Only and they say they can't see anything.">
     View Only people see the same screens as everyone else. If the wedding doesn't appear at all, they're almost always logged in with a different number from the one you added, or the country code is wrong. Compare the number on their card in **Teams Management** with the one they log in with. To fix a wrong number, remove them and add them again. If they can see the wedding but every change fails, that's View Only working as intended — change them to **Member**.
