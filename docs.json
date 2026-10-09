@@ -47,7 +47,9 @@
               "announcements/ai-announcements",
               "announcements/scheduling",
               "announcements/announcement-packs",
+              "announcements/personalized-cards",
               "announcements/own-templates",
+              "announcements/proven-templates",
               "announcements/voice-announcements"
             ]
           },
