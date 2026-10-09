@@ -25,7 +25,7 @@ An event's sending number is chosen when the event is created and **cannot be ch
 You can open the **WhatsApp Business** screen from any of these places:
 
 - The side menu: **Your WhatsApp numbers**.
-- The home screen card **Send from your own number**: *"Your guests currently see messages from WeddingKart. Connect your own WhatsApp number and they see your name instead."*
+- The home screen card **Send from your own number**: *"Your guests currently see messages from Weddingkart. Connect your own WhatsApp number and they see your name instead."*
 - If you have no events yet, the home screen tile **Already use WhatsApp Business?**
 - When creating an event, the **Send messages from** field. If you have not connected a number yet, the sheet shows **Send from your own business number** with a **Set it up** button.
 
@@ -56,7 +56,7 @@ Anyone with a Weddingkart login can connect a number. The person who connects it
 
 ## Choosing how to connect
 
-| | Keep using WhatsApp on this number (Coexistence) | Move this number to WeddingKart |
+| | Keep using WhatsApp on this number (Coexistence) | Move this number to Weddingkart |
 |---|---|---|
 | **Best for** | The number you already give out | A spare number |
 | **WhatsApp Business app on your phone** | Keeps working; your existing chats stay on the phone | Stops working — the number leaves the WhatsApp app entirely |
@@ -70,7 +70,7 @@ Anyone with a Weddingkart login can connect a number. The person who connects it
 
 **Keep using WhatsApp on this number (Coexistence)** is the recommended option. It needs a number already set up on the **WhatsApp Business** app (not the regular WhatsApp app), on a phone you actually carry and open. When you connect, WhatsApp sends across your recent chat history and contacts from that number once — this is required by WhatsApp, and Weddingkart does not store any of it. Other devices signed in to WhatsApp Web on that number will be unlinked and need reconnecting. When you reply to a guest from your phone, Weddingkart's assistant stays quiet for that guest for the next 30 minutes, so nobody gets two different answers.
 
-**Move this number to WeddingKart** takes the number off the WhatsApp and WhatsApp Business apps on your phone, and all guest messages arrive in Weddingkart instead. Use a dedicated number, not the one you use for everyday conversations.
+**Move this number to Weddingkart** takes the number off the WhatsApp and WhatsApp Business apps on your phone, and all guest messages arrive in Weddingkart instead. Use a dedicated number, not the one you use for everyday conversations.
 
 <Note>
 A number can only be connected to one platform at a time. If it is already connected to another tool, disconnect it there first.
@@ -89,8 +89,11 @@ These are the statuses you may see, and what to do:
 
 | Status | What it means | What to do |
 |---|---|---|
-| **Ready to send** | Everything is approved. | Nothing. |
-| **Payment method needed** | *"WhatsApp will not deliver any message from this number until a payment method is added to the business account it belongs to."* | Add a payment method in WhatsApp Manager. Sending starts working once it is added. |
+| **Ready to send** | WhatsApp checked the number recently and reported no problems. | Nothing. |
+| **Messages are delivering** | Messages sent from the number recently reached guests. Weddingkart is going by your deliveries here, not by a fresh check with WhatsApp. | Nothing. |
+| **No problems reported** | Nothing is known to be wrong, but the number has not sent recently and WhatsApp has not been checked recently. | Nothing. Send an announcement as usual. |
+| **WhatsApp payment issue** | WhatsApp refused messages from this number because of a billing problem on its WhatsApp account. Common causes: no card added, a declined card, or **business details missing in payment settings**. | Tap **Open billing in Meta** and fix what Meta shows there. The status clears by itself once a message is delivered. |
+| **WhatsApp reported a problem** | WhatsApp reported a problem on the number that stops messages. Meta's own words are shown in the app. | Tap **Open WhatsApp Manager** to see the details. |
 | **Waiting on WhatsApp name review** | WhatsApp is reviewing the business name guests will see. | Wait. Sending starts automatically once it is approved. |
 | **Business name rejected** | WhatsApp rejected the business name, so the number cannot send. | Submit a new name in WhatsApp Manager. |
 | **Finish connecting this number** | The phone number is not registered with WhatsApp yet. | The owner taps **Register Phone Number**. |
@@ -101,7 +104,7 @@ These are the statuses you may see, and what to do:
 
 ### If your number gets disconnected
 
-If a number disconnects, its card shows **This number is disconnected**: *"WeddingKart can no longer send from this number. This usually happens if it was unlinked in the WhatsApp Business app, or the app went unused for about two weeks. Reconnect it to start sending again."*
+If a number disconnects, its card shows **This number is disconnected**: *"Weddingkart can no longer send from this number. This usually happens if it was unlinked in the WhatsApp Business app, or the app went unused for about two weeks. Reconnect it to start sending again."*
 
 Only the number's owner can reconnect it, by tapping **Reconnect this number** and going through WhatsApp's signup again. Everyone else with access sees *"Ask the number's owner to reconnect it."* Events on that number cannot send until it is reconnected — and because an event's number can't be changed, reconnecting is the only fix.
 
@@ -136,7 +139,7 @@ A number can't be picked yet if something still needs to happen. The sheet expla
 | Message | What to do |
 |---|---|
 | *"Your access to this number is still pending"* | Accept the invitation on the **WhatsApp Business** screen. |
-| *"This number has no payment method"* | Add a payment method in WhatsApp Manager. |
+| *"WhatsApp payment issue"* | Open billing in Meta and fix what it shows (card, or business details in payment settings). |
 | *"WhatsApp rejected this business name"* | Submit a new name in WhatsApp Manager. |
 | *"WhatsApp is still reviewing this name"* | Wait — usually within a day. |
 | *"Still being set up"* | Wait — this usually takes a few minutes. |
@@ -146,6 +149,7 @@ A number can't be picked yet if something still needs to happen. The sheet expla
 - **You can always see the sender.** The announcement screen shows **Sending from** followed by the name guests see.
 - **Templates are your own.** On an event that uses your own number, the template list shows only the approved templates on that number — Weddingkart's shared templates are not available there. Create your own from **Manage Templates** or the **Create** tile at the end of **Browse Templates**. See [Create your own message templates](/announcements/own-templates). If there's no template for what you want to say, send a free-form message instead.
 - **Daily sending limit.** WhatsApp limits how many people a new number can message each day. If your number is limited, you see *"Your WhatsApp number is limited to N people per day"* — *"This is WhatsApp's starting limit for a new number. Getting your business verified raises it, usually within a few days."* If one send is larger than the limit, the warning reads *"This send is larger than your 24-hour limit"* and tells you roughly how many guests will not get it. Send the rest the next day, or get your business verified in WhatsApp Manager.
+- **How much of today's limit is left.** The limit is per rolling 24 hours, not per calendar day, and messaging the same guest twice counts once. On your event's sending-number screen, Weddingkart shows how many people you messaged from this number in the last 24 hours, how many are left, and when you are back to the full limit — for example *"Messaged in the last 24 hours: 119 of 250. 131 left right now."* Before a send, the warning compares your guest count with what is left: *"This send is more than you can send today."* This count only includes messages sent through Weddingkart. If you also sent messages from this number another way, such as the WhatsApp Business app, you have fewer left than shown.
 - **Costs.** Sending from your own number uses your event's Weddingkart credits in the same way as the shared number (see [Payments & Credits](/account/payments-credits)). **In addition**, WhatsApp charges your WhatsApp Business account directly for the messages it delivers, using the payment method in WhatsApp Manager.
 
 <Note>
@@ -164,10 +168,10 @@ In the web app, the chat's announcement sheet (the megaphone) also greys out fre
     WhatsApp has to approve the number and its business name first. Allow 2–3 days. You can still create the event and set it up while you wait — the name review usually finishes within a day.
   </Accordion>
   <Accordion title="Everything looks set up, but nothing is being delivered. Why?">
-    The most common cause is a missing payment method. WhatsApp will not deliver anything from your number until a payment method is added to your WhatsApp Business account in WhatsApp Manager. The number shows **Payment method needed** when this is the problem.
+    The most common cause is a billing problem on the number's WhatsApp account: no card, a declined card, or business details missing in payment settings. WhatsApp will not deliver anything from the number until it is fixed. The number shows **WhatsApp payment issue** with an **Open billing in Meta** button when this is the problem, and the status clears by itself once a message is delivered.
   </Accordion>
   <Accordion title="Will my number stop working on my phone?">
-    Only if you chose **Move this number to WeddingKart**. With **Keep using WhatsApp on this number (Coexistence)**, the number keeps working in the WhatsApp Business app and still rings for calls.
+    Only if you chose **Move this number to Weddingkart**. With **Keep using WhatsApp on this number (Coexistence)**, the number keeps working in the WhatsApp Business app and still rings for calls.
   </Accordion>
   <Accordion title="Can I undo the connection later?">
     Yes, but it isn't instant. Undoing it means disconnecting the number and verifying it again by SMS. That's why the app asks you to pick the number carefully before you start.
@@ -182,7 +186,7 @@ In the web app, the chat's announcement sheet (the megaphone) also greys out fre
     Yes. Messages use your event's Weddingkart credits as usual, and WhatsApp also bills your WhatsApp Business account for delivered messages.
   </Accordion>
   <Accordion title="My send was cut short by the daily limit. What can I do?">
-    WhatsApp caps how many people a new number can message in 24 hours. Send to the remaining guests the next day, or get your business verified in WhatsApp Manager to raise the limit.
+    WhatsApp caps how many people a new number can message in any 24 hours. Check how many are left on your event's sending-number screen, send to the remaining guests once the limit frees up, or get your business verified in WhatsApp Manager to raise the limit. The count there only includes messages sent through Weddingkart.
   </Accordion>
   <Accordion title="How do I change the business name guests see?">
     Change the display name in WhatsApp Manager. WhatsApp reviews it before it goes live. You can edit the description and profile picture in the app with **Set Up Branding**.
@@ -200,7 +204,7 @@ In the web app, the chat's announcement sheet (the megaphone) also greys out fre
     Getting your business verified in WhatsApp Manager isn't needed to start, but it raises the daily sending limit for a new number.
   </Accordion>
   <Accordion title="Why does WhatsApp ask for my card when I've already paid Weddingkart?">
-    On your own number, WhatsApp charges your WhatsApp Business account directly for the messages it delivers — that's separate from your Weddingkart plan. Until a payment method is added in WhatsApp Manager, the number shows **Payment method needed** and nothing is delivered, not even a test message.
+    On your own number, WhatsApp charges your WhatsApp Business account directly for the messages it delivers — that's separate from your Weddingkart plan. Until billing is set up in Meta (a card and the business details in payment settings), the number shows **WhatsApp payment issue** and nothing is delivered, not even a test message.
   </Accordion>
   <Accordion title="What does it cost in total to send from my own number?">
     Two things. Your event's Weddingkart plan and credits work the same as on Weddingkart's number (see [Payments & Credits](/account/payments-credits)). On top of that, WhatsApp bills your WhatsApp Business account for the messages it delivers, using the payment method in WhatsApp Manager.

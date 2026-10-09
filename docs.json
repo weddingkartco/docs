@@ -43,6 +43,7 @@
             "group": "WhatsApp Announcements",
             "pages": [
               "announcements/overview",
+              "announcements/saying-it-your-way",
               "announcements/ai-announcements",
               "announcements/scheduling",
               "announcements/announcement-packs",
@@ -68,7 +69,8 @@
               "account/google-sheets-integration",
               "account/use-with-claude-and-chatgpt",
               "account/payments-credits",
-              "account/referral-program"
+              "account/referral-program",
+              "account/appearance"
             ]
           }
         ]
