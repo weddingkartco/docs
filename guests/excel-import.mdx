@@ -106,6 +106,18 @@ Warnings point to a sheet and cell (for example, `Guests:A11 -> …`) so you can
 
 Name checks never block the import — they're there so a guest doesn't receive "Hi Mausi" on WhatsApp. Casing alone (ALL CAPS or all lowercase) isn't flagged.
 
+## The import report
+
+After you upload a file, the review screen shows an import report before anything is added. It groups what needs your attention:
+
+- **Fix these** — the problems worth fixing first.
+- **Numbers we skipped** — extra numbers left out of a guest's row. The guest still imports with their other number.
+- **Same number in more than one row** — duplicates in the file.
+- **No phone number** — rows that are skipped. Add a number to the sheet, or add the guest in the app later.
+- **Names to double-check** — these guests import, but the name may need a look.
+
+Tap **Download all problems (Excel)** to get a spreadsheet of every problem with the bad cells marked, or **Copy list** to copy the problems as text.
+
 ## Duplicates in the same file
 
 If the same phone number appears on more than one row, Weddingkart creates one guest, using the name from the first row it finds. Groups from the later rows are added to that guest. You'll see "Multiple names found for phone number …" listing every name and sheet that used it, and the rows are highlighted in the report sent to you on WhatsApp.
