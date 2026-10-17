@@ -39,6 +39,15 @@ For each passenger and each leg of the journey, the AI records:
 
 The AI only records what's printed on the ticket. If the arrival time isn't printed (common on some train tickets), it leaves the time blank instead of guessing. A blank arrival time on its own doesn't make a ticket bad.
 
+### Train tickets are checked against the railway record
+
+For a train ticket, Weddingkart also looks up the ticket's PNR in a railway PNR-status service. **Only the PNR number is sent** — no guest names, phone numbers or other details. The railway record has no passenger names, so names are never changed by it.
+
+- The record is used only if its train number and journey date match the ticket. If they don't (for example, the PNR was misread), the ticket is left as it was read.
+- When they match, empty fields such as class and station codes are filled in, and the booking status, coach and seat or berth are updated to the railway's current values.
+- Tickets that are still **waitlisted** or **RAC** (and confirmed tickets that don't have a coach yet) are checked again once a day until they confirm or the train has left. So a seat or status can change overnight. On **All tickets**, the **Waitlisted** filter shows the tickets that are still unconfirmed.
+- If your team has already edited or checked a ticket, the railway's values are not written over it. They appear as a suggestion in the ticket's [**Re-read differs** panel](#fix-details-and-re-read), which you accept or ignore.
+
 ### What happens after a guest sends a ticket
 
 1. Once the file is recognised as a ticket, the guest gets an automatic WhatsApp reply. By default it says: *"Thank you for sharing your travel ticket! We have received and processed it successfully. This information will be used to ensure your smooth pickup and drop at the wedding destination. See you soon!"* You can change or turn off this reply (see [Customise the automatic reply](#customise-the-automatic-reply)).
@@ -87,7 +96,13 @@ If you see *"Couldn't create the WhatsApp message. Try again."*, the ticket-requ
 - **Bad** — tickets flagged for review. Tickets you've marked valid aren't counted.
 - **N arrivals · N departures** — arrival and departure legs are counted separately, so a return flight isn't mistaken for another guest arriving.
 
-Tap **Received** or **Pending** to open **Travel Ticket Submissions**, where you can search guests by name and tap a guest to open their ticket. Tap **Bad** to see bad tickets. Under **Recent Tickets**, tap **View All >** to see every ticket and search by guest or passenger name.
+Tap **Received** or **Pending** to open **Travel Ticket Submissions**, where you can search guests by name and tap a guest to open their ticket. Tap **Bad** to see bad tickets. Under **Recent Tickets**, tap **View All >** to see every ticket and search it.
+
+### Search tickets
+
+The **Search tickets** box at the top of **Travel & Arrivals** (and the search box in **View All**) finds a ticket by guest or passenger name, phone number, PNR, flight or train number, **Ticket ID**, or **Guest ID**. Each result shows what it matched on, for example *Ticket ID* or *Guest ID*, when it isn't the guest's name.
+
+On the web app, a ticket also has its own link ending in `/travel-tickets/` and the Ticket ID, which opens that ticket in **View All**. Add `/edit` to the end to open its **Edit ticket** form. A ticket you've marked invalid doesn't open from its link; find it under the **Invalid** filter in **View All**.
 
 ### Mark a ticket invalid
 
@@ -127,10 +142,24 @@ The **Travel & Arrivals** screen shows **Received**, **Pending**, and **Bad** co
 - **Couldn't read it** — almost no text could be read (a blurry photo, or a file that couldn't be opened), or no journey details were found. Tap **Ask to re-send** to request a clearer photo or the PDF.
 - **No arrival place** — the ticket was read, but no leg shows an arrival station or airport, which is needed to plan a pickup. Tap **Ask to re-send** for a clearer or more complete ticket.
 - **Wrong week** — every date on the ticket is **more than 5 days** before the wedding's first event or after its last event. If even one leg falls inside that window, the ticket is fine. Common causes: the wrong week, last year's ticket, or a genuinely longer stay. If it's actually fine, tap **Mark valid** and add a note so your team knows why.
-- **Not a valid ticket** — the flight/train number or PNR that was read doesn't actually appear on the document, so it's probably not a real journey ticket. Tap **Ask to re-send** to request the actual ticket.
+- **Couldn't verify details** — the flight/train number or PNR that was read doesn't actually appear on the document, so it may not be a real journey ticket. Tap **Ask to re-send** to request the actual ticket.
+- **Check passengers** — the ticket was read and its passengers were saved, but some passengers printed on it may be missing from the reading. There is no re-send button, because the guest already sent the whole ticket. Tap **Fix details** and compare the passengers with the photo (see [Fix details and re-read](#fix-details-and-re-read)).
 - **Processing…** — the ticket is still being read. Check back in a moment.
 
 Tap any row to open the file and check it yourself.
+
+### Fix details and re-read
+
+Wherever you see a ticket (the **Bad** list, **View All**, or the ticket viewer), tap **Fix details** to open the **Edit ticket** form. It shows the ticket photo or PDF next to the details the AI read, so you can check each field against it. On a wide screen the photo stays open beside the form. The heading shows the ticket's **Ticket ID** and the guest's **Guest ID**.
+
+- Fields the AI is unsure about are marked in red. Each journey keeps its own passengers. Use **Add journey** to add a leg that was missed.
+- Tap **Save and mark as checked** once the ticket matches the document, or **Save but still needs attention** to keep it in your review list. Your changes replace what was read; the original values are kept in the ticket's history.
+- If someone else on your team saves the same ticket while you have it open, you are asked to reload before saving, so nobody's changes are lost.
+- **Mark as duplicate** and **Mark as invalid** are on the same form.
+
+Tap **Read again** to have the AI read the file a second time. Nothing you saved is changed. When the new reading differs, a **Re-read differs** panel appears with a few grouped questions, one per journey detail instead of one per field. For each, choose **Keep mine** or **Use new reading**, then accept the changes. Differences that are only spelling (such as "Jn" and "Junction") are not shown as questions.
+
+If the new reading finds passengers that are printed on the ticket but missing from your saved list, the panel lists them and offers **Accept: add** to put them into the form. They are only added to the form for you to check; nothing is saved until you save the ticket.
 
 **Ask to re-send** sends the guest a WhatsApp message asking them to re-send a clearer ticket. After that the button reads **Re-send sent**, so a double-tap won't message the guest twice. **Wrong week** tickets have no re-send button — a new copy would carry the same dates — so follow up with the guest yourself if needed.
 
