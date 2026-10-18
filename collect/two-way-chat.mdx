@@ -29,7 +29,11 @@ If the bar at the top says **Reconnecting to chat**, the app has lost its live c
 
 ### Filter chips
 
-Three chips sit above the list: **All**, **Unread (n)**, and **Needs attention (n)**. Tap **Unread** to see only conversations with messages you haven't read yet. **Needs attention** shows chats the WhatsApp assistant has handed to you (see [Automatic assistant replies](#automatic-assistant-replies)). If a filter has nothing to show, you see **You're all caught up** with *No unread chats. Switch to "All" to see every conversation.* (or *No guests currently need bot escalation.* on Needs attention).
+In the web app, four chips sit above the list: **All**, **Unread (n)**, **Needs attention (n)** and **No messages**. **All** lists only guests you have a conversation with. Tap **Unread** to see only conversations with messages you haven't read yet. **Needs attention** shows chats the WhatsApp assistant has handed to you (see [Automatic assistant replies](#automatic-assistant-replies)). **No messages** lists guests you have no conversation with yet. If a filter has nothing to show, you see **You're all caught up** with *No unread chats. Switch to "All" to see every conversation.* (or *No guests currently need bot escalation.* on Needs attention).
+
+### Search the inbox
+
+The search box looks across every guest, not just the ones you have already chatted with. Type any part of a name — each word is matched separately and in any order, so *sharma riya* finds *Riya Sharma*. Type a phone number in any format (with or without spaces, hyphens or +91) and it is matched on its digits against all of the guest's phone numbers and the number they chatted from.
 
 ### Pin a chat
 
@@ -146,6 +150,16 @@ Tap an image to open the full-screen viewer. The viewer's built-in **Share** but
 
 Voice messages have an **inline player** — play and pause, scrub via the slider, and read the duration right inside the bubble. No external player needed.
 
+On the web app, the voice-note player also has a speed chip to change playback speed, and a guest's audio file (not a voice note) shows as **Audio** with its file name.
+
+### Photo albums
+
+When a guest sends several photos or videos together, the web app shows them as one grid, like WhatsApp: two side by side, three as one wide tile plus two, and four or more as a 2x2 grid with a **+N** on the fourth tile. Tap a tile to open the swipeable viewer at that photo; long-press a tile for the actions on just that photo.
+
+### Forwarded messages
+
+A message the guest forwarded in WhatsApp shows a small italic **Forwarded** label at the top of the bubble, or **Forwarded many times** when WhatsApp marks it as widely forwarded.
+
 ### Videos
 
 Video bubbles show a **first-frame thumbnail** instead of a grey placeholder, so you can recognise a clip at a glance.
@@ -171,6 +185,8 @@ Messages preserve WhatsApp-style formatting (`*bold*`, `_italic_`, `~strike~`, m
 - **Select** — enters bulk-select mode with that message pre-checked.
 
 **Tap the timestamp row** on any message (the small "10:42 ✓✓" line under the bubble) to open the **Message info** sheet. It shows the full timestamp and a plain-English delivery status — "Read by the guest", "Delivered to the guest's phone", "Sent — delivered to WhatsApp servers", "Pending — not yet sent to WhatsApp" — so you don't have to remember which tick means what.
+
+In the web app, messages you send show WhatsApp-style ticks: a clock while pending, one tick when sent, two grey ticks when delivered, two blue ticks when read, and a red icon if it failed. On the web, **Message info** is also in the menu when you hover over a message. For your own messages it shows **Sent at** and a status timeline with a row for each step — **Sent**, **Delivered**, **Read** or **Failed** — each with its date and time. A failed row shows the error from WhatsApp. If WhatsApp never reported a read receipt but the guest wrote back after your message, the timeline shows **Read · inferred** and the ticks show a lighter blue with a small hollow dot; guests can turn read receipts off. For messages sent before 18/10/2026, only the latest status is available.
 
 ## Messages from people not on your guest list
 

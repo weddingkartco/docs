@@ -75,6 +75,8 @@ Weddingkart includes templates for every stage of the wedding communication time
     Tap **Send Now** to deliver immediately, or choose **Schedule for Later** to pick a future date and time. The announcement goes out automatically at the scheduled moment.
 
     For larger sends, a **Confirm Announcement** sheet asks you to type the number of recipients before it sends. This is deliberate: a WhatsApp send is irreversible — you cannot delete the messages once they are sent.
+
+    In the web app, if some guests have no value for a name or guest detail the message uses (for example no alias), they would see the word **Unknown** (or another placeholder) in their message. Before sending or scheduling, a sheet titled like *"3 guests will see "Unknown" in this message"* shows a sample of the message with the placeholder highlighted and lists the affected guests. Tap **Add the missing details** to fix your guest list, or type **I understand** and tap **Send anyway** to go ahead. Your confirmation is recorded against the send.
   </Step>
 </Steps>
 
@@ -193,6 +195,7 @@ If your event sends from [your own WhatsApp number](/account/own-whatsapp-number
 
 - **A guest is in two of the groups I selected?** They get the message once. With **Send only to common guests**, only guests in *every* selected group receive it.
 - **I add or remove guests from a group after scheduling?** For group sends, the recipient list is worked out when the message goes out, so the change is picked up. Individually picked guests are fixed when you schedule.
+- **I scheduled a send and some guests would see "Unknown" but I didn't confirm them?** Those guests are held rather than sent. They show as **Failed** in the report with the reason *missing alias, not confirmed*, and their credits are returned. Everyone else still gets the message.
 - **Some guests can't receive it?** Everyone else still gets the message. The failed guests show as **Failed** in the report with a reason, and their credits are returned.
 - **A guest's number isn't on WhatsApp?** The report shows **Not on WhatsApp**. Call or text them, or correct the number on the guest list.
 - **A guest replies?** Their reply lands in your team's [chat inbox](/collect/two-way-chat) as a one-to-one conversation — other guests never see it.
