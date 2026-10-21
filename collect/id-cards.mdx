@@ -74,6 +74,7 @@ Guests are never told that their ID is wrong, blurry, or missing a side. Any pro
 ### Reading the ID Cards screen
 
 - **Live** appears once at least 20% of your guests have sent an ID. Before that it shows **Not Live**.
+- **To check** is the number of ID card questions waiting for you. Tap it to open the **Check ID cards** list (see [Answer the ID check questions](#answer-the-id-check-questions)).
 - **Received** counts ID files, not guests — a guest who sent a front and a back counts more than once.
 - **Pending** is the number of guests who got an ID request announcement but haven't sent any ID yet.
 - **Bad** lists IDs that may need a second look: the document type wasn't recognised, the ID number is missing, an Aadhaar number doesn't have all 12 digits, or the name looks cut short (only one word was read). If nothing is flagged you'll see "No bad ID cards" and "All received ID cards look valid."
@@ -114,6 +115,27 @@ If you see:
 - "File is too large. Maximum size is 25 MB." — compress the file or take a smaller photo.
 - "The uploaded file is empty." or "Could not read that file. Try selecting it again." — select the file again.
 - "Still processing. Refresh in a moment to see if it arrived." — the upload probably went through. Refresh before uploading again, or you may end up with a duplicate.
+
+## Answer the ID check questions
+
+When Weddingkart can't be sure about an ID, it doesn't guess. It adds a question to the **To check** list instead. Tap **To check** on the ID Cards screen to open **Check ID cards**. The questions are grouped by type with a count, and at the top you see how many are waiting. Once everything is answered you'll see "You're all caught up."
+
+Tap **Start checking** to go through them one at a time. Each answer is saved straight away, you can stop any time, and **Skip for now** leaves a question for later. Tap a photo to open it full screen and zoom in. For a back with no front, tap **Find front** to pick the right front yourself.
+
+| Question | What it means | Your options |
+| --- | --- | --- |
+| **Which side is this?** | The card couldn't be read as front or back. | **Front**, **Back**, or **Not an ID card**. |
+| **Which front goes with this back?** | The AI has a guess for pairing a back with a front. | **Looks right** or **Not the same card**. You can also find the front yourself, or say there is no front here. |
+| **Replace or keep?** | A new photo of a card you already have. | **Replace with the new photo** or **Keep both**. |
+| **Same number, different name** | Two cards show the same ID number but different names. | **Same person** or **Different people**. |
+| **Same number on N cards** | The same ID number appears on more than one card. | **Keep this one**, or **Keep all**. |
+| **Number changed** | The number on a card changed when it was read again. | **Keep the pair** or **Split**. |
+| **2 cards in one photo** | One photo shows two ID cards. | **Keep as it is**, or **Ask for separate photos**. |
+| **Hard to read** | The name is cut off or the photo is blurry. | **Keep as it is**, or **Ask again**. |
+
+**Ask for separate photos** and **Ask again** send a WhatsApp message to the guest who sent the card. A request for separate photos goes out at most once a day.
+
+Cards the AI paired on its own appear separately under **Paired by AI**. That list is optional spot-checking and is not counted as work to do.
 
 ## Check who has the right documents
 
