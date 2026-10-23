@@ -92,7 +92,7 @@ These are the statuses you may see, and what to do:
 | **Ready to send** | WhatsApp checked the number recently and reported no problems. | Nothing. |
 | **Messages are delivering** | Messages sent from the number recently reached guests. Weddingkart is going by your deliveries here, not by a fresh check with WhatsApp. | Nothing. |
 | **No problems reported** | Nothing is known to be wrong, but the number has not sent recently and WhatsApp has not been checked recently. | Nothing. Send an announcement as usual. |
-| **WhatsApp payment issue** | WhatsApp refused messages from this number because of a billing problem on its WhatsApp account. Common causes: no card added, a declined card, or **business details missing in payment settings**. | Tap **Open billing in Meta** and fix what Meta shows there. The status clears by itself once a message is delivered. |
+| **WhatsApp payment issue** | WhatsApp refused messages from this number because of a billing problem on its WhatsApp account. Common causes: no card added, a card added to a **Facebook ads account instead of the WhatsApp account**, a declined card, or **business details missing in payment settings**. | Tap **Open billing in Meta**, pick the number's **WhatsApp Business account** (not an ads account), and fix what Meta shows there. The status clears by itself once a message is delivered. |
 | **WhatsApp reported a problem** | WhatsApp reported a problem on the number that stops messages. Meta's own words are shown in the app. | Tap **Open WhatsApp Manager** to see the details. |
 | **Waiting on WhatsApp name review** | WhatsApp is reviewing the business name guests will see. | Wait. Sending starts automatically once it is approved. |
 | **Business name rejected** | WhatsApp rejected the business name, so the number cannot send. | Submit a new name in WhatsApp Manager. |
@@ -219,6 +219,9 @@ In the web app, the chat's announcement sheet (the megaphone) also greys out fre
   </Accordion>
   <Accordion title="Why does WhatsApp ask for my card when I've already paid Weddingkart?">
     On your own number, WhatsApp charges your WhatsApp Business account directly for the messages it delivers — that's separate from your Weddingkart plan. Until billing is set up in Meta (a card and the business details in payment settings), the number shows **WhatsApp payment issue** and nothing is delivered, not even a test message.
+  </Accordion>
+  <Accordion title="I added a card in Meta, but it still says WhatsApp payment issue.">
+    Check that the card is on the number's **WhatsApp Business account**, not on a Facebook **ads account**. Meta's **Billing & payments** page lists both kinds of account side by side, and a card or prepaid balance on an ads account does not pay for WhatsApp. If the page you added the card on mentions running ads, available funds or auto-reload, it is the ads account. Go back to **Billing & payments → Accounts**, pick the WhatsApp Business account with this number's business name, and add the card there (fill in the business details if Meta asks). Then tap **I've done this — check again** in Weddingkart.
   </Accordion>
   <Accordion title="What does it cost in total to send from my own number?">
     Two things. Your event's Weddingkart plan and credits work the same as on Weddingkart's number (see [Payments & Credits](/account/payments-credits)). On top of that, WhatsApp bills your WhatsApp Business account for the messages it delivers, using the payment method in WhatsApp Manager.
