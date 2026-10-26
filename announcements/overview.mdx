@@ -78,13 +78,23 @@ Weddingkart includes templates for every stage of the wedding communication time
 
     For larger sends, a **Confirm Announcement** sheet asks you to type the number of recipients before it sends. This is deliberate: a WhatsApp send is irreversible — you cannot delete the messages once they are sent.
 
-    In the web app, if some guests have no value for a name or guest detail the message uses (for example no alias), they would see the word **Unknown** (or another placeholder) in their message. Before sending or scheduling, a sheet titled like *"3 guests will see "Unknown" in this message"* shows a sample of the message with the placeholder highlighted and lists the affected guests. Tap **Add the missing details** to fix your guest list, or type **I understand** and tap **Send anyway** to go ahead. Your confirmation is recorded against the send.
+    In the web app, if some guests have no value for a name or guest detail the message uses (for example no alias) and that detail has no fallback, they would see the word **Unknown** (or another placeholder) in their message. A detail whose fallback is set to blank is left empty instead, and is not flagged. Before sending or scheduling, a sheet titled like *"3 guests will see "Unknown" in this message"* shows a sample of the message with the placeholder highlighted and lists the affected guests. Tap **Add the missing details** to fix your guest list, or type **I understand** and tap **Send anyway** to go ahead. Your confirmation is recorded against the send.
   </Step>
 </Steps>
 
 <Tip>
 Tap **Send it to me** at the bottom of the editor to receive the exact announcement on your own WhatsApp before adding any guests. You are added to the guest list as yourself so it can be delivered to you.
 </Tip>
+
+### View as a guest
+
+In the web app, the editor of a saved WhatsApp announcement has a **View as a guest** row just above the message preview (**Pick anyone to see their name, card and details filled in**). It is shown to people who can view the guest list, and not on voice announcements.
+
+1. Tap **View as a guest**, then search by name, number or group, and tap a guest. Nothing is sent.
+2. The screen shows the message **As that guest would see it**: their name and guest details filled in, with a personalised image card or PDF attached when the announcement uses one. Tap the card to open the guest's own file.
+3. A key under the message explains the colours: the guest's own details, your fallback text, and **No value, no fallback: shows "Unknown"**. A detail left blank shows as a small dashed box here, but the guest sees nothing there.
+
+If the guest has no value for a detail, type a fallback in the box on the preview (**Set fallback, or leave empty for blank**) and tap **Save**, or tap **Fill in** (the button reads **Fill in** and the guest's first name, then **'s details**) to fix their record. Tap **Change** to pick another guest. If the guest's number isn't on WhatsApp, or their card can't be personalised, the screen says so.
 
 ## What it costs
 
@@ -148,7 +158,7 @@ If you have connected your own WhatsApp Business number, you write and submit th
 Your number has two separate pages:
 
 - **My templates** — every template on your number, with its status: **Pending**, **Approved** or **Rejected**. Filter by **Utility**, **Marketing**, **Waiting** or **Rejected**. A template in review shows **In review** and roughly how long WhatsApp can take. If WhatsApp moves a template to marketing, it is marked **Moved to marketing**.
-- **Template catalog** — starting points for everyday updates such as RSVP confirmations, on-the-day reminders, meal timings, check-ins, and venue or timing changes. Search or filter by use case. Each card says where the wording comes from: **WhatsApp's own wording**, **Based on approved wording**, or **New wording**, and when WhatsApp last approved it. Open it from **Browse the catalog** on **My templates**, or from **See all** next to **Start from the catalog** on Announcements. English only for now, and invitations aren't included.
+- **Template catalog** — starting points for everyday updates such as RSVP confirmations, on-the-day reminders, meal timings, check-ins, and venue or timing changes. Search or filter by use case. Each card says where the wording comes from: **WhatsApp's own wording**, **Based on approved wording**, or **New wording**, and when WhatsApp last approved it. Open it from **Browse the catalog** on **My templates**, or from the **Template catalog** row on Announcements. English only for now, and invitations aren't included.
 
 <Steps>
   <Step title="Pick a starting point">
