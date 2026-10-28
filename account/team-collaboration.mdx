@@ -7,33 +7,52 @@ Team collaboration lets multiple people — event managers, coordinators, the br
 
 ## What team members can do
 
-When an Admin adds a team member, they choose that person's job, which sets their **Access Role** (Admin, Member, or View Only). Admins and Members can:
+When you add a team member, you choose that person's **job** (for example Co-planner, Comms assistant, or Travel desk). The job decides exactly what they can do on that wedding. It also sets their **Access Role** (Admin, Member, or View Only), but the job is what counts: a Member whose job is Comms assistant can draft announcements and reply in chat, but can't send announcements or pay.
 
-- Manage the guest list
-- Send announcements and WhatsApp messages
-- Handle RSVPs
-- Manage travel and ID collection
-- View payment and credit details
+A **Co-planner** can do everything except delete the wedding. The other jobs are narrower, see [What each job can do](#what-each-job-can-do).
 
 ### Access roles
 
 | Access Role | What they can do |
 |---|---|
 | **Admin** | Full access to every feature, including deleting the wedding |
-| **Member** | Everything an Admin can do except deleting the wedding — including editing wedding settings and managing the team |
-| **View Only** | See the same screens as the rest of the team, but cannot add, edit, delete, or send anything |
+| **Member** | What their job allows. A Co-planner can do everything an Admin can except delete the wedding, including editing wedding settings and managing the team. Narrower jobs (Comms assistant, Travel desk, ...) can do only their part |
+| **View Only** | Look at guests, RSVPs, events, announcements and reports, travel, rooming and gifts. Can't open chats, ID cards and tickets, downloads, or payments, and can't add, edit, delete, or send anything |
 
 <Note>
 Use **View Only** for people who only need to follow along — for example, a family member who wants to watch RSVPs come in without accidentally messaging guests.
 </Note>
 
+### What each job can do
+
+Every job except the field-staff ones can **look at** the guest list, RSVPs, events, announcements and their reports, travel, rooming, gifts and the activity log, and can use **Ask Weddingkart**. On top of that, each job adds its own part:
+
+| Job | What it adds | What it can't do |
+|---|---|---|
+| **Co-planner** | Everything | Delete the wedding |
+| **Family viewer** | Nothing: look only | Chats, ID cards and tickets, downloads, payments, the join link, or any change |
+| **Comms manager** | Write, schedule and send announcements, download announcement reports, read and reply to guest chats | Edit guests, travel, rooming, payments, team |
+| **Comms assistant** | Draft announcements, read and reply to guest chats | Send or schedule announcements |
+| **Inbox responder** | Read and reply to guest chats | Download chats, send announcements |
+| **Guest data entry** | Add, edit and import guests and guest details | Delete guests in bulk, download the guest list |
+| **Travel desk** | Manage travel and pickups, see and manage ID cards and tickets, ask guests to re-send them | Download travel sheets, send announcements |
+| **Rooming manager** | Plan rooms, check guests in, publish and download the rooming sheet | Send announcements, edit guests |
+| **AI analyst** | Nothing beyond looking and Ask Weddingkart | Any change |
+| **Accounts** | See payments and billing, pay for a plan, add credits | Send announcements, edit guests |
+
+You can give someone more than one job; they get everything each job allows. When you pick jobs, the invite screen shows a live preview of what the person will and won't be able to do.
+
+If someone opens something their job doesn't include, the app shows **"This isn't part of your role here"** and tells them which person to ask. The server refuses the action too, so hiding a button is never the only protection.
+
 ### Permission details
 
-The table below lists what each access role can do on a wedding.
+The table below lists what each access role can do on a wedding when the job is the default for that role (Co-planner for Member, Family viewer for View Only). Narrower jobs can do less, see the table above.
 
 | Action | Admin | Member | View Only |
 |---|:---:|:---:|:---:|
 | See guests, groups, RSVPs, events, announcements, and reports | ✓ | ✓ | ✓ |
+| Open guest chats, ID cards, and travel tickets | ✓ | ✓ | — |
+| Download guest lists, reports, and files | ✓ | ✓ | — |
 | See the team list | ✓ | ✓ | ✓ |
 | Open the wedding's Google Sheet link | ✓ | ✓ | ✓ |
 | Add, edit, or delete guests and groups | ✓ | ✓ | — |
@@ -49,9 +68,38 @@ The table below lists what each access role can do on a wedding.
 A few more things to know:
 
 - **Admins and Members manage the team.** Both can add people, change an access role, or remove someone. View Only people see the team list but can't change it. Only the wedding owner can change or remove the owner's own access. If someone opens a screen their job doesn't cover, the app says they don't have access and to ask the wedding owner. Nobody can change their own access role, so nobody can promote themselves.
-- **View Only people can't change anything.** In the web app, the buttons that add, edit, delete, or send are hidden for them. If an action still gets through to the server, it is refused, and they may see **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
+- **View Only people can't change anything, and don't see chats or ID files.** In the web app, the buttons that add, edit, delete, or send are hidden for them. If an action still gets through to the server, it is refused, and they may see **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
 - **Moving referral credits into a wedding** depends on who created the wedding, not on access role. Only the person who created the wedding can transfer their personal referral credits into it. See [Referral Program](/account/referral-program).
 - **Access to your own WhatsApp number is separate.** Your role on a wedding doesn't let someone send from, or create templates on, a WhatsApp Business number you connected. That's a separate grant, covered in [Share your number with your team](/account/own-number-access).
+
+## See what a team member sees (View as)
+
+If you manage the team, you can look at the wedding exactly the way one of your team members sees it. Use it to check you gave someone the right job before they start, or to understand what they mean when they say "I can't find it".
+
+<Steps>
+  <Step title="Open the Team page">
+    Open the wedding and tap **Team**.
+  </Step>
+  <Step title="Tap See what they see">
+    On the person's card (or inside their details), tap **See what <name> sees**. A sheet explains what happens and lists what their job can do. Tap **See what <name> sees** again to start.
+  </Step>
+  <Step title="Look around">
+    The app opens the wedding home as that person would see it. A dark strip stays at the top of every screen: **Viewing as <name> · <job> · look only**, with an **Exit** button. Screens and buttons their job doesn't include are hidden, just as they are for them. If you open something they can't open, you see **"<name> can't open <feature>"**.
+  </Step>
+  <Step title="Tap Exit">
+    Tap **Exit** in the strip to go back to your own view. You return to the Team page.
+  </Step>
+</Steps>
+
+**View as is look only.** Nothing you do while viewing as someone is saved or sent, on any screen: no guest edits, no announcements, no chat replies, no read receipts, no payments, no calls. If you try, you see **"Nothing is saved while viewing as <name>"**. Tap **Exit** first to make the change as yourself.
+
+A few more things to know:
+
+- **Only people who manage the team can use it.** That is the owner, Admins, and Co-planners. Other jobs don't see the button, and the server refuses it for them.
+- **You never see more than you can see yourself.** View as only takes things away: it shows the parts of the app both you and that person can open.
+- **The data is the real, live data** for that wedding, the same data they would see.
+- **It is per wedding.** Switching to another wedding, logging out, or tapping **Exit** ends it.
+- **You can't view as yourself**, and the button isn't shown on your own card.
 
 ## Adding a team member
 
@@ -154,7 +202,7 @@ When they open the link, Weddingkart takes them straight to that screen in the w
     That phone number is already on this wedding's team. Find the person in **Teams Management** and edit their role instead of adding them again.
   </Accordion>
   <Accordion title="A team member says every change fails">
-    Check their access role. A **View Only** person can look at everything but can't add, edit, delete, or send. Change them to **Member** if they need to make changes.
+    Check their job. A **Family viewer** can look but can't add, edit, delete, or send, and narrower jobs can change only their own part (a Comms assistant can't send announcements, for example). Use **See what <name> sees** on the Team page to see exactly what they see, then tap **Change access** to give them the job they need.
   </Accordion>
   <Accordion title="A team member didn't get the WhatsApp notification">
     The notification is only a courtesy — the person doesn't need it to get access. As long as they log in with the number you entered, the wedding appears in their account. The Google Sheet link is only sent if the wedding's sheet had already been created when you added them.
@@ -188,10 +236,19 @@ When they open the link, Weddingkart takes them straight to that screen in the w
     No. Only Admins can delete the wedding.
   </Accordion>
   <Accordion title="Can View Only people see guest phone numbers and chats?">
-    Yes. View Only people see the same screens as Admins and Members, including the guest list and messages. They just can't change or send anything.
+    They see the guest list, including phone numbers, but not guest chats. Chats, ID cards and travel tickets, and downloads need a job that includes them, such as Co-planner, Comms manager, Inbox responder, or Travel desk.
   </Accordion>
   <Accordion title="Can a team member pay for the plan?">
-    Yes. Admins and Members can buy a plan or top up credits from the **Wallet**. View Only people can't.
+    Owners, Admins, Co-planners, and anyone with the **Accounts** job can buy a plan or top up credits from the **Wallet**. Other jobs can't.
+  </Accordion>
+  <Accordion title="I gave someone the Comms assistant job. Can they send an announcement?">
+    No. A Comms assistant can draft announcements and reply in chat, but sending and scheduling need **Comms manager** (or Co-planner). If they try, they see **"This isn't part of your role here"**. Use **See what <name> sees** on the Team page to check.
+  </Accordion>
+  <Accordion title="How do I check what a team member can see?">
+    Open **Team**, then tap **See what <name> sees** on their card. The app shows the wedding the way they see it, with a strip at the top and an **Exit** button. Nothing you do there is saved or sent.
+  </Accordion>
+  <Accordion title="Can I do something on someone's behalf with View as?">
+    No. View as is look only, on purpose: everything you do there would otherwise be recorded as them, and a message sent by mistake can't be taken back. Tap **Exit** and make the change as yourself.
   </Accordion>
   <Accordion title="Do team members see all my weddings?">
     No. Access is per wedding. Someone added to one wedding sees only that wedding, not your other weddings.
