@@ -40,6 +40,14 @@
             ]
           },
           {
+            "group": "Calling Guests",
+            "pages": [
+              "guests/call-guests",
+              "guests/guest-caller-link",
+              "guests/calling-number"
+            ]
+          },
+          {
             "group": "WhatsApp Announcements",
             "pages": [
               "announcements/overview",
