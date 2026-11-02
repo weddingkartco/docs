@@ -60,7 +60,15 @@ You can start from any of these places. All of them open the same set-up screens
     Tap **Start verification**.
   </Step>
   <Step title="Tell us about your business">
-    Enter your **business name**, choose your **business type** and give an **email address** for the verification. The business type decides which documents you need (see the table below).
+    At the top of the **Your business** sheet, tap **Upload document** and choose your **GST certificate**, **Udyam (MSME) certificate**, or **company or LLP certificate** (a PDF or a photo, up to 8 MB). Weddingkart reads it, fills in your **business name** and picks your **business type** for you, for example *Read from your Udyam certificate: Sole proprietor*. We only read the document; we don't keep it.
+
+    If you have no registration, tap **No registration? I'm an individual**. You can always change the business type yourself with the buttons below the upload.
+
+    Then give an **email address** for the verification. The business type decides which documents Vobiz asks for (see the table below).
+
+    <Note>
+    A **partnership** needs **GST** for Vobiz's check: a partnership has no CIN, and Vobiz doesn't list Udyam. If your partnership firm only has Udyam, the app warns you; contact us before you start. A **sole proprietor** with Udyam is fine: Vobiz only needs your PAN and Aadhaar.
+    </Note>
   </Step>
   <Step title="Verify your business">
     The screen **Verify your business** opens Vobiz's page inside the app. It asks for the documents that match your business type, then returns you to Weddingkart. While it loads you see a spinner, and after you submit you see **Checking your documents…**. When Vobiz confirms, you move on automatically.
@@ -89,6 +97,35 @@ After setup, the **Calling number** row in **Settings** reads, for example, *+91
 | **Company**, **LLP** or **partnership** | **PAN**, and **GST** or **CIN** |
 
 Your documents go to Vobiz, our telephony partner, who checks them. The documents are used to register the number in your business's name.
+
+### Already have a Vobiz account?
+
+If you already have your own Vobiz account with a number on it, you can use that number instead of verifying again through Weddingkart.
+
+<Steps>
+  <Step title="Open the connect screen">
+    On the **Calling number** screen, tap **I already have a Vobiz account** (below **Start verification**).
+  </Step>
+  <Step title="Paste your keys">
+    In your Vobiz console, open your API keys and copy your **Auth ID** (it looks like `MA_XXXXXXXX`) and your **Auth Token**. Paste both and tap **Check keys**. If they don't work, the app says *Those keys didn't work. Copy the Auth ID and Auth Token again from your Vobiz console.*
+  </Step>
+  <Step title="Pick your number">
+    The app lists the numbers on your Vobiz account that can make calls. Pick one and tap **Connect**. The number is ready straight away: there is no document check and nothing is bought, because the number is already yours.
+
+    If a number already sends its calls somewhere else, the app warns you: connecting sends that number's incoming calls to Weddingkart.
+  </Step>
+</Steps>
+
+What changes when you use your own account:
+
+- Vobiz bills call minutes to **your** Vobiz account. Recorded calls still use Weddingkart credits per minute, as shown on the call sheet.
+- Weddingkart doesn't charge a monthly fee for the number. You pay Vobiz for it directly.
+- Your account must have finished Vobiz's own KYC, or Vobiz won't place calls.
+- We keep your Auth Token encrypted and use it only to place, record and look up your calls.
+
+To stop, open **Settings** › **Calling number** and tap **Disconnect**. Weddingkart stops using your number and deletes your keys. The number stays in your Vobiz account, and its incoming calls go back to wherever they went before you connected it. If the number wasn't set up to send its calls anywhere before, or Vobiz doesn't accept the change, the app shows **Point your number back in Vobiz**: open your Vobiz console and choose where the number should send its calls, otherwise it won't ring anywhere. If a recorded call was made in the last half hour, wait until it has finished saving and then disconnect.
+
+Settings shows *Your own Vobiz account* with part of your Auth ID, so you can tell which account is connected.
 
 ### Turn it on or off for a wedding
 
