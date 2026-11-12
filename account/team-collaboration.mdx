@@ -17,7 +17,7 @@ A **Co-planner** can do everything except delete the wedding. The other jobs are
 |---|---|
 | **Admin** | Full access to every feature, including deleting the wedding |
 | **Member** | What their job allows. A Co-planner can do everything an Admin can except delete the wedding, including editing wedding settings and managing the team. Narrower jobs (Comms assistant, Travel desk, ...) can do only their part |
-| **View Only** | Look at guests, RSVPs, events, announcements and reports, travel, rooming and gifts. Can't open chats, ID cards and tickets, downloads, or payments, and can't add, edit, delete, or send anything |
+| **View Only** | Look at guests, RSVPs, events, announcements and reports, travel, rooming and gifts, and open and download guests' ID cards and travel tickets. Can't open chats or payments, can't download guest lists or reports, and can't add, edit, delete, or send anything |
 
 <Note>
 Use **View Only** for people who only need to follow along — for example, a family member who wants to watch RSVPs come in without accidentally messaging guests.
@@ -30,7 +30,7 @@ Every job except the field-staff ones can **look at** the guest list, RSVPs, eve
 | Job | What it adds | What it can't do |
 |---|---|---|
 | **Co-planner** | Everything | Delete the wedding |
-| **Family viewer** | Nothing: look only | Chats, ID cards and tickets, downloads, payments, the join link, or any change |
+| **Family viewer** | Open and download ID cards and travel tickets (including the Google Drive copy), the travel sheet and the pickup roster | Chats, guest-list and report downloads, payments, the join link, or any change |
 | **Comms manager** | Write, schedule and send announcements, download announcement reports, read and reply to guest chats | Edit guests, travel, rooming, payments, team |
 | **Comms assistant** | Draft announcements, read and reply to guest chats | Send or schedule announcements |
 | **Inbox responder** | Read and reply to guest chats | Download chats, send announcements |
@@ -51,14 +51,16 @@ The table below lists what each access role can do on a wedding when the job is 
 | Action | Admin | Member | View Only |
 |---|:---:|:---:|:---:|
 | See guests, groups, RSVPs, events, announcements, and reports | ✓ | ✓ | ✓ |
-| Open guest chats, ID cards, and travel tickets | ✓ | ✓ | — |
-| Download guest lists, reports, and files | ✓ | ✓ | — |
+| Open ID cards and travel tickets | ✓ | ✓ | ✓ |
+| Download ID cards and travel tickets, or copy them to Google Drive, and download the travel sheet and pickup roster | ✓ | ✓ | ✓ |
+| Open guest chats | ✓ | ✓ | — |
+| Download guest lists, announcement reports, and the rooming sheet | ✓ | ✓ | — |
 | See the team list | ✓ | ✓ | ✓ |
 | Open the wedding's Google Sheet link | ✓ | ✓ | ✓ |
 | Add, edit, or delete guests and groups | ✓ | ✓ | — |
 | Create, send, or schedule announcements and WhatsApp messages | ✓ | ✓ | — |
 | Create or edit events | ✓ | ✓ | — |
-| Tap **Sync Now** for Google Sheets, or sync documents to Google Drive | ✓ | ✓ | — |
+| Tap **Sync Now** for Google Sheets | ✓ | ✓ | — |
 | Pay for a plan or top up credits | ✓ | ✓ | — |
 | Add, edit, or remove team members | ✓ | ✓ | — |
 | Change the **WhatsApp Bot** settings and knowledge | ✓ | ✓ | — |
@@ -68,7 +70,7 @@ The table below lists what each access role can do on a wedding when the job is 
 A few more things to know:
 
 - **Admins and Members manage the team.** Both can add people, change an access role, or remove someone. View Only people see the team list but can't change it. Only the wedding owner can change or remove the owner's own access. If someone opens a screen their job doesn't cover, the app says they don't have access and to ask the wedding owner. Nobody can change their own access role, so nobody can promote themselves.
-- **View Only people can't change anything, and don't see chats or ID files.** In the web app, the buttons that add, edit, delete, or send are hidden for them. If an action still gets through to the server, it is refused, and they may see **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
+- **View Only people can't change anything, and don't see chats.** They can open and download guests' ID cards and travel tickets, and copy them to Google Drive from **Export Guest Data**. That Drive folder also holds a sheet with guests' phone numbers, so add people as View Only only if they should see those. In the web app, the buttons that add, edit, delete, or send are hidden for them. If an action still gets through to the server, it is refused, and they may see **"Permission denied for role = view_only"**. That means the action was blocked on purpose, not that something is broken.
 - **Moving referral credits into a wedding** depends on who created the wedding, not on access role. Only the person who created the wedding can transfer their personal referral credits into it. See [Referral Program](/account/referral-program).
 - **Access to your own WhatsApp number is separate.** Your role on a wedding doesn't let someone send from, or create templates on, a WhatsApp Business number you connected. That's a separate grant, covered in [Share your number with your team](/account/own-number-access).
 
