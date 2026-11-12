@@ -30,7 +30,7 @@ If the number is disconnected, nobody can create templates on it until the owner
     On the **My templates** page, tap **Write your own**, or tap **Use this** on a [catalog](/announcements/proven-templates) card to start from its wording. The **New template** screen opens.
   </Step>
   <Step title="Name it">
-    Enter a **Template name** using lowercase letters, numbers, and underscores only — for example `sangeet_venue_update`. Guests don't see the name.
+    Enter a **Template name** using lowercase letters, numbers, and underscores only — for example `sangeet_venue_update`. Guests don't see the name, so it only has to help you find the template again. If you leave it empty, the app names the template from the first words of your message and shows you the name.
   </Step>
   <Step title="Pick a language">
     Choose **English**, **Hindi**, or **English (UK)**.
@@ -91,11 +91,13 @@ Things that fail every time:
 
 While you write, the app shows either **No problems found** (*"This draft passes our WhatsApp checks. Meta still reviews it independently."*), problems that **must be fixed**, or **things worth checking** (*"These won't stop the submission, but they raise the chance of a rejection."*).
 
-If there are problems to fix, the button reads **Fix problems to submit**. That's deliberate: *"WhatsApp keeps a rejected template name forever, so we have not sent this."* Nothing has been sent to WhatsApp yet, so the name is still free to use once you fix the problems.
+If there are problems to fix, the button reads **Fix problems to submit**. Tap a problem to go straight to the field it's about. Nothing has been sent to WhatsApp yet.
 
-<Warning>
-WhatsApp remembers the name of every rejected template and never lets you reuse it. If a template is rejected, you must submit the corrected version under a new name.
-</Warning>
+### If the name is already taken
+
+WhatsApp won't let a number use the same template name twice, even after a rejection. You don't need to think of another one: the app saves your template under the next free name and tells you, both while you type and after you send. For example, `rsvp_7` becomes `rsvp_8`, and `invite` becomes `invite_2`.
+
+Your earlier template stays exactly as it was. The new one is a separate template with its own review, so pick the right one when you send an announcement.
 
 ## Tracking review status
 
@@ -105,7 +107,7 @@ The **My templates** page groups your templates by status:
 |---|---|
 | **Approved** | It appears in the template list on events that send from this number. Filter by **Utility** or **Marketing** to see which category WhatsApp gave it. |
 | **Pending** | Waiting on WhatsApp. It shows **In review** and how long WhatsApp can take: up to 24 hours, or longer for businesses not yet verified with Meta. |
-| **Rejected** | WhatsApp's reason is shown on the card. A rejected name can't be reused, so submit a corrected version under a new name. |
+| **Rejected** | WhatsApp's reason is shown on the card. To try again, create a new template with the corrected wording. WhatsApp won't reuse a rejected name, so the app adds a number to it. |
 
 If WhatsApp moves a template you submitted as Utility to Marketing, it is marked **Moved to marketing**.
 
@@ -138,13 +140,16 @@ Once a template is **Approved**, create an announcement on an event that sends f
     WhatsApp usually decides within about 1 hour for businesses verified with Meta, and up to 24 hours otherwise. The status updates on its own about every 15 minutes, and you get a WhatsApp message when it's decided. To check straight away, open the **My templates** page and tap **Check status now**. A template still listed as **Pending** is waiting on WhatsApp — there's nothing more to do on your side.
   </Accordion>
   <Accordion title="My template was rejected. What do I do?">
-    Open the **My templates** page and tap the **Rejected** filter. Read WhatsApp's reason, rewrite the message, and submit it under a new name. A rejected name can never be reused.
+    Open the **My templates** page and tap the **Rejected** filter. Read WhatsApp's reason, rewrite the message, and create a new template. You can type the same name: WhatsApp won't reuse a rejected name, so the app adds a number to it for you.
+  </Accordion>
+  <Accordion title="Can I add a logo to a template that's already approved?">
+    Not from the app. Create a new template with the same wording, choose **Image** under **Attachment**, and send it for review. The new template gets its own review, and your approved one stays as it was until you stop using it.
   </Accordion>
   <Accordion title="I asked for Utility but it says Marketing. Can I change it back?">
     No. Once WhatsApp files a template as Marketing, that can't be undone. Rewrite the message as a plain fact about the event and submit it as a new template.
   </Accordion>
   <Accordion title="Why won't the app let me submit?">
-    The app found something that would very likely get the template rejected, and a rejected name can never be reused. Fix the highlighted problems and the **Submit for review** button comes back.
+    The app found something that would very likely get the template rejected. Tap a problem to go to the field it's about and fix it, and the **Send for review** button comes back. The template's name won't stop you: if it's taken, the app adds a number to it.
   </Accordion>
   <Accordion title="Is the attachment I upload what guests receive?">
     No. It's a sample for WhatsApp's reviewers. You choose the real image, video, or PDF each time you send.
