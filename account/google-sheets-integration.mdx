@@ -44,6 +44,22 @@ The Master Sheet is split into these tabs:
 | **Other Files** | Any other files guests sent, with a **File Link** and when they were sent |
 | **Guest Attributes** | **Name** and phones, then one column for each custom guest attribute you use |
 | **RSVP Forms** | Everything your RSVP forms collected, one row per guest: **Guest**, **Phone**, **Group**, then for each event its **RSVP**, **people** count and the **names** of who's coming, then one column per RSVP form question (named by the question), then one column for every other detail collected about guests, for example on WhatsApp or a call |
+| **Travel Desk** | One row per guest on your guest list, with their arrival and departure side by side: date, time, flight or train number, station or airport, people, PNR and driver. Also their ID cards, room, notes, a **Check** column for things to verify, and **Files not used**. |
+| **Persons (Beta)** | One row per person, not per guest: everyone named on a ticket, every guest with no ticket yet, people known only from an ID card a guest sent, and last the guests who said no. See [Persons (Beta)](#persons-beta) below. |
+
+### Persons (Beta)
+
+The **Persons (Beta)** tab helps you see each person once, even when a relative or the planner sent their ticket or ID card. It's in Beta: the matching is automatic, so check the orange and red rows before you rely on them.
+
+- **Row 2 explains every column** in plain words. It stays at the top when you scroll, filter or sort.
+- **Who the person is.** **Guest (matched)**, **Phone** and **Groups** show the guest on your list this person is. They are filled only when exactly one guest fits. **How matched** says why, or which guests it could be.
+- **Only rows that need a look are coloured.** Orange: one family sent the person's ID card and another sent their ticket, so check whose party they're in. Red: someone known only from an ID card, on no ticket and not on your guest list. Every other row is white, and **How matched** says how it was matched. Hover over the **How matched** header to see the colours.
+- **Planners and coordinators.** When one guest sends documents for many families (a planner, or one relative collecting everyone's papers), the ID cards they send don't decide whose party someone is in. The card still shows under **ID card** and **ID sent by**.
+- **Ticket sent by** and **Ticket sender phone** name the guest who sent the ticket. Call them about people who aren't on your guest list. **Ticket 1** and **Ticket 2** open the ticket files (**FL** flight, **TR** train, **BS** bus).
+- **ID card** is **Yes**, **Maybe** (a card with a similar name, for example Vijay and Vijaya) or **No**. **ID sent by** names who sent it. **ID 1** to **ID 3** open the card files (**AD** Aadhaar, **PP** passport, **DL** driving licence, **PN** PAN, **VT** voter ID).
+- **ID card problem** tells you why a card may not be usable, for example **ID number not readable** or **type of ID not recognised**. It's blank when at least one of the person's cards is fine.
+- **Files not used** lists what a guest sent that no row uses: a ticket we couldn't read, a journey the team removed, an ID card back side with no front, or an upload we couldn't open.
+- **Links to tickets and ID cards** work for 7 days and renew every time the sheet syncs. Anyone with the sheet link can open them, the same as the **ID Cards** and **Travel Tickets** tabs.
 
 A few details:
 
@@ -76,7 +92,7 @@ You can also tap **Export to Google Sheet** from the RSVP, ID card, and travel t
 |---|---|
 | **Queued — waiting to start** | Your sync is in line and will start shortly. |
 | **Starting sync...** | The sync has started. |
-| **3 of 9 sheets updated** (for example) | The sync is working through the tabs one by one. |
+| **3 of 10 sheets updated** (for example) | The sync is working through the tabs one by one. |
 | **Synced just now** | The sync finished. Open the link to see the latest data. |
 | **Last updated** followed by a date and time | When the sheet was last refreshed. |
 | **Sync failed** with a **Retry** button | Something went wrong. Tap **Retry**. |
