@@ -29,7 +29,7 @@ If the bar at the top says **Reconnecting to chat**, the app has lost its live c
 
 ### Filter chips
 
-In the web app, four chips sit above the list: **All**, **Unread (n)**, **Needs attention (n)** and **No messages**. **All** lists only guests you have a conversation with. Tap **Unread** to see only conversations with messages you haven't read yet. **Needs attention** shows chats the WhatsApp assistant has handed to you (see [Automatic assistant replies](#automatic-assistant-replies)) and guests WhatsApp is refusing your messages to (see [When a guest isn't receiving your messages](#when-a-guest-isnt-receiving-your-messages)). **No messages** lists guests you have no conversation with yet. If a filter has nothing to show, you see **You're all caught up** with *No unread chats. Switch to "All" to see every conversation.* (or *No guests currently need bot escalation.* on Needs attention).
+In the web app, four chips sit above the list: **All**, **Unread (n)**, **Needs attention (n)** and **No messages**. **All** lists only guests you have a conversation with. Tap **Unread** to see only conversations with messages you haven't read yet. **Needs attention** shows chats with messages the WhatsApp assistant flagged for you that nobody has resolved yet (see [Messages that need your attention](#messages-that-need-your-attention)) and guests WhatsApp is refusing your messages to (see [When a guest isn't receiving your messages](#when-a-guest-isnt-receiving-your-messages)). **No messages** lists guests you have no conversation with yet. If a filter has nothing to show, you see **You're all caught up** with *No unread chats. Switch to "All" to see every conversation.* (or *No guests currently need bot escalation.* on Needs attention).
 
 ### When a guest isn't receiving your messages
 
@@ -238,6 +238,33 @@ If the same phone number is a guest in more than one Weddingkart wedding, WhatsA
 On weddings where Weddingkart's WhatsApp assistant is turned on, it can answer common guest questions automatically. When it can't help, it flags the chat **Needs attention** (an amber label and left border in the inbox) and the team gets a push notification such as *"Priya needs a reply"* or *"Priya asked for a person"*, using the name you gave your assistant (Neeti by default).
 
 When the assistant hands a chat to your team, it steps back in that chat for 48 hours. Every reply from your team restarts the 48 hours, so the assistant only comes back after the team has been quiet in that chat for two days. You can switch it back on sooner yourself.
+
+### Messages that need your attention
+
+**Needs attention** is marked on the guest's message itself, not only on the chat. Inside the chat, each message the assistant flagged shows as an **orange bubble** headed **Needs attention**, with the reason underneath (for example *Wants a ground-floor room for her parents; not in the wedding info.*). If a guest sends two messages that both need you, you see two orange bubbles.
+
+**Replying does not clear it.** Each orange message stays orange until someone on your team marks it handled:
+
+- Tap **Mark as resolved** at the bottom of the orange bubble. You can also long-press the message (or right-click it in the web app) and choose **Mark as resolved**.
+- Changed your mind? Tap **Undo** in the message that appears at the bottom of the screen.
+- Once resolved, the bubble turns back to normal and shows a small **✓ Resolved by** *name* line, so the team can see who handled it.
+
+Above the typing box, a strip reads **N messages need attention** while any are open. Tap it to see them all in one list and resolve each one there, including older messages you haven't scrolled back to. A chat flagged before messages could be marked one by one shows as a single item in this list.
+
+The chat leaves the **Needs attention** chip in the inbox once every flagged message in it is resolved. In the inbox, long-press a chat (or right-click it in the web app) and choose **Mark all as resolved** to resolve all of its flagged messages at once.
+
+You get a push notification when a chat first needs you, and again when the assistant flags something new after your team has replied in that chat. A new hand-over more than 30 minutes after the previous one also rings. Other flags on a chat that is already waiting on you don't ring again; they only add another orange bubble.
+
+### What the assistant did on its own
+
+When the assistant changes something for a guest from the chat, a small blue note appears in the conversation saying what it did, for example *Neeti updated RSVP for Mehendi: Awaiting reply → Yes · 2*. Notes show for:
+
+- RSVP updates (each event's old answer → new answer, plus any diet or note it saved with it)
+- Travel details it saved from the guest's message
+- Special requests it recorded
+- Answers to your RSVP form questions it read from the guest's reply
+
+Notes read **Only your team sees this**. They are never sent to the guest on WhatsApp.
 
 In the web app, the assistant's on/off control sits in the typing box, the way WhatsApp Business shows its AI agent:
 

@@ -96,16 +96,27 @@ On the RSVP screen, open the **RSVP page** card and tap **Set up RSVP page**. Th
 - **Events lock when they are over.** Each event locks once it has passed, with or without a reply-by date. A form that asks once about the whole wedding locks that question after the wedding's last event, or after the wedding date if no event has a date.
 - A closed form tells the guest **This form is closed.** and shows what they already told you.
 
+### Greeting
+
+The first line a guest sees on the form greets them by name. By default it is **Dear `{{guest_name}}`**, so a guest saved as "Bucky Aunty and Percy Mama" sees **Dear Bucky Aunty and Percy Mama**. Each form has its own greeting: open the form and change it under **Greeting**.
+
+- **Pick a ready greeting.** Tap **Dear `{{guest_name}}`**, **Dear Guest**, or **No greeting**. If your guest list has a column for what you call each guest, such as **alias** or **nickname**, it shows up as a choice too (for example **Dear `{{alias}}`**).
+- **Write your own.** Type any greeting, up to 100 characters, and add guest details with **Add guest detail**. For example **Namaste `{{guest_name}}` ji** or **Dear `{{alias}}`**.
+- **When a guest has no value.** If a guest is missing a detail the greeting uses, that guest sees no greeting instead of half of one. The form tells you how many guests have the detail. If you set a fallback for the detail in your guest columns, guests without a value see the fallback instead (**Dear `{{alias}}`** with fallback "Guest" shows **Dear Guest**).
+- **The name on the button.** The form names the guest on **Update (name)'s RSVP** and **Not (name)? Answer for someone else** with the first guest detail in the greeting. With **Dear Guest**, **No greeting**, or a fallback value, it says **Update your RSVP** and **Not you? Answer for someone else**.
+- **Before you send.** Use **Preview as a guest** to check how the greeting reads for a few guests.
+
 ### Cover, theme and your brand
 
 - **Cover image.** Use the wedding cover, no cover, or upload your own for a single form. JPG, PNG or WebP, up to 5 MB. A wide image of about 1600 x 800 works best; invite cards work too, and tall ones show the top with **View full invite**.
 - **Make a cover with AI.** If you have no cover yet, the app gives you a prompt to paste into ChatGPT, Gemini or any AI image tool. AI tools sometimes misspell names, so check before you upload.
+- **Couple's names.** The page shows the couple's names in large letters under the cover. Each form has **Auto**, **Show** and **Hide**. **Auto** (the default) hides them when the text you put on the cover with **Add text** already has one of the couple's names, so guests don't read the names twice; with no text on the cover, or text without the names (like "Save the date"), they show. Pick **Show** to always show them. Pick **Hide** when the names are part of the cover picture itself, because the app can't read words inside a picture. The line with the place and dates stays either way, and screen readers still read the names.
 - **Wedding link and defaults.** Set the link name, your brand, and the default theme and cover that every form uses unless it picks its own. **Show my brand on guest pages** controls whether your business name appears on the guest page.
 - **Welcome note (optional).** Add guest details such as their name with **Add guest detail**. Each guest sees their own.
 
 ### What guests see
 
-A guest opens their personal link and answers for each event the form asks about (or the one **Will you come to the wedding?** question), plus any questions you added. If the link is shared in a family, they can tap **Not (name)? Answer for someone else** to answer for a relative. Someone answering for a relative never sees the relative's saved answers; they get a blank form. That session expires after 30 minutes — they see **That took too long. Please start again from your own link.**
+A guest opens their personal link and answers for each event the form asks about (or the one **Will you come to the wedding?** question), plus any questions you added. If the link is shared in a family, they can tap **Not (name)? Answer for someone else** (or **Not you?** when the greeting has no name) to answer for a relative. Someone answering for a relative never sees the relative's saved answers; they get a blank form. That session expires after 30 minutes — they see **That took too long. Please start again from your own link.**
 
 A link that is no longer active shows **This link isn't active any more. Please ask the couple's team for a new one.**
 
@@ -146,7 +157,7 @@ WhatsApp reply buttons remove every one of those steps. Everything happens insid
 
 <Steps>
   <Step title="Open the RSVP dashboard">
-    Go to the **Wedding Homepage** and tap **RSVP** in the progress overview.
+    Go to the **Wedding Homepage** and tap **RSVP & Forms** in the progress overview.
   </Step>
   <Step title="Review response counts">
     The RSVP screen shows the counts: **Yes**, **Maybe**, **No**, and **Pending**. Tap any of them to see the guest list, split into **Attending**, **Declined**, and **Pending** tabs. Counts update in real time as guests tap their buttons.
@@ -170,6 +181,14 @@ The RSVP screen also shows a **Recent Responses** list (tap **See all N response
 | **Pending** | Every guest who hasn't answered at all — including guests you haven't sent the RSVP to yet. |
 
 Each guest in the **Attending** tab shows their party size (for example, "4 guests"). For the total number of people coming, sync to Google Sheets: the **Summary** tab shows **Total Guests Attending (with plus ones)**, which adds up the headcount of every guest who answered Yes. The **RSVP** tab has **RSVP**, **RSVP No of Guests**, and **RSVP Last Updated** columns for each guest.
+
+### See how an RSVP changed
+
+The **RSVP** tab also has an **RSVP History** column: every change to the guest's answer, oldest first, with how it happened and when. For example:
+
+*Awaiting reply → Yes · 2 (WhatsApp button, 12 Nov 2:05 PM) → No (edited by Priya Shah, 15 Nov 9:10 AM)*
+
+The part in brackets says what changed it: **WhatsApp button**, **RSVP page**, *Neeti* **in WhatsApp chat** (your assistant read it from the guest's message), **AI phone call**, **phone call by** *name*, **edited by** *name* (someone on your team), **guest list import**, or **undone by** *name*. If you collect RSVPs per event, each event gets its own line (*Mehendi: …*). Very long histories keep the latest changes.
 
 ## Changing a response
 
