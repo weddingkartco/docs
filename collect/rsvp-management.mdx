@@ -72,9 +72,11 @@ On the RSVP screen, open the **RSVP page** card and tap **Set up RSVP page**. Th
     - **Ask for names of the people coming** appears while **Ask how many people are coming** is on. It is off by default, so guests pick a number. Turn it on and guests tick who comes to each event, and the people count comes from the names.
 
     If you add your own "How many guests are coming?" question, turn off **Ask how many people are coming** so guests aren't asked twice.
+
+    While **Ask Yes / No / Not sure** is on, you can also change the heading above the events and the words on the buttons. See **Your words for the question and buttons** below.
   </Step>
   <Step title="Or ask once for the whole wedding">
-    With **Include events** off, turn on **Ask if they're coming to the wedding**. It is off by default. Guests then see one question, **Will you come to the wedding?**, and answer **Yes**, **No** or **Not sure**. Under it, **Ask how many people are coming** works as it does for events: it is on by default, and with it off a **Yes** counts as 1 person, or keeps the number the guest already gave you.
+    With **Include events** off, turn on **Ask if they're coming to the wedding**. It is off by default. Guests then see one question, **Will you be joining us for the celebrations?** unless you change the words, and answer **Yes**, **No** or **Not sure**. Under it, **Ask how many people are coming** works as it does for events: it is on by default, and with it off a **Yes** counts as 1 person, or keeps the number the guest already gave you.
 
     The answer is the guest's RSVP, the same one the WhatsApp RSVP buttons set. A guest who already tapped **Attending - 3 People** on WhatsApp opens the page with **Yes** and 3 people already picked. Their answer counts for every event they are invited to, and their latest answer wins, whether it came from this page or from WhatsApp. Answers they gave event by event on another form stay, unless they would change the RSVP they just gave.
 
@@ -84,9 +86,20 @@ On the RSVP screen, open the **RSVP page** card and tap **Set up RSVP page**. Th
     Under questions, tap **New question** or **Add existing** to reuse one you made for another form. A question keeps one answer per guest, even when it sits on several forms. Guests can skip a question unless you mark it required. Answer types are text, long text, single choice, multiple choice, yes/no, number (0 to 50), date and time.
   </Step>
   <Step title="Set the look and send">
-    Pick a cover and theme for the form (see below), then add the form's chip to an announcement with **Open Announcements**. Each guest receives their own link. **Preview as a guest** lets you search for any guest or group and open the form as that guest sees it. Guests in different groups can see different events. Nothing you pick in a preview is sent or saved.
+    Pick a cover and theme for the form (see below), then add the form's chip to an announcement with **Open Announcements**. Each guest receives their own link. To check the form as a guest sees it, use the **Guest view** while you edit (see below), or **Preview as a guest** on the form list to open it in a new tab. Guests in different groups can see different events. Nothing you pick in a preview is sent or saved.
   </Step>
 </Steps>
+
+### See it as your guests do
+
+While you edit a form, the **Guest view** shows the real guest page beside it, as one guest sees it. On a narrow window, switch between **Edit** and **Guest view** under the form's name.
+
+- **Pick the guest.** Tap **As (name)** at the top of the guest view. **Quick picks** lists you and the guests you looked at recently, and you can search for anyone else. Guests in different groups can see different events.
+- **See changes before you save.** Changes to the welcome note, the greeting, the question and the button words show as you type, marked **Not saved yet**. Guests only get them after you tap **Save changes**. Switches such as **Include events** save straight away, and the guest view updates.
+- **Open it full size.** **Full page** opens the guest page in a new tab. It shows what is saved, not your unsaved changes.
+- **Hide it.** Tap **›** to hide the guest view, and **Guest view** to bring it back.
+
+Nothing you pick in the guest view is sent or saved.
 
 ### Reply-by date
 
@@ -104,7 +117,18 @@ The first line a guest sees on the form greets them by name. By default it is **
 - **Write your own.** Type any greeting, up to 100 characters, and add guest details with **Add guest detail**. For example **Namaste `{{guest_name}}` ji** or **Dear `{{alias}}`**.
 - **When a guest has no value.** If a guest is missing a detail the greeting uses, that guest sees no greeting instead of half of one. The form tells you how many guests have the detail. If you set a fallback for the detail in your guest columns, guests without a value see the fallback instead (**Dear `{{alias}}`** with fallback "Guest" shows **Dear Guest**).
 - **The name on the button.** The form names the guest on **Update (name)'s RSVP** and **Not (name)? Answer for someone else** with the first guest detail in the greeting. With **Dear Guest**, **No greeting**, or a fallback value, it says **Update your RSVP** and **Not you? Answer for someone else**.
-- **Before you send.** Use **Preview as a guest** to check how the greeting reads for a few guests.
+- **Before you send.** Pick a few guests in the **Guest view** to check how the greeting reads for each of them.
+
+### Your words for the question and buttons
+
+Each form can ask in your own words. Open the form, pick a ready wording or write your own, in any language, and tap **Save changes**.
+
+- **The question.** With **Include events** off and **Ask if they're coming to the wedding** on, **How guests are asked** sets the question above the buttons. The default is **Will you be joining us for the celebrations?**. The other ready choices are **Will you grace the occasion with your presence?**, **Can we count on you to celebrate with us?** and **Will you bless the couple with your presence?**.
+- **The heading above the events.** With **Include events** and **Ask Yes / No / Not sure** on, **Heading above the events** sets the line above the event cards. The default is **Which celebrations will you join us for?**.
+- **The buttons.** **Answer buttons** sets the words on the three buttons. Pick a ready set, such as **Joyfully accept**, **Regretfully decline** and **Not sure yet**, or type your own, up to 24 characters each. The three buttons need different words.
+- **The meaning stays the same.** Whatever the buttons say, answers count as **Yes**, **No** and **Maybe** on the RSVP screen and in your Google Sheet, just like answers given on WhatsApp.
+- **Limits.** The question and the heading can be up to 100 characters. Guest details such as `{{guest_name}}` can't go in them or on the buttons; use the greeting for names. Leave a box empty to go back to the default.
+- **Answering for someone else.** A guest answering for a relative sees **Will (name) be joining us for the celebrations?**, so the question names the right person.
 
 ### Cover, theme and your brand
 
@@ -116,7 +140,7 @@ The first line a guest sees on the form greets them by name. By default it is **
 
 ### What guests see
 
-A guest opens their personal link and answers for each event the form asks about (or the one **Will you come to the wedding?** question), plus any questions you added. If the link is shared in a family, they can tap **Not (name)? Answer for someone else** (or **Not you?** when the greeting has no name) to answer for a relative. Someone answering for a relative never sees the relative's saved answers; they get a blank form. That session expires after 30 minutes — they see **That took too long. Please start again from your own link.**
+A guest opens their personal link and answers for each event the form asks about (or the one question for the whole wedding), plus any questions you added. If the link is shared in a family, they can tap **Not (name)? Answer for someone else** (or **Not you?** when the greeting has no name) to answer for a relative. Someone answering for a relative never sees the relative's saved answers; they get a blank form. That session expires after 30 minutes — they see **That took too long. Please start again from your own link.**
 
 A link that is no longer active shows **This link isn't active any more. Please ask the couple's team for a new one.**
 
