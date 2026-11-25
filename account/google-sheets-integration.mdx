@@ -90,20 +90,20 @@ You can also tap **Export to Google Sheet** from the RSVP, ID card, and travel t
 
 | On screen | What it means |
 |---|---|
-| **Queued — waiting to start** | Your sync is in line and will start shortly. |
+| **Queued — waiting to start** | Your sync is in line. It usually starts within a few seconds (at most about 20). If a sheet sync finished less than a minute ago, for this wedding or another one, yours starts about a minute after that one finished. |
 | **Starting sync...** | The sync has started. |
 | **3 of 10 sheets updated** (for example) | The sync is working through the tabs one by one. |
 | **Synced just now** | The sync finished. Open the link to see the latest data. |
 | **Last updated** followed by a date and time | When the sheet was last refreshed. |
 | **Sync failed** with a **Retry** button | Something went wrong. Tap **Retry**. |
+| **Sync failed** with **"Sync was interrupted twice. Tap Sync to try again."** | The sync stopped part-way two times in a row (for example during a server restart). After the first interruption Weddingkart restarts the sync by itself; after a second one it stops and asks you. Tap **Retry**. |
 
 The screen also says **"You can leave this page. The sync will continue in the background."**
 
-If you start another sync right after one, you may see one of these messages instead of a new sync starting:
+When you tap sync you may also see one of these messages:
 
-- **"Your task is already in queue, please wait for few more mins"** — a sync you started less than a minute ago is still waiting or running. Wait for it to finish.
-- **"Guest sheet is just got updated, please check"** — a sync finished less than a minute ago. Open the sheet; it's already current.
-- **"Guest sheet is updating, please check after few mins"** — your new sync has started.
+- **"Updating your Google Sheet now. It's usually ready in under a minute."** — a new sync is queued. If a sync is already running for this wedding, the new one runs after it, so any changes you made while the first one was running are included.
+- **"Your Google Sheet is already updating. It's usually ready in under a minute."** — you tapped sync again while your earlier sync was still waiting to start. No second sync is added: the waiting one reads your latest data when it starts, so nothing is missed.
 
 ### Who can sync
 
@@ -143,8 +143,8 @@ Re-sync the sheet right before sharing with your catering or logistics team to m
   <Accordion title="The sheet isn't showing my latest changes">
     Tap **Sync Now** in **More** > **Export Guest Data** and wait for **Synced just now**. Then reload the sheet in your browser — an open Google Sheets tab may not show new data until you reload it.
   </Accordion>
-  <Accordion title="The sync keeps saying it's already in queue">
-    A sync is already running for this wedding. Large guest lists take longer. Wait a few minutes, then check **Last updated**. If the status changes to **Sync failed**, tap **Retry**.
+  <Accordion title="It says my Google Sheet is already updating">
+    You tapped sync while an earlier sync for this wedding was still waiting to start. That sync reads your latest data when it starts, so there's nothing more to do: wait for **Synced just now**, then reload the sheet. If the status changes to **Sync failed**, tap **Retry**.
   </Accordion>
   <Accordion title="I can't edit the sheet">
     That's expected. The sheet is view-only so that every sync can safely replace its data. Use **File** > **Make a copy** in Google Sheets to get an editable copy.
@@ -167,7 +167,7 @@ Re-sync the sheet right before sharing with your catering or logistics team to m
     No. Each wedding keeps the same sheet link. Syncing updates the data in place.
   </Accordion>
   <Accordion title="How long does a sync take?">
-    Usually a few minutes. It depends on the size of the guest list and how many documents guests sent. You can leave the screen while it runs.
+    Usually under a minute. It starts within a few seconds of your tap; how long it then takes depends on the size of the guest list and how many documents guests sent. Syncs take turns: if another sheet sync finished less than a minute ago (for your wedding or someone else's), yours waits about a minute before it starts. You can leave the screen while it runs.
   </Accordion>
   <Accordion title="Can my team members get the sheet?">
     Yes. Team members receive the link on WhatsApp when they're added, if the sheet already exists. You can also forward the link to them.
