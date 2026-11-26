@@ -131,7 +131,7 @@ You can upload an updated version of your list at any time. Weddingkart matches 
 - **Guests missing from the new file** are not deleted — remove them manually if needed.
 - **Groups** are only added, never taken away — with one exception: for groups made from a column (like `mehendi=yes`), a guest's new value replaces the old one. Change a guest from Yes to No in the "Mehendi" column and they move from `mehendi=yes` to `mehendi=no`.
 - **Per-guest info** from the columns you pick overwrites the old value. An empty cell leaves the existing value alone.
-- **One row that has the numbers of two different existing guests** merges them: one guest is kept, updated with that row's name and numbers, and the other is removed. Check your sheet before uploading if two family members' numbers are on one row.
+- **One row that has the numbers of two different existing guests** isn't imported, and nobody is changed or removed: Weddingkart can't tell which guest the row means. This usually happens when two family members' numbers are on one row. Put each person's number on their own row (or fix the guests in the app) and import again.
 
 <Warning>
   Changing a guest's phone number to a completely new one in Excel and re-uploading adds a new guest with the new number — the old guest, with the old number, stays. Delete the old guest manually in the app if you no longer need it.
@@ -157,7 +157,7 @@ Weddingkart's free **Guest Excel Cleaner** tool at [weddingkart.co/tools/guest-e
     No. Weddingkart looks for the header row in the first few rows, so a title or blank line above it is fine.
   </Accordion>
   <Accordion title="Some rows were skipped. Why?">
-    A row is skipped when it has no phone number Weddingkart can read, has no name, or has a name over 200 characters. Rows whose number already appeared earlier in the file are merged into that earlier guest instead of added again. The warnings list, and the report sent to you on WhatsApp, name every affected row.
+    A row is skipped when it has no phone number Weddingkart can read, has no name, or has a name over 200 characters. On a re-import, a row whose numbers belong to two different existing guests is also skipped, and neither guest is changed. Rows whose number already appeared earlier in the file are merged into that earlier guest instead of added again. The warnings list, and the report sent to you on WhatsApp, name every affected row.
   </Accordion>
   <Accordion title="Can I import the same file again after fixing it?">
     Yes. Guests are matched by phone number, so existing guests are updated rather than duplicated, and new numbers are added. Guests you removed from the file aren't deleted from Weddingkart.
