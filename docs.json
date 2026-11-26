@@ -36,6 +36,7 @@
               "guests/excel-import",
               "guests/international-guests",
               "guests/guest-groups",
+              "guests/families",
               "guests/rooming"
             ]
           },

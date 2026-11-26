@@ -19,6 +19,7 @@ Put column headers in the first row and avoid merged cells. If your file has mor
 | Phone | Yes | Any format works. Include the country code for non-Indian numbers (e.g., `+44 7911 123456`) — numbers without a country code are treated as Indian (+91). Add a second phone column for guests with more than one number. |
 | Group columns | No | Weddingkart suggests a group for each distinct value in a column (for example, `brideside=yes`). Each sheet name also becomes a suggested group. |
 | Attribute columns | No | Any other column (hotel name, pickup point, meal preference, etc.) can be imported as a guest attribute. |
+| Family, Main contact | No | Put a household's rows under one Family value (like "Sharma Jaipur") to import them as a [family](/guests/families), including family members without a phone. Optional Main contact column: Yes on the person messages for the family go to. Used only when you turn on **Use the "Family" column as families**. |
 
 ### Example file
 
@@ -54,13 +55,14 @@ For this file, Weddingkart suggests groups such as `brideside=yes` and `groomsid
     Tap **Add Guest** → **Import from Excel**, then tap **Select Sheet from Device** and choose your `.xlsx` file. The same screen has a **Sample Excel Template** you can download to get started.
   </Step>
   <Step title="Upload your file">
-    Wait for Weddingkart to process the file. It detects names, phone numbers, and groups, and shows progress as it works through each sheet — "Opening workbook", "Processing sheet 2/5 — …", "Validating guest names", then "Finishing up". Large files can take a minute; if it runs long you'll see "This is taking longer than usual. Your file is still being processed — give it another minute, or close and try again with a smaller sheet." To pick a different file, tap **Change File**.
+    Wait for Weddingkart to process the file. It detects names, phone numbers, groups, and a Family column if there is one, and shows progress as it works through each sheet — "Opening workbook", "Processing sheet 2/5 — …", "Validating guest names", then "Finishing up". Large files can take a minute; if it runs long you'll see "This is taking longer than usual. Your file is still being processed — give it another minute, or close and try again with a smaller sheet." To pick a different file, tap **Change File**.
 
     If your file has more than one sheet, you're asked to choose which ones to import: "We found more than one sheet in this file. Choose which ones to import." Row counts next to each sheet are approximate. Tap **Import 1 sheet →** (or **Import N sheets →**); you must keep at least one sheet ticked.
 
     - If there are errors in your sheet, the import stops — fix the errors and import the file again.
     - If some rows have issues (for example, a missing phone number, a duplicate number, or a name that doesn't look right), you'll see warnings with a summary. Warnings don't block the import, and Weddingkart also sends them to you on WhatsApp so you can fix them later.
     - If there's nothing to fix, you'll see "N guests found, no issues — ready to import."
+    - If your file has a Family column, you'll see **Use the "Family" column as families** with a switch, off to start with, and how many families it found. Turn it on to import households as families. See [Families from an Excel file](/guests/families#families-from-an-excel-file).
 
     Tap **Next: Choose Groups** to continue.
   </Step>
@@ -131,6 +133,7 @@ You can upload an updated version of your list at any time. Weddingkart matches 
 - **Guests missing from the new file** are not deleted — remove them manually if needed.
 - **Groups** are only added, never taken away — with one exception: for groups made from a column (like `mehendi=yes`), a guest's new value replaces the old one. Change a guest from Yes to No in the "Mehendi" column and they move from `mehendi=yes` to `mehendi=no`.
 - **Per-guest info** from the columns you pick overwrites the old value. An empty cell leaves the existing value alone.
+- **Families** change only when you turn on **Use the "Family" column as families**. An empty Family cell changes nothing. See [Re-importing a file with families](/guests/families#re-importing-a-file-with-families).
 - **One row that has the numbers of two different existing guests** isn't imported, and nobody is changed or removed: Weddingkart can't tell which guest the row means. This usually happens when two family members' numbers are on one row. Put each person's number on their own row (or fix the guests in the app) and import again.
 
 <Warning>
@@ -179,6 +182,9 @@ Weddingkart's free **Guest Excel Cleaner** tool at [weddingkart.co/tools/guest-e
   </Accordion>
   <Accordion title="The import shows warnings. Should I fix them first or import anyway?">
     Warnings don't stop the import, so you can go ahead. Rows with no readable phone number or no name are skipped, and name warnings (like "Mausi" or a name with numbers) are imported as written. To fix things later, correct the file and import it again — guests are matched by phone number, so nobody is duplicated. Fix names before you send anything that greets guests by name.
+  </Accordion>
+  <Accordion title="Can I import children or grandparents who don't have a phone?">
+    Yes, as part of a family. Give their rows the same Family value as the rest of their household, leave the phone empty, and turn on **Use the "Family" column as families** when you upload. Messages for them go to the family's main contact. Without a Family value (or with the switch off), rows without a phone are skipped. See [Families](/guests/families).
   </Accordion>
   <Accordion title="Can a guest's column value put them in two groups from the same column?">
     No. For groups made from a column, a guest has one value per column. If the same guest shows up twice with different values, the later value is kept and you'll see a "conflicting values" warning.
